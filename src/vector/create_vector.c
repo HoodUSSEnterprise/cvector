@@ -6,7 +6,7 @@ Vector2i *create_vector2i(int x, int y)
     if (res == NULL)
     {
         printf("No memory\n");
-        exit(0);
+        return NULL;
     }
     res->x = x;
     res->y = y;
@@ -19,7 +19,7 @@ Vector2f *create_vector2f(float x, float y)
     if (res == NULL)
     {
         printf("No memory\n");
-        exit(0);
+        return NULL;
     }
     res->x = x;
     res->y = y;
@@ -32,7 +32,7 @@ Vector2d *create_vector2d(double x, double y)
     if (res == NULL)
     {
         printf("No memory\n");
-        exit(0);
+        return NULL;
     }
     res->x = x;
     res->y = y;
@@ -45,7 +45,7 @@ Vector2c *create_vector2c(Complex x, Complex y)
     if (res == NULL)
     {
         printf("No memory\n");
-        exit(0);
+        return NULL;
     }
     res->x = x;
     res->y = y;
@@ -58,7 +58,7 @@ Vector3i *create_vector3i(int x, int y, int z)
     if (res == NULL)
     {
         printf("No memory\n");
-        exit(0);
+        return NULL;
     }
     res->x = x;
     res->y = y;
@@ -72,7 +72,7 @@ Vector3f *create_vector3f(float x, float y, float z)
     if (res == NULL)
     {
         printf("No memory\n");
-        exit(0);
+        return NULL;
     }
     res->x = x;
     res->y = y;
@@ -86,7 +86,7 @@ Vector3d *create_vector3d(double x, double y, double z)
     if (res == NULL)
     {
         printf("No memory\n");
-        exit(0);
+        return NULL;
     }
     res->x = x;
     res->y = y;
@@ -100,7 +100,7 @@ Vector3c *create_vector3c(Complex x, Complex y, Complex z)
     if (res == NULL)
     {
         printf("No memory\n");
-        exit(0);
+        return NULL;
     }
     res->x = x;
     res->y = y;
@@ -114,14 +114,14 @@ Vectori *create_vectori(unsigned int len, int *data)
     if (res == NULL)
     {
         printf("No memory\n");
-        exit(0);
+        return NULL;
     }
     res->len = len;
     res->data = (int *)malloc(sizeof(int) * len);
     if (res->data == NULL)
     {
         printf("No memory\n");
-        exit(0);
+        return NULL;
     }
     memcpy(res->data, data, sizeof(int) * res->len);
     return res;
@@ -133,14 +133,14 @@ Vectorf *create_vectorf(unsigned int len, float *data)
     if (res == NULL)
     {
         printf("No memory\n");
-        exit(0);
+        return NULL;
     }
     res->len = len;
     res->data = (float *)malloc(sizeof(float) * len);
     if (res->data == NULL)
     {
         printf("No memory\n");
-        exit(0);
+        return NULL;
     }
     memcpy(res->data, data, sizeof(float) * res->len);
     return res;
@@ -152,14 +152,14 @@ Vectord *create_vectord(unsigned int len, double *data)
     if (res == NULL)
     {
         printf("No memory\n");
-        exit(0);
+        return NULL;
     }
     res->len = len;
     res->data = (double *)malloc(sizeof(double) * len);
     if (res->data == NULL)
     {
         printf("No memory\n");
-        exit(0);
+        return NULL;
     }
     memcpy(res->data, data, sizeof(double) * res->len);
     return res;
@@ -171,14 +171,14 @@ Vectorc *create_vectorc(unsigned int len, Complex *data)
     if (res == NULL)
     {
         printf("No memory\n");
-        exit(0);
+        return NULL;
     }
     res->len = len;
     res->data = (Complex *)malloc(sizeof(Complex) * len);
     if (res->data == NULL)
     {
         printf("No memory\n");
-        exit(0);
+        return NULL;
     }
     memcpy(res->data, data, sizeof(Complex) * res->len);
     return res;

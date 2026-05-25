@@ -5,7 +5,7 @@
 #include "complex/operator_complex.h"
 #include <math.h>
 
-// ============ Vector2i 组合 ============
+// ============ Vector2i  ============
 Vector2i *add_vector2i_2i(Vector2i *v1, Vector2i *v2);
 
 Vector2f *add_vector2i_2f(Vector2i *v1, Vector2f *v2);
@@ -30,7 +30,7 @@ Vectord *add_vector2i_d(Vector2i *v1, Vectord *v2);
 
 Vectorc *add_vector2i_c(Vector2i *v1, Vectorc *v2);
 
-// ============ Vector2f 组合 ============
+// ============ Vector2f  ============
 Vector2f *add_vector2f_2i(Vector2f *v1, Vector2i *v2);
 
 Vector2f *add_vector2f_2f(Vector2f *v1, Vector2f *v2);
@@ -55,7 +55,7 @@ Vectord *add_vector2f_d(Vector2f *v1, Vectord *v2);
 
 Vectorc *add_vector2f_c(Vector2f *v1, Vectorc *v2);
 
-// ============ Vector2d 组合 ============
+// ============ Vector2d  ============
 Vector2d *add_vector2d_2i(Vector2d *v1, Vector2i *v2);
 
 Vector2d *add_vector2d_2f(Vector2d *v1, Vector2f *v2);
@@ -80,7 +80,7 @@ Vectord *add_vector2d_d(Vector2d *v1, Vectord *v2);
 
 Vectorc *add_vector2d_c(Vector2d *v1, Vectorc *v2);
 
-// ============ Vector2c 组合 ============
+// ============ Vector2c  ============
 Vector2c *add_vector2c_2i(Vector2c *v1, Vector2i *v2);
 
 Vector2c *add_vector2c_2f(Vector2c *v1, Vector2f *v2);
@@ -105,7 +105,7 @@ Vectorc *add_vector2c_d(Vector2c *v1, Vectord *v2);
 
 Vectorc *add_vector2c_c(Vector2c *v1, Vectorc *v2);
 
-// ============ Vector3i 组合 ============
+// ============ Vector3i  ============
 Vector3i *add_vector3i_2i(Vector3i *v1, Vector2i *v2);
 
 Vector3f *add_vector3i_2f(Vector3i *v1, Vector2f *v2);
@@ -130,7 +130,7 @@ Vectord *add_vector3i_d(Vector3i *v1, Vectord *v2);
 
 Vectorc *add_vector3i_c(Vector3i *v1, Vectorc *v2);
 
-// ============ Vector3f 组合 ============
+// ============ Vector3f  ============
 Vector3f *add_vector3f_2i(Vector3f *v1, Vector2i *v2);
 
 Vector3f *add_vector3f_2f(Vector3f *v1, Vector2f *v2);
@@ -155,7 +155,7 @@ Vectord *add_vector3f_d(Vector3f *v1, Vectord *v2);
 
 Vectorc *add_vector3f_c(Vector3f *v1, Vectorc *v2);
 
-// ============ Vector3d 组合 ============
+// ============ Vector3d  ============
 Vector3d *add_vector3d_2i(Vector3d *v1, Vector2i *v2);
 
 Vector3d *add_vector3d_2f(Vector3d *v1, Vector2f *v2);
@@ -180,7 +180,7 @@ Vectord *add_vector3d_d(Vector3d *v1, Vectord *v2);
 
 Vectorc *add_vector3d_c(Vector3d *v1, Vectorc *v2);
 
-// ============ Vector3c 组合 ============
+// ============ Vector3c  ============
 Vector3c *add_vector3c_2i(Vector3c *v1, Vector2i *v2);
 
 Vector3c *add_vector3c_2f(Vector3c *v1, Vector2f *v2);
@@ -205,7 +205,7 @@ Vectorc *add_vector3c_d(Vector3c *v1, Vectord *v2);
 
 Vectorc *add_vector3c_c(Vector3c *v1, Vectorc *v2);
 
-// ============ Vectori 组合 ============
+// ============ Vectori  ============
 Vectori *add_vectori_2i(Vectori *v1, Vector2i *v2);
 
 Vectorf *add_vectori_2f(Vectori *v1, Vector2f *v2);
@@ -230,7 +230,7 @@ Vectord *add_vectori_d(Vectori *v1, Vectord *v2);
 
 Vectorc *add_vectori_c(Vectori *v1, Vectorc *v2);
 
-// ============ Vectorf 组合 ============
+// ============ Vectorf  ============
 Vectorf *add_vectorf_2i(Vectorf *v1, Vector2i *v2);
 
 Vectorf *add_vectorf_2f(Vectorf *v1, Vector2f *v2);
@@ -255,7 +255,7 @@ Vectord *add_vectorf_d(Vectorf *v1, Vectord *v2);
 
 Vectorc *add_vectorf_c(Vectorf *v1, Vectorc *v2);
 
-// ============ Vectord 组合 ============
+// ============ Vectord  ============
 Vectord *add_vectord_2i(Vectord *v1, Vector2i *v2);
 
 Vectord *add_vectord_2f(Vectord *v1, Vector2f *v2);
@@ -280,7 +280,7 @@ Vectord *add_vectord_d(Vectord *v1, Vectord *v2);
 
 Vectorc *add_vectord_c(Vectord *v1, Vectorc *v2);
 
-// ============ Vectorc 组合 ============
+// ============ Vectorc  ============
 Vectorc *add_vectorc_2i(Vectorc *v1, Vector2i *v2);
 
 Vectorc *add_vectorc_2f(Vectorc *v1, Vector2f *v2);
