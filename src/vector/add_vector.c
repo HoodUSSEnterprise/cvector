@@ -5,7 +5,6 @@ Vectorf *Nonef = NULL;
 Vectord *Noned = NULL;
 Vectorc *Nonec = NULL;
 
-// TODO There are some bug in pointer transform. I'll modify them right away.
 //  ============ Vector2i  ============
 Vector2i *add_vector2i_2i(Vector2i *v1, Vector2i *v2)
 {

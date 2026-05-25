@@ -6,6 +6,6 @@
 #include "vector/add_vector.h"
 #include "vector/sub_vector.h"
 #include "vector/mul_vector.h"
-// #include "vector/norm_vector.h"
+#include "vector/norm_vector.h"
 
 #endif // OPERATOR_VECTOR_H
