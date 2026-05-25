@@ -1,10 +1,5 @@
 #include "complex/operator_complex.h"
 
-Complex create_complex(double real, double imag)
-{
-    return (Complex){real, imag};
-}
-
 Complex add_complex(Complex c1, Complex c2)
 {
     Complex res = {0, 0};
