@@ -2,7 +2,10 @@
 
 void copy_complex_ptr_ptr(Complex *c1, Complex *c2)
 {
-    memcpy(c1, c2, sizeof(Complex));
+    if (c1 != c2)
+    {
+        memcpy(c1, c2, sizeof(Complex));
+    }
 }
 
 void copy_complex_ptr_c(Complex *c1, Complex c2)
