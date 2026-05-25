@@ -82,4 +82,9 @@ typedef struct Vectorc
     Complex *data;
 } Vectorc;
 
+extern Vectori *Nonei;
+extern Vectorf *Nonef;
+extern Vectord *Noned;
+extern Vectorc *Nonec;
+
 #endif // BASE_VECTOR_H
