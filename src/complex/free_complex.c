@@ -3,4 +3,5 @@
 void free_complex(Complex *c)
 {
     free(c);
+    c = NULL;
 }
