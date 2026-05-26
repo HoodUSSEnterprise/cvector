@@ -6,7 +6,7 @@ Vectord *Noned = NULL;
 Vectorc *Nonec = NULL;
 
 //  ============ Vector2i  ============
-Vector2i *add_vector2i_2i(Vector2i *v1, Vector2i *v2)
+Vector2i *add_vector2i_2i(const Vector2i *v1, const Vector2i *v2)
 {
     Vector2i *res = (Vector2i *)malloc(sizeof(Vector2i));
     if (res == NULL)
@@ -19,7 +19,7 @@ Vector2i *add_vector2i_2i(Vector2i *v1, Vector2i *v2)
     return res;
 }
 
-Vector2f *add_vector2i_2f(Vector2i *v1, Vector2f *v2)
+Vector2f *add_vector2i_2f(const Vector2i *v1, const Vector2f *v2)
 {
     Vector2f *res = (Vector2f *)malloc(sizeof(Vector2f));
     if (res == NULL)
@@ -32,7 +32,7 @@ Vector2f *add_vector2i_2f(Vector2i *v1, Vector2f *v2)
     return res;
 }
 
-Vector2d *add_vector2i_2d(Vector2i *v1, Vector2d *v2)
+Vector2d *add_vector2i_2d(const Vector2i *v1, const Vector2d *v2)
 {
     Vector2d *res = (Vector2d *)malloc(sizeof(Vector2d));
     if (res == NULL)
@@ -45,7 +45,7 @@ Vector2d *add_vector2i_2d(Vector2i *v1, Vector2d *v2)
     return res;
 }
 
-Vector2c *add_vector2i_2c(Vector2i *v1, Vector2c *v2)
+Vector2c *add_vector2i_2c(const Vector2i *v1, const Vector2c *v2)
 {
     Vector2c *res = (Vector2c *)malloc(sizeof(Vector2c));
     if (res == NULL)
@@ -58,7 +58,7 @@ Vector2c *add_vector2i_2c(Vector2i *v1, Vector2c *v2)
     return res;
 }
 
-Vector3i *add_vector2i_3i(Vector2i *v1, Vector3i *v2)
+Vector3i *add_vector2i_3i(const Vector2i *v1, const Vector3i *v2)
 {
     Vector3i *res = (Vector3i *)malloc(sizeof(Vector3i));
     if (res == NULL)
@@ -72,7 +72,7 @@ Vector3i *add_vector2i_3i(Vector2i *v1, Vector3i *v2)
     return res;
 }
 
-Vector3f *add_vector2i_3f(Vector2i *v1, Vector3f *v2)
+Vector3f *add_vector2i_3f(const Vector2i *v1, const Vector3f *v2)
 {
     Vector3f *res = (Vector3f *)malloc(sizeof(Vector3f));
     if (res == NULL)
@@ -86,7 +86,7 @@ Vector3f *add_vector2i_3f(Vector2i *v1, Vector3f *v2)
     return res;
 }
 
-Vector3d *add_vector2i_3d(Vector2i *v1, Vector3d *v2)
+Vector3d *add_vector2i_3d(const Vector2i *v1, const Vector3d *v2)
 {
     Vector3d *res = (Vector3d *)malloc(sizeof(Vector3d));
     if (res == NULL)
@@ -100,7 +100,7 @@ Vector3d *add_vector2i_3d(Vector2i *v1, Vector3d *v2)
     return res;
 }
 
-Vector3c *add_vector2i_3c(Vector2i *v1, Vector3c *v2)
+Vector3c *add_vector2i_3c(const Vector2i *v1, const Vector3c *v2)
 {
     Vector3c *res = (Vector3c *)malloc(sizeof(Vector3c));
     if (res == NULL)
@@ -114,7 +114,7 @@ Vector3c *add_vector2i_3c(Vector2i *v1, Vector3c *v2)
     return res;
 }
 
-Vectori *add_vector2i_i(Vector2i *v1, Vectori *v2)
+Vectori *add_vector2i_i(const Vector2i *v1, const Vectori *v2)
 {
     if (v2->len == 0)
     {
@@ -169,7 +169,7 @@ Vectori *add_vector2i_i(Vector2i *v1, Vectori *v2)
     }
 }
 
-Vectorf *add_vector2i_f(Vector2i *v1, Vectorf *v2)
+Vectorf *add_vector2i_f(const Vector2i *v1, const Vectorf *v2)
 {
     if (v2->len == 0)
     {
@@ -204,7 +204,7 @@ Vectorf *add_vector2i_f(Vector2i *v1, Vectorf *v2)
     }
 }
 
-Vectord *add_vector2i_d(Vector2i *v1, Vectord *v2)
+Vectord *add_vector2i_d(const Vector2i *v1, const Vectord *v2)
 {
     if (v2->len == 0)
     {
@@ -239,7 +239,7 @@ Vectord *add_vector2i_d(Vector2i *v1, Vectord *v2)
     }
 }
 
-Vectorc *add_vector2i_c(Vector2i *v1, Vectorc *v2)
+Vectorc *add_vector2i_c(const Vector2i *v1, const Vectorc *v2)
 {
     if (v2->len == 0)
     {
@@ -285,7 +285,7 @@ Vectorc *add_vector2i_c(Vector2i *v1, Vectorc *v2)
 }
 
 // ============ Vector2f  ============
-Vector2f *add_vector2f_2i(Vector2f *v1, Vector2i *v2)
+Vector2f *add_vector2f_2i(const Vector2f *v1, const Vector2i *v2)
 {
     Vector2f *res = (Vector2f *)malloc(sizeof(Vector2f));
     if (res == NULL)
@@ -298,7 +298,7 @@ Vector2f *add_vector2f_2i(Vector2f *v1, Vector2i *v2)
     return res;
 }
 
-Vector2f *add_vector2f_2f(Vector2f *v1, Vector2f *v2)
+Vector2f *add_vector2f_2f(const Vector2f *v1, const Vector2f *v2)
 {
     Vector2f *res = (Vector2f *)malloc(sizeof(Vector2f));
     if (res == NULL)
@@ -311,7 +311,7 @@ Vector2f *add_vector2f_2f(Vector2f *v1, Vector2f *v2)
     return res;
 }
 
-Vector2d *add_vector2f_2d(Vector2f *v1, Vector2d *v2)
+Vector2d *add_vector2f_2d(const Vector2f *v1, const Vector2d *v2)
 {
     Vector2d *res = (Vector2d *)malloc(sizeof(Vector2d));
     if (res == NULL)
@@ -324,7 +324,7 @@ Vector2d *add_vector2f_2d(Vector2f *v1, Vector2d *v2)
     return res;
 }
 
-Vector2c *add_vector2f_2c(Vector2f *v1, Vector2c *v2)
+Vector2c *add_vector2f_2c(const Vector2f *v1, const Vector2c *v2)
 {
     Vector2c *res = (Vector2c *)malloc(sizeof(Vector2c));
     if (res == NULL)
@@ -337,7 +337,7 @@ Vector2c *add_vector2f_2c(Vector2f *v1, Vector2c *v2)
     return res;
 }
 
-Vector3f *add_vector2f_3i(Vector2f *v1, Vector3i *v2)
+Vector3f *add_vector2f_3i(const Vector2f *v1, const Vector3i *v2)
 {
     Vector3f *res = (Vector3f *)malloc(sizeof(Vector3f));
     if (res == NULL)
@@ -351,7 +351,7 @@ Vector3f *add_vector2f_3i(Vector2f *v1, Vector3i *v2)
     return res;
 }
 
-Vector3f *add_vector2f_3f(Vector2f *v1, Vector3f *v2)
+Vector3f *add_vector2f_3f(const Vector2f *v1, const Vector3f *v2)
 {
     Vector3f *res = (Vector3f *)malloc(sizeof(Vector3f));
     if (res == NULL)
@@ -365,7 +365,7 @@ Vector3f *add_vector2f_3f(Vector2f *v1, Vector3f *v2)
     return res;
 }
 
-Vector3d *add_vector2f_3d(Vector2f *v1, Vector3d *v2)
+Vector3d *add_vector2f_3d(const Vector2f *v1, const Vector3d *v2)
 {
     Vector3d *res = (Vector3d *)malloc(sizeof(Vector3d));
     if (res == NULL)
@@ -379,7 +379,7 @@ Vector3d *add_vector2f_3d(Vector2f *v1, Vector3d *v2)
     return res;
 }
 
-Vector3c *add_vector2f_3c(Vector2f *v1, Vector3c *v2)
+Vector3c *add_vector2f_3c(const Vector2f *v1, const Vector3c *v2)
 {
     Vector3c *res = (Vector3c *)malloc(sizeof(Vector3c));
     if (res == NULL)
@@ -393,7 +393,7 @@ Vector3c *add_vector2f_3c(Vector2f *v1, Vector3c *v2)
     return res;
 }
 
-Vectorf *add_vector2f_i(Vector2f *v1, Vectori *v2)
+Vectorf *add_vector2f_i(const Vector2f *v1, const Vectori *v2)
 {
     if (v2->len == 0)
     {
@@ -428,7 +428,7 @@ Vectorf *add_vector2f_i(Vector2f *v1, Vectori *v2)
     }
 }
 
-Vectorf *add_vector2f_f(Vector2f *v1, Vectorf *v2)
+Vectorf *add_vector2f_f(const Vector2f *v1, const Vectorf *v2)
 {
     if (v2->len == 0)
     {
@@ -463,7 +463,7 @@ Vectorf *add_vector2f_f(Vector2f *v1, Vectorf *v2)
     }
 }
 
-Vectord *add_vector2f_d(Vector2f *v1, Vectord *v2)
+Vectord *add_vector2f_d(const Vector2f *v1, const Vectord *v2)
 {
     if (v2->len == 0)
     {
@@ -498,7 +498,7 @@ Vectord *add_vector2f_d(Vector2f *v1, Vectord *v2)
     }
 }
 
-Vectorc *add_vector2f_c(Vector2f *v1, Vectorc *v2)
+Vectorc *add_vector2f_c(const Vector2f *v1, const Vectorc *v2)
 {
     if (v2->len == 0)
     {
@@ -544,7 +544,7 @@ Vectorc *add_vector2f_c(Vector2f *v1, Vectorc *v2)
 }
 
 // ============ Vector2d  ============
-Vector2d *add_vector2d_2i(Vector2d *v1, Vector2i *v2)
+Vector2d *add_vector2d_2i(const Vector2d *v1, const Vector2i *v2)
 {
     Vector2d *res = (Vector2d *)malloc(sizeof(Vector2d));
     if (res == NULL)
@@ -557,7 +557,7 @@ Vector2d *add_vector2d_2i(Vector2d *v1, Vector2i *v2)
     return res;
 }
 
-Vector2d *add_vector2d_2f(Vector2d *v1, Vector2f *v2)
+Vector2d *add_vector2d_2f(const Vector2d *v1, const Vector2f *v2)
 {
     Vector2d *res = (Vector2d *)malloc(sizeof(Vector2d));
     if (res == NULL)
@@ -570,7 +570,7 @@ Vector2d *add_vector2d_2f(Vector2d *v1, Vector2f *v2)
     return res;
 }
 
-Vector2d *add_vector2d_2d(Vector2d *v1, Vector2d *v2)
+Vector2d *add_vector2d_2d(const Vector2d *v1, const Vector2d *v2)
 {
     Vector2d *res = (Vector2d *)malloc(sizeof(Vector2d));
     if (res == NULL)
@@ -583,7 +583,7 @@ Vector2d *add_vector2d_2d(Vector2d *v1, Vector2d *v2)
     return res;
 }
 
-Vector2c *add_vector2d_2c(Vector2d *v1, Vector2c *v2)
+Vector2c *add_vector2d_2c(const Vector2d *v1, const Vector2c *v2)
 {
     Vector2c *res = (Vector2c *)malloc(sizeof(Vector2c));
     if (res == NULL)
@@ -596,7 +596,7 @@ Vector2c *add_vector2d_2c(Vector2d *v1, Vector2c *v2)
     return res;
 }
 
-Vector3d *add_vector2d_3i(Vector2d *v1, Vector3i *v2)
+Vector3d *add_vector2d_3i(const Vector2d *v1, const Vector3i *v2)
 {
     Vector3d *res = (Vector3d *)malloc(sizeof(Vector3d));
     if (res == NULL)
@@ -610,7 +610,7 @@ Vector3d *add_vector2d_3i(Vector2d *v1, Vector3i *v2)
     return res;
 }
 
-Vector3d *add_vector2d_3f(Vector2d *v1, Vector3f *v2)
+Vector3d *add_vector2d_3f(const Vector2d *v1, const Vector3f *v2)
 {
     Vector3d *res = (Vector3d *)malloc(sizeof(Vector3d));
     if (res == NULL)
@@ -624,7 +624,7 @@ Vector3d *add_vector2d_3f(Vector2d *v1, Vector3f *v2)
     return res;
 }
 
-Vector3d *add_vector2d_3d(Vector2d *v1, Vector3d *v2)
+Vector3d *add_vector2d_3d(const Vector2d *v1, const Vector3d *v2)
 {
     Vector3d *res = (Vector3d *)malloc(sizeof(Vector3d));
     if (res == NULL)
@@ -638,7 +638,7 @@ Vector3d *add_vector2d_3d(Vector2d *v1, Vector3d *v2)
     return res;
 }
 
-Vector3c *add_vector2d_3c(Vector2d *v1, Vector3c *v2)
+Vector3c *add_vector2d_3c(const Vector2d *v1, const Vector3c *v2)
 {
     Vector3c *res = (Vector3c *)malloc(sizeof(Vector3c));
     if (res == NULL)
@@ -652,7 +652,7 @@ Vector3c *add_vector2d_3c(Vector2d *v1, Vector3c *v2)
     return res;
 }
 
-Vectord *add_vector2d_i(Vector2d *v1, Vectori *v2)
+Vectord *add_vector2d_i(const Vector2d *v1, const Vectori *v2)
 {
     if (v2->len == 0)
     {
@@ -687,7 +687,7 @@ Vectord *add_vector2d_i(Vector2d *v1, Vectori *v2)
     }
 }
 
-Vectord *add_vector2d_f(Vector2d *v1, Vectorf *v2)
+Vectord *add_vector2d_f(const Vector2d *v1, const Vectorf *v2)
 {
     if (v2->len == 0)
     {
@@ -722,7 +722,7 @@ Vectord *add_vector2d_f(Vector2d *v1, Vectorf *v2)
     }
 }
 
-Vectord *add_vector2d_d(Vector2d *v1, Vectord *v2)
+Vectord *add_vector2d_d(const Vector2d *v1, const Vectord *v2)
 {
     if (v2->len == 0)
     {
@@ -757,7 +757,7 @@ Vectord *add_vector2d_d(Vector2d *v1, Vectord *v2)
     }
 }
 
-Vectorc *add_vector2d_c(Vector2d *v1, Vectorc *v2)
+Vectorc *add_vector2d_c(const Vector2d *v1, const Vectorc *v2)
 {
     if (v2->len == 0)
     {
@@ -803,7 +803,7 @@ Vectorc *add_vector2d_c(Vector2d *v1, Vectorc *v2)
 }
 
 // ============ Vector2c  ============
-Vector2c *add_vector2c_2i(Vector2c *v1, Vector2i *v2)
+Vector2c *add_vector2c_2i(const Vector2c *v1, const Vector2i *v2)
 {
     Vector2c *res = (Vector2c *)malloc(sizeof(Vector2c));
     if (res == NULL)
@@ -816,7 +816,7 @@ Vector2c *add_vector2c_2i(Vector2c *v1, Vector2i *v2)
     return res;
 }
 
-Vector2c *add_vector2c_2f(Vector2c *v1, Vector2f *v2)
+Vector2c *add_vector2c_2f(const Vector2c *v1, const Vector2f *v2)
 {
     Vector2c *res = (Vector2c *)malloc(sizeof(Vector2c));
     if (res == NULL)
@@ -829,7 +829,7 @@ Vector2c *add_vector2c_2f(Vector2c *v1, Vector2f *v2)
     return res;
 }
 
-Vector2c *add_vector2c_2d(Vector2c *v1, Vector2d *v2)
+Vector2c *add_vector2c_2d(const Vector2c *v1, const Vector2d *v2)
 {
     Vector2c *res = (Vector2c *)malloc(sizeof(Vector2c));
     if (res == NULL)
@@ -842,7 +842,7 @@ Vector2c *add_vector2c_2d(Vector2c *v1, Vector2d *v2)
     return res;
 }
 
-Vector2c *add_vector2c_2c(Vector2c *v1, Vector2c *v2)
+Vector2c *add_vector2c_2c(const Vector2c *v1, const Vector2c *v2)
 {
     Vector2c *res = (Vector2c *)malloc(sizeof(Vector2c));
     if (res == NULL)
@@ -855,7 +855,7 @@ Vector2c *add_vector2c_2c(Vector2c *v1, Vector2c *v2)
     return res;
 }
 
-Vector3c *add_vector2c_3i(Vector2c *v1, Vector3i *v2)
+Vector3c *add_vector2c_3i(const Vector2c *v1, const Vector3i *v2)
 {
     Vector3c *res = (Vector3c *)malloc(sizeof(Vector3c));
     if (res == NULL)
@@ -869,7 +869,7 @@ Vector3c *add_vector2c_3i(Vector2c *v1, Vector3i *v2)
     return res;
 }
 
-Vector3c *add_vector2c_3f(Vector2c *v1, Vector3f *v2)
+Vector3c *add_vector2c_3f(const Vector2c *v1, const Vector3f *v2)
 {
     Vector3c *res = (Vector3c *)malloc(sizeof(Vector3c));
     if (res == NULL)
@@ -883,7 +883,7 @@ Vector3c *add_vector2c_3f(Vector2c *v1, Vector3f *v2)
     return res;
 }
 
-Vector3c *add_vector2c_3d(Vector2c *v1, Vector3d *v2)
+Vector3c *add_vector2c_3d(const Vector2c *v1, const Vector3d *v2)
 {
     Vector3c *res = (Vector3c *)malloc(sizeof(Vector3c));
     if (res == NULL)
@@ -897,7 +897,7 @@ Vector3c *add_vector2c_3d(Vector2c *v1, Vector3d *v2)
     return res;
 }
 
-Vector3c *add_vector2c_3c(Vector2c *v1, Vector3c *v2)
+Vector3c *add_vector2c_3c(const Vector2c *v1, const Vector3c *v2)
 {
     Vector3c *res = (Vector3c *)malloc(sizeof(Vector3c));
     if (res == NULL)
@@ -911,7 +911,7 @@ Vector3c *add_vector2c_3c(Vector2c *v1, Vector3c *v2)
     return res;
 }
 
-Vectorc *add_vector2c_i(Vector2c *v1, Vectori *v2)
+Vectorc *add_vector2c_i(const Vector2c *v1, const Vectori *v2)
 {
     if (v2->len == 0)
     {
@@ -956,7 +956,7 @@ Vectorc *add_vector2c_i(Vector2c *v1, Vectori *v2)
     }
 }
 
-Vectorc *add_vector2c_f(Vector2c *v1, Vectorf *v2)
+Vectorc *add_vector2c_f(const Vector2c *v1, const Vectorf *v2)
 {
     if (v2->len == 0)
     {
@@ -1001,7 +1001,7 @@ Vectorc *add_vector2c_f(Vector2c *v1, Vectorf *v2)
     }
 }
 
-Vectorc *add_vector2c_d(Vector2c *v1, Vectord *v2)
+Vectorc *add_vector2c_d(const Vector2c *v1, const Vectord *v2)
 {
     if (v2->len == 0)
     {
@@ -1046,7 +1046,7 @@ Vectorc *add_vector2c_d(Vector2c *v1, Vectord *v2)
     }
 }
 
-Vectorc *add_vector2c_c(Vector2c *v1, Vectorc *v2)
+Vectorc *add_vector2c_c(const Vector2c *v1, const Vectorc *v2)
 {
     if (v2->len == 0)
     {
@@ -1092,7 +1092,7 @@ Vectorc *add_vector2c_c(Vector2c *v1, Vectorc *v2)
 }
 
 // ============ Vector3i  ============
-Vector3i *add_vector3i_2i(Vector3i *v1, Vector2i *v2)
+Vector3i *add_vector3i_2i(const Vector3i *v1, const Vector2i *v2)
 {
     Vector3i *res = (Vector3i *)malloc(sizeof(Vector3i));
     if (res == NULL)
@@ -1106,7 +1106,7 @@ Vector3i *add_vector3i_2i(Vector3i *v1, Vector2i *v2)
     return res;
 }
 
-Vector3f *add_vector3i_2f(Vector3i *v1, Vector2f *v2)
+Vector3f *add_vector3i_2f(const Vector3i *v1, const Vector2f *v2)
 {
     Vector3f *res = (Vector3f *)malloc(sizeof(Vector3f));
     if (res == NULL)
@@ -1120,7 +1120,7 @@ Vector3f *add_vector3i_2f(Vector3i *v1, Vector2f *v2)
     return res;
 }
 
-Vector3d *add_vector3i_2d(Vector3i *v1, Vector2d *v2)
+Vector3d *add_vector3i_2d(const Vector3i *v1, const Vector2d *v2)
 {
     Vector3d *res = (Vector3d *)malloc(sizeof(Vector3d));
     if (res == NULL)
@@ -1134,7 +1134,7 @@ Vector3d *add_vector3i_2d(Vector3i *v1, Vector2d *v2)
     return res;
 }
 
-Vector3c *add_vector3i_2c(Vector3i *v1, Vector2c *v2)
+Vector3c *add_vector3i_2c(const Vector3i *v1, const Vector2c *v2)
 {
     Vector3c *res = (Vector3c *)malloc(sizeof(Vector3c));
     if (res == NULL)
@@ -1148,7 +1148,7 @@ Vector3c *add_vector3i_2c(Vector3i *v1, Vector2c *v2)
     return res;
 }
 
-Vector3i *add_vector3i_3i(Vector3i *v1, Vector3i *v2)
+Vector3i *add_vector3i_3i(const Vector3i *v1, const Vector3i *v2)
 {
     Vector3i *res = (Vector3i *)malloc(sizeof(Vector3i));
     if (res == NULL)
@@ -1162,7 +1162,7 @@ Vector3i *add_vector3i_3i(Vector3i *v1, Vector3i *v2)
     return res;
 }
 
-Vector3f *add_vector3i_3f(Vector3i *v1, Vector3f *v2)
+Vector3f *add_vector3i_3f(const Vector3i *v1, const Vector3f *v2)
 {
     Vector3f *res = (Vector3f *)malloc(sizeof(Vector3f));
     if (res == NULL)
@@ -1176,7 +1176,7 @@ Vector3f *add_vector3i_3f(Vector3i *v1, Vector3f *v2)
     return res;
 }
 
-Vector3d *add_vector3i_3d(Vector3i *v1, Vector3d *v2)
+Vector3d *add_vector3i_3d(const Vector3i *v1, const Vector3d *v2)
 {
     Vector3d *res = (Vector3d *)malloc(sizeof(Vector3d));
     if (res == NULL)
@@ -1190,7 +1190,7 @@ Vector3d *add_vector3i_3d(Vector3i *v1, Vector3d *v2)
     return res;
 }
 
-Vector3c *add_vector3i_3c(Vector3i *v1, Vector3c *v2)
+Vector3c *add_vector3i_3c(const Vector3i *v1, const Vector3c *v2)
 {
     Vector3c *res = (Vector3c *)malloc(sizeof(Vector3c));
     if (res == NULL)
@@ -1204,7 +1204,7 @@ Vector3c *add_vector3i_3c(Vector3i *v1, Vector3c *v2)
     return res;
 }
 
-Vectori *add_vector3i_i(Vector3i *v1, Vectori *v2)
+Vectori *add_vector3i_i(const Vector3i *v1, const Vectori *v2)
 {
     if (v2->len == 0)
     {
@@ -1259,7 +1259,7 @@ Vectori *add_vector3i_i(Vector3i *v1, Vectori *v2)
     }
 }
 
-Vectorf *add_vector3i_f(Vector3i *v1, Vectorf *v2)
+Vectorf *add_vector3i_f(const Vector3i *v1, const Vectorf *v2)
 {
     if (v2->len == 0)
     {
@@ -1309,7 +1309,7 @@ Vectorf *add_vector3i_f(Vector3i *v1, Vectorf *v2)
     }
 }
 
-Vectord *add_vector3i_d(Vector3i *v1, Vectord *v2)
+Vectord *add_vector3i_d(const Vector3i *v1, const Vectord *v2)
 {
     if (v2->len == 0)
     {
@@ -1359,7 +1359,7 @@ Vectord *add_vector3i_d(Vector3i *v1, Vectord *v2)
     }
 }
 
-Vectorc *add_vector3i_c(Vector3i *v1, Vectorc *v2)
+Vectorc *add_vector3i_c(const Vector3i *v1, const Vectorc *v2)
 {
     if (v2->len == 0)
     {
@@ -1410,7 +1410,7 @@ Vectorc *add_vector3i_c(Vector3i *v1, Vectorc *v2)
 }
 
 // ============ Vector3f  ============
-Vector3f *add_vector3f_2i(Vector3f *v1, Vector2i *v2)
+Vector3f *add_vector3f_2i(const Vector3f *v1, const Vector2i *v2)
 {
     Vector3f *res = (Vector3f *)malloc(sizeof(Vector3f));
     if (res == NULL)
@@ -1424,7 +1424,7 @@ Vector3f *add_vector3f_2i(Vector3f *v1, Vector2i *v2)
     return res;
 }
 
-Vector3f *add_vector3f_2f(Vector3f *v1, Vector2f *v2)
+Vector3f *add_vector3f_2f(const Vector3f *v1, const Vector2f *v2)
 {
     Vector3f *res = (Vector3f *)malloc(sizeof(Vector3f));
     if (res == NULL)
@@ -1438,7 +1438,7 @@ Vector3f *add_vector3f_2f(Vector3f *v1, Vector2f *v2)
     return res;
 }
 
-Vector3d *add_vector3f_2d(Vector3f *v1, Vector2d *v2)
+Vector3d *add_vector3f_2d(const Vector3f *v1, const Vector2d *v2)
 {
     Vector3d *res = (Vector3d *)malloc(sizeof(Vector3d));
     if (res == NULL)
@@ -1452,7 +1452,7 @@ Vector3d *add_vector3f_2d(Vector3f *v1, Vector2d *v2)
     return res;
 }
 
-Vector3c *add_vector3f_2c(Vector3f *v1, Vector2c *v2)
+Vector3c *add_vector3f_2c(const Vector3f *v1, const Vector2c *v2)
 {
     Vector3c *res = (Vector3c *)malloc(sizeof(Vector3c));
     if (res == NULL)
@@ -1466,7 +1466,7 @@ Vector3c *add_vector3f_2c(Vector3f *v1, Vector2c *v2)
     return res;
 }
 
-Vector3f *add_vector3f_3i(Vector3f *v1, Vector3i *v2)
+Vector3f *add_vector3f_3i(const Vector3f *v1, const Vector3i *v2)
 {
     Vector3f *res = (Vector3f *)malloc(sizeof(Vector3f));
     if (res == NULL)
@@ -1480,7 +1480,7 @@ Vector3f *add_vector3f_3i(Vector3f *v1, Vector3i *v2)
     return res;
 }
 
-Vector3f *add_vector3f_3f(Vector3f *v1, Vector3f *v2)
+Vector3f *add_vector3f_3f(const Vector3f *v1, const Vector3f *v2)
 {
     Vector3f *res = (Vector3f *)malloc(sizeof(Vector3f));
     if (res == NULL)
@@ -1494,7 +1494,7 @@ Vector3f *add_vector3f_3f(Vector3f *v1, Vector3f *v2)
     return res;
 }
 
-Vector3d *add_vector3f_3d(Vector3f *v1, Vector3d *v2)
+Vector3d *add_vector3f_3d(const Vector3f *v1, const Vector3d *v2)
 {
     Vector3d *res = (Vector3d *)malloc(sizeof(Vector3d));
     if (res == NULL)
@@ -1508,7 +1508,7 @@ Vector3d *add_vector3f_3d(Vector3f *v1, Vector3d *v2)
     return res;
 }
 
-Vector3c *add_vector3f_3c(Vector3f *v1, Vector3c *v2)
+Vector3c *add_vector3f_3c(const Vector3f *v1, const Vector3c *v2)
 {
     Vector3c *res = (Vector3c *)malloc(sizeof(Vector3c));
     if (res == NULL)
@@ -1522,7 +1522,7 @@ Vector3c *add_vector3f_3c(Vector3f *v1, Vector3c *v2)
     return res;
 }
 
-Vectorf *add_vector3f_i(Vector3f *v1, Vectori *v2)
+Vectorf *add_vector3f_i(const Vector3f *v1, const Vectori *v2)
 {
     if (v2->len == 0)
     {
@@ -1572,7 +1572,7 @@ Vectorf *add_vector3f_i(Vector3f *v1, Vectori *v2)
     }
 }
 
-Vectorf *add_vector3f_f(Vector3f *v1, Vectorf *v2)
+Vectorf *add_vector3f_f(const Vector3f *v1, const Vectorf *v2)
 {
     if (v2->len == 0)
     {
@@ -1622,7 +1622,7 @@ Vectorf *add_vector3f_f(Vector3f *v1, Vectorf *v2)
     }
 }
 
-Vectord *add_vector3f_d(Vector3f *v1, Vectord *v2)
+Vectord *add_vector3f_d(const Vector3f *v1, const Vectord *v2)
 {
     if (v2->len == 0)
     {
@@ -1672,7 +1672,7 @@ Vectord *add_vector3f_d(Vector3f *v1, Vectord *v2)
     }
 }
 
-Vectorc *add_vector3f_c(Vector3f *v1, Vectorc *v2)
+Vectorc *add_vector3f_c(const Vector3f *v1, const Vectorc *v2)
 {
     if (v2->len == 0)
     {
@@ -1723,7 +1723,7 @@ Vectorc *add_vector3f_c(Vector3f *v1, Vectorc *v2)
 }
 
 // ============ Vector3d  ============
-Vector3d *add_vector3d_2i(Vector3d *v1, Vector2i *v2)
+Vector3d *add_vector3d_2i(const Vector3d *v1, const Vector2i *v2)
 {
     Vector3d *res = (Vector3d *)malloc(sizeof(Vector3d));
     if (res == NULL)
@@ -1737,7 +1737,7 @@ Vector3d *add_vector3d_2i(Vector3d *v1, Vector2i *v2)
     return res;
 }
 
-Vector3d *add_vector3d_2f(Vector3d *v1, Vector2f *v2)
+Vector3d *add_vector3d_2f(const Vector3d *v1, const Vector2f *v2)
 {
     Vector3d *res = (Vector3d *)malloc(sizeof(Vector3d));
     if (res == NULL)
@@ -1751,7 +1751,7 @@ Vector3d *add_vector3d_2f(Vector3d *v1, Vector2f *v2)
     return res;
 }
 
-Vector3d *add_vector3d_2d(Vector3d *v1, Vector2d *v2)
+Vector3d *add_vector3d_2d(const Vector3d *v1, const Vector2d *v2)
 {
     Vector3d *res = (Vector3d *)malloc(sizeof(Vector3d));
     if (res == NULL)
@@ -1765,7 +1765,7 @@ Vector3d *add_vector3d_2d(Vector3d *v1, Vector2d *v2)
     return res;
 }
 
-Vector3c *add_vector3d_2c(Vector3d *v1, Vector2c *v2)
+Vector3c *add_vector3d_2c(const Vector3d *v1, const Vector2c *v2)
 {
     Vector3c *res = (Vector3c *)malloc(sizeof(Vector3c));
     if (res == NULL)
@@ -1779,7 +1779,7 @@ Vector3c *add_vector3d_2c(Vector3d *v1, Vector2c *v2)
     return res;
 }
 
-Vector3d *add_vector3d_3i(Vector3d *v1, Vector3i *v2)
+Vector3d *add_vector3d_3i(const Vector3d *v1, const Vector3i *v2)
 {
     Vector3d *res = (Vector3d *)malloc(sizeof(Vector3d));
     if (res == NULL)
@@ -1793,7 +1793,7 @@ Vector3d *add_vector3d_3i(Vector3d *v1, Vector3i *v2)
     return res;
 }
 
-Vector3d *add_vector3d_3f(Vector3d *v1, Vector3f *v2)
+Vector3d *add_vector3d_3f(const Vector3d *v1, const Vector3f *v2)
 {
     Vector3d *res = (Vector3d *)malloc(sizeof(Vector3d));
     if (res == NULL)
@@ -1807,7 +1807,7 @@ Vector3d *add_vector3d_3f(Vector3d *v1, Vector3f *v2)
     return res;
 }
 
-Vector3d *add_vector3d_3d(Vector3d *v1, Vector3d *v2)
+Vector3d *add_vector3d_3d(const Vector3d *v1, const Vector3d *v2)
 {
     Vector3d *res = (Vector3d *)malloc(sizeof(Vector3d));
     if (res == NULL)
@@ -1821,7 +1821,7 @@ Vector3d *add_vector3d_3d(Vector3d *v1, Vector3d *v2)
     return res;
 }
 
-Vector3c *add_vector3d_3c(Vector3d *v1, Vector3c *v2)
+Vector3c *add_vector3d_3c(const Vector3d *v1, const Vector3c *v2)
 {
     Vector3c *res = (Vector3c *)malloc(sizeof(Vector3c));
     if (res == NULL)
@@ -1835,7 +1835,7 @@ Vector3c *add_vector3d_3c(Vector3d *v1, Vector3c *v2)
     return res;
 }
 
-Vectord *add_vector3d_i(Vector3d *v1, Vectori *v2)
+Vectord *add_vector3d_i(const Vector3d *v1, const Vectori *v2)
 {
     if (v2->len == 0)
     {
@@ -1885,7 +1885,7 @@ Vectord *add_vector3d_i(Vector3d *v1, Vectori *v2)
     }
 }
 
-Vectord *add_vector3d_f(Vector3d *v1, Vectorf *v2)
+Vectord *add_vector3d_f(const Vector3d *v1, const Vectorf *v2)
 {
     if (v2->len == 0)
     {
@@ -1935,7 +1935,7 @@ Vectord *add_vector3d_f(Vector3d *v1, Vectorf *v2)
     }
 }
 
-Vectord *add_vector3d_d(Vector3d *v1, Vectord *v2)
+Vectord *add_vector3d_d(const Vector3d *v1, const Vectord *v2)
 {
     if (v2->len == 0)
     {
@@ -1985,7 +1985,7 @@ Vectord *add_vector3d_d(Vector3d *v1, Vectord *v2)
     }
 }
 
-Vectorc *add_vector3d_c(Vector3d *v1, Vectorc *v2)
+Vectorc *add_vector3d_c(const Vector3d *v1, const Vectorc *v2)
 {
     if (v2->len == 0)
     {
@@ -2036,7 +2036,7 @@ Vectorc *add_vector3d_c(Vector3d *v1, Vectorc *v2)
 }
 
 // ============ Vector3c  ============
-Vector3c *add_vector3c_2i(Vector3c *v1, Vector2i *v2)
+Vector3c *add_vector3c_2i(const Vector3c *v1, const Vector2i *v2)
 {
     Vector3c *res = (Vector3c *)malloc(sizeof(Vector3c));
     if (res == NULL)
@@ -2050,7 +2050,7 @@ Vector3c *add_vector3c_2i(Vector3c *v1, Vector2i *v2)
     return res;
 }
 
-Vector3c *add_vector3c_2f(Vector3c *v1, Vector2f *v2)
+Vector3c *add_vector3c_2f(const Vector3c *v1, const Vector2f *v2)
 {
     Vector3c *res = (Vector3c *)malloc(sizeof(Vector3c));
     if (res == NULL)
@@ -2064,7 +2064,7 @@ Vector3c *add_vector3c_2f(Vector3c *v1, Vector2f *v2)
     return res;
 }
 
-Vector3c *add_vector3c_2d(Vector3c *v1, Vector2d *v2)
+Vector3c *add_vector3c_2d(const Vector3c *v1, const Vector2d *v2)
 {
     Vector3c *res = (Vector3c *)malloc(sizeof(Vector3c));
     if (res == NULL)
@@ -2078,7 +2078,7 @@ Vector3c *add_vector3c_2d(Vector3c *v1, Vector2d *v2)
     return res;
 }
 
-Vector3c *add_vector3c_2c(Vector3c *v1, Vector2c *v2)
+Vector3c *add_vector3c_2c(const Vector3c *v1, const Vector2c *v2)
 {
     Vector3c *res = (Vector3c *)malloc(sizeof(Vector3c));
     if (res == NULL)
@@ -2092,7 +2092,7 @@ Vector3c *add_vector3c_2c(Vector3c *v1, Vector2c *v2)
     return res;
 }
 
-Vector3c *add_vector3c_3i(Vector3c *v1, Vector3i *v2)
+Vector3c *add_vector3c_3i(const Vector3c *v1, const Vector3i *v2)
 {
     Vector3c *res = (Vector3c *)malloc(sizeof(Vector3c));
     if (res == NULL)
@@ -2106,7 +2106,7 @@ Vector3c *add_vector3c_3i(Vector3c *v1, Vector3i *v2)
     return res;
 }
 
-Vector3c *add_vector3c_3f(Vector3c *v1, Vector3f *v2)
+Vector3c *add_vector3c_3f(const Vector3c *v1, const Vector3f *v2)
 {
     Vector3c *res = (Vector3c *)malloc(sizeof(Vector3c));
     if (res == NULL)
@@ -2120,7 +2120,7 @@ Vector3c *add_vector3c_3f(Vector3c *v1, Vector3f *v2)
     return res;
 }
 
-Vector3c *add_vector3c_3d(Vector3c *v1, Vector3d *v2)
+Vector3c *add_vector3c_3d(const Vector3c *v1, const Vector3d *v2)
 {
     Vector3c *res = (Vector3c *)malloc(sizeof(Vector3c));
     if (res == NULL)
@@ -2134,7 +2134,7 @@ Vector3c *add_vector3c_3d(Vector3c *v1, Vector3d *v2)
     return res;
 }
 
-Vector3c *add_vector3c_3c(Vector3c *v1, Vector3c *v2)
+Vector3c *add_vector3c_3c(const Vector3c *v1, const Vector3c *v2)
 {
     Vector3c *res = (Vector3c *)malloc(sizeof(Vector3c));
     if (res == NULL)
@@ -2148,7 +2148,7 @@ Vector3c *add_vector3c_3c(Vector3c *v1, Vector3c *v2)
     return res;
 }
 
-Vectorc *add_vector3c_i(Vector3c *v1, Vectori *v2)
+Vectorc *add_vector3c_i(const Vector3c *v1, const Vectori *v2)
 {
     if (v2->len == 0)
     {
@@ -2198,7 +2198,7 @@ Vectorc *add_vector3c_i(Vector3c *v1, Vectori *v2)
     }
 }
 
-Vectorc *add_vector3c_f(Vector3c *v1, Vectorf *v2)
+Vectorc *add_vector3c_f(const Vector3c *v1, const Vectorf *v2)
 {
     if (v2->len == 0)
     {
@@ -2248,7 +2248,7 @@ Vectorc *add_vector3c_f(Vector3c *v1, Vectorf *v2)
     }
 }
 
-Vectorc *add_vector3c_d(Vector3c *v1, Vectord *v2)
+Vectorc *add_vector3c_d(const Vector3c *v1, const Vectord *v2)
 {
     if (v2->len == 0)
     {
@@ -2298,7 +2298,7 @@ Vectorc *add_vector3c_d(Vector3c *v1, Vectord *v2)
     }
 }
 
-Vectorc *add_vector3c_c(Vector3c *v1, Vectorc *v2)
+Vectorc *add_vector3c_c(const Vector3c *v1, const Vectorc *v2)
 {
     if (v2->len == 0)
     {
@@ -2349,7 +2349,7 @@ Vectorc *add_vector3c_c(Vector3c *v1, Vectorc *v2)
 }
 
 // ============ Vectori  ============
-Vectori *add_vectori_2i(Vectori *v1, Vector2i *v2)
+Vectori *add_vectori_2i(const Vectori *v1, const Vector2i *v2)
 {
     Vectori *res = (Vectori *)malloc(sizeof(Vectori));
     if (res == NULL)
@@ -2373,7 +2373,7 @@ Vectori *add_vectori_2i(Vectori *v1, Vector2i *v2)
     return res;
 }
 
-Vectorf *add_vectori_2f(Vectori *v1, Vector2f *v2)
+Vectorf *add_vectori_2f(const Vectori *v1, const Vector2f *v2)
 {
     Vectorf *res = (Vectorf *)malloc(sizeof(Vectorf));
     if (res == NULL)
@@ -2392,7 +2392,7 @@ Vectorf *add_vectori_2f(Vectori *v1, Vector2f *v2)
     return res;
 }
 
-Vectord *add_vectori_2d(Vectori *v1, Vector2d *v2)
+Vectord *add_vectori_2d(const Vectori *v1, const Vector2d *v2)
 {
     Vectord *res = (Vectord *)malloc(sizeof(Vectord));
     if (res == NULL)
@@ -2411,7 +2411,7 @@ Vectord *add_vectori_2d(Vectori *v1, Vector2d *v2)
     return res;
 }
 
-Vectorc *add_vectori_2c(Vectori *v1, Vector2c *v2)
+Vectorc *add_vectori_2c(const Vectori *v1, const Vector2c *v2)
 {
     Vectorc *res = (Vectorc *)malloc(sizeof(Vectorc));
     if (res == NULL)
@@ -2430,7 +2430,7 @@ Vectorc *add_vectori_2c(Vectori *v1, Vector2c *v2)
     return res;
 }
 
-Vectori *add_vectori_3i(Vectori *v1, Vector3i *v2)
+Vectori *add_vectori_3i(const Vectori *v1, const Vector3i *v2)
 {
     Vectori *res = (Vectori *)malloc(sizeof(Vectori));
     if (res == NULL)
@@ -2454,7 +2454,7 @@ Vectori *add_vectori_3i(Vectori *v1, Vector3i *v2)
     return res;
 }
 
-Vectorf *add_vectori_3f(Vectori *v1, Vector3f *v2)
+Vectorf *add_vectori_3f(const Vectori *v1, const Vector3f *v2)
 {
     Vectorf *res = (Vectorf *)malloc(sizeof(Vectorf));
     if (res == NULL)
@@ -2473,7 +2473,7 @@ Vectorf *add_vectori_3f(Vectori *v1, Vector3f *v2)
     return res;
 }
 
-Vectord *add_vectori_3d(Vectori *v1, Vector3d *v2)
+Vectord *add_vectori_3d(const Vectori *v1, const Vector3d *v2)
 {
     Vectord *res = (Vectord *)malloc(sizeof(Vectord));
     if (res == NULL)
@@ -2492,7 +2492,7 @@ Vectord *add_vectori_3d(Vectori *v1, Vector3d *v2)
     return res;
 }
 
-Vectorc *add_vectori_3c(Vectori *v1, Vector3c *v2)
+Vectorc *add_vectori_3c(const Vectori *v1, const Vector3c *v2)
 {
     Vectorc *res = (Vectorc *)malloc(sizeof(Vectorc));
     if (res == NULL)
@@ -2511,7 +2511,7 @@ Vectorc *add_vectori_3c(Vectori *v1, Vector3c *v2)
     return res;
 }
 
-Vectori *add_vectori_i(Vectori *v1, Vectori *v2)
+Vectori *add_vectori_i(const Vectori *v1, const Vectori *v2)
 {
     if (v1->len == 0 && v2->len == 0)
     {
@@ -2557,7 +2557,7 @@ Vectori *add_vectori_i(Vectori *v1, Vectori *v2)
     }
 }
 
-Vectorf *add_vectori_f(Vectori *v1, Vectorf *v2)
+Vectorf *add_vectori_f(const Vectori *v1, const Vectorf *v2)
 {
     if (v1->len == 0 && v2->len == 0)
     {
@@ -2588,7 +2588,7 @@ Vectorf *add_vectori_f(Vectori *v1, Vectorf *v2)
     return res;
 }
 
-Vectord *add_vectori_d(Vectori *v1, Vectord *v2)
+Vectord *add_vectori_d(const Vectori *v1, const Vectord *v2)
 {
     if (v1->len == 0 && v2->len == 0)
     {
@@ -2619,7 +2619,7 @@ Vectord *add_vectori_d(Vectori *v1, Vectord *v2)
     return res;
 }
 
-Vectorc *add_vectori_c(Vectori *v1, Vectorc *v2)
+Vectorc *add_vectori_c(const Vectori *v1, const Vectorc *v2)
 {
     if (v1->len == 0 && v2->len == 0)
     {
@@ -2656,7 +2656,7 @@ Vectorc *add_vectori_c(Vectori *v1, Vectorc *v2)
 }
 
 // ============ Vectorf  ============
-Vectorf *add_vectorf_2i(Vectorf *v1, Vector2i *v2)
+Vectorf *add_vectorf_2i(const Vectorf *v1, const Vector2i *v2)
 {
     Vectorf *res = (Vectorf *)malloc(sizeof(Vectorf));
     if (res == NULL)
@@ -2675,7 +2675,7 @@ Vectorf *add_vectorf_2i(Vectorf *v1, Vector2i *v2)
     return res;
 }
 
-Vectorf *add_vectorf_2f(Vectorf *v1, Vector2f *v2)
+Vectorf *add_vectorf_2f(const Vectorf *v1, const Vector2f *v2)
 {
     Vectorf *res = (Vectorf *)malloc(sizeof(Vectorf));
     if (res == NULL)
@@ -2694,7 +2694,7 @@ Vectorf *add_vectorf_2f(Vectorf *v1, Vector2f *v2)
     return res;
 }
 
-Vectord *add_vectorf_2d(Vectorf *v1, Vector2d *v2)
+Vectord *add_vectorf_2d(const Vectorf *v1, const Vector2d *v2)
 {
     Vectord *res = (Vectord *)malloc(sizeof(Vectord));
     if (res == NULL)
@@ -2713,7 +2713,7 @@ Vectord *add_vectorf_2d(Vectorf *v1, Vector2d *v2)
     return res;
 }
 
-Vectorc *add_vectorf_2c(Vectorf *v1, Vector2c *v2)
+Vectorc *add_vectorf_2c(const Vectorf *v1, const Vector2c *v2)
 {
     Vectorc *res = (Vectorc *)malloc(sizeof(Vectorc));
     if (res == NULL)
@@ -2732,7 +2732,7 @@ Vectorc *add_vectorf_2c(Vectorf *v1, Vector2c *v2)
     return res;
 }
 
-Vectorf *add_vectorf_3i(Vectorf *v1, Vector3i *v2)
+Vectorf *add_vectorf_3i(const Vectorf *v1, const Vector3i *v2)
 {
     Vectorf *res = (Vectorf *)malloc(sizeof(Vectorf));
     if (res == NULL)
@@ -2751,7 +2751,7 @@ Vectorf *add_vectorf_3i(Vectorf *v1, Vector3i *v2)
     return res;
 }
 
-Vectorf *add_vectorf_3f(Vectorf *v1, Vector3f *v2)
+Vectorf *add_vectorf_3f(const Vectorf *v1, const Vector3f *v2)
 {
     Vectorf *res = (Vectorf *)malloc(sizeof(Vectorf));
     if (res == NULL)
@@ -2770,7 +2770,7 @@ Vectorf *add_vectorf_3f(Vectorf *v1, Vector3f *v2)
     return res;
 }
 
-Vectord *add_vectorf_3d(Vectorf *v1, Vector3d *v2)
+Vectord *add_vectorf_3d(const Vectorf *v1, const Vector3d *v2)
 {
     Vectord *res = (Vectord *)malloc(sizeof(Vectord));
     if (res == NULL)
@@ -2789,7 +2789,7 @@ Vectord *add_vectorf_3d(Vectorf *v1, Vector3d *v2)
     return res;
 }
 
-Vectorc *add_vectorf_3c(Vectorf *v1, Vector3c *v2)
+Vectorc *add_vectorf_3c(const Vectorf *v1, const Vector3c *v2)
 {
     Vectorc *res = (Vectorc *)malloc(sizeof(Vectorc));
     if (res == NULL)
@@ -2808,7 +2808,7 @@ Vectorc *add_vectorf_3c(Vectorf *v1, Vector3c *v2)
     return res;
 }
 
-Vectorf *add_vectorf_i(Vectorf *v1, Vectori *v2)
+Vectorf *add_vectorf_i(const Vectorf *v1, const Vectori *v2)
 {
     if (v1->len == 0 && v2->len == 0)
     {
@@ -2839,7 +2839,7 @@ Vectorf *add_vectorf_i(Vectorf *v1, Vectori *v2)
     return res;
 }
 
-Vectorf *add_vectorf_f(Vectorf *v1, Vectorf *v2)
+Vectorf *add_vectorf_f(const Vectorf *v1, const Vectorf *v2)
 {
     if (v1->len == 0 && v2->len == 0)
     {
@@ -2870,7 +2870,7 @@ Vectorf *add_vectorf_f(Vectorf *v1, Vectorf *v2)
     return res;
 }
 
-Vectord *add_vectorf_d(Vectorf *v1, Vectord *v2)
+Vectord *add_vectorf_d(const Vectorf *v1, const Vectord *v2)
 {
     if (v1->len == 0 && v2->len == 0)
     {
@@ -2901,7 +2901,7 @@ Vectord *add_vectorf_d(Vectorf *v1, Vectord *v2)
     return res;
 }
 
-Vectorc *add_vectorf_c(Vectorf *v1, Vectorc *v2)
+Vectorc *add_vectorf_c(const Vectorf *v1, const Vectorc *v2)
 {
     if (v1->len == 0 && v2->len == 0)
     {
@@ -2933,7 +2933,7 @@ Vectorc *add_vectorf_c(Vectorf *v1, Vectorc *v2)
 }
 
 // ============ Vectord  ============
-Vectord *add_vectord_2i(Vectord *v1, Vector2i *v2)
+Vectord *add_vectord_2i(const Vectord *v1, const Vector2i *v2)
 {
     Vectord *res = (Vectord *)malloc(sizeof(Vectord));
     if (res == NULL)
@@ -2952,7 +2952,7 @@ Vectord *add_vectord_2i(Vectord *v1, Vector2i *v2)
     return res;
 }
 
-Vectord *add_vectord_2f(Vectord *v1, Vector2f *v2)
+Vectord *add_vectord_2f(const Vectord *v1, const Vector2f *v2)
 {
     Vectord *res = (Vectord *)malloc(sizeof(Vectord));
     if (res == NULL)
@@ -2971,7 +2971,7 @@ Vectord *add_vectord_2f(Vectord *v1, Vector2f *v2)
     return res;
 }
 
-Vectord *add_vectord_2d(Vectord *v1, Vector2d *v2)
+Vectord *add_vectord_2d(const Vectord *v1, const Vector2d *v2)
 {
     Vectord *res = (Vectord *)malloc(sizeof(Vectord));
     if (res == NULL)
@@ -2990,7 +2990,7 @@ Vectord *add_vectord_2d(Vectord *v1, Vector2d *v2)
     return res;
 }
 
-Vectorc *add_vectord_2c(Vectord *v1, Vector2c *v2)
+Vectorc *add_vectord_2c(const Vectord *v1, const Vector2c *v2)
 {
     Vectorc *res = (Vectorc *)malloc(sizeof(Vectorc));
     if (res == NULL)
@@ -3009,7 +3009,7 @@ Vectorc *add_vectord_2c(Vectord *v1, Vector2c *v2)
     return res;
 }
 
-Vectord *add_vectord_3i(Vectord *v1, Vector3i *v2)
+Vectord *add_vectord_3i(const Vectord *v1, const Vector3i *v2)
 {
     Vectord *res = (Vectord *)malloc(sizeof(Vectord));
     if (res == NULL)
@@ -3028,7 +3028,7 @@ Vectord *add_vectord_3i(Vectord *v1, Vector3i *v2)
     return res;
 }
 
-Vectord *add_vectord_3f(Vectord *v1, Vector3f *v2)
+Vectord *add_vectord_3f(const Vectord *v1, const Vector3f *v2)
 {
     Vectord *res = (Vectord *)malloc(sizeof(Vectord));
     if (res == NULL)
@@ -3047,7 +3047,7 @@ Vectord *add_vectord_3f(Vectord *v1, Vector3f *v2)
     return res;
 }
 
-Vectord *add_vectord_3d(Vectord *v1, Vector3d *v2)
+Vectord *add_vectord_3d(const Vectord *v1, const Vector3d *v2)
 {
     Vectord *res = (Vectord *)malloc(sizeof(Vectord));
     if (res == NULL)
@@ -3066,7 +3066,7 @@ Vectord *add_vectord_3d(Vectord *v1, Vector3d *v2)
     return res;
 }
 
-Vectorc *add_vectord_3c(Vectord *v1, Vector3c *v2)
+Vectorc *add_vectord_3c(const Vectord *v1, const Vector3c *v2)
 {
     Vectorc *res = (Vectorc *)malloc(sizeof(Vectorc));
     if (res == NULL)
@@ -3085,7 +3085,7 @@ Vectorc *add_vectord_3c(Vectord *v1, Vector3c *v2)
     return res;
 }
 
-Vectord *add_vectord_i(Vectord *v1, Vectori *v2)
+Vectord *add_vectord_i(const Vectord *v1, const Vectori *v2)
 {
     if (v1->len == 0 && v2->len == 0)
     {
@@ -3116,7 +3116,7 @@ Vectord *add_vectord_i(Vectord *v1, Vectori *v2)
     return res;
 }
 
-Vectord *add_vectord_f(Vectord *v1, Vectorf *v2)
+Vectord *add_vectord_f(const Vectord *v1, const Vectorf *v2)
 {
     if (v1->len == 0 && v2->len == 0)
     {
@@ -3147,7 +3147,7 @@ Vectord *add_vectord_f(Vectord *v1, Vectorf *v2)
     return res;
 }
 
-Vectord *add_vectord_d(Vectord *v1, Vectord *v2)
+Vectord *add_vectord_d(const Vectord *v1, const Vectord *v2)
 {
     if (v1->len == 0 && v2->len == 0)
     {
@@ -3178,7 +3178,7 @@ Vectord *add_vectord_d(Vectord *v1, Vectord *v2)
     return res;
 }
 
-Vectorc *add_vectord_c(Vectord *v1, Vectorc *v2)
+Vectorc *add_vectord_c(const Vectord *v1, const Vectorc *v2)
 {
     if (v1->len == 0 && v2->len == 0)
     {
@@ -3210,7 +3210,7 @@ Vectorc *add_vectord_c(Vectord *v1, Vectorc *v2)
 }
 
 // ============ Vectorc  ============
-Vectorc *add_vectorc_2i(Vectorc *v1, Vector2i *v2)
+Vectorc *add_vectorc_2i(const Vectorc *v1, const Vector2i *v2)
 {
     Vectorc *res = (Vectorc *)malloc(sizeof(Vectorc));
     if (res == NULL)
@@ -3229,7 +3229,7 @@ Vectorc *add_vectorc_2i(Vectorc *v1, Vector2i *v2)
     return res;
 }
 
-Vectorc *add_vectorc_2f(Vectorc *v1, Vector2f *v2)
+Vectorc *add_vectorc_2f(const Vectorc *v1, const Vector2f *v2)
 {
     Vectorc *res = (Vectorc *)malloc(sizeof(Vectorc));
     if (res == NULL)
@@ -3248,7 +3248,7 @@ Vectorc *add_vectorc_2f(Vectorc *v1, Vector2f *v2)
     return res;
 }
 
-Vectorc *add_vectorc_2d(Vectorc *v1, Vector2d *v2)
+Vectorc *add_vectorc_2d(const Vectorc *v1, const Vector2d *v2)
 {
     Vectorc *res = (Vectorc *)malloc(sizeof(Vectorc));
     if (res == NULL)
@@ -3267,7 +3267,7 @@ Vectorc *add_vectorc_2d(Vectorc *v1, Vector2d *v2)
     return res;
 }
 
-Vectorc *add_vectorc_2c(Vectorc *v1, Vector2c *v2)
+Vectorc *add_vectorc_2c(const Vectorc *v1, const Vector2c *v2)
 {
     Vectorc *res = (Vectorc *)malloc(sizeof(Vectorc));
     if (res == NULL)
@@ -3286,7 +3286,7 @@ Vectorc *add_vectorc_2c(Vectorc *v1, Vector2c *v2)
     return res;
 }
 
-Vectorc *add_vectorc_3i(Vectorc *v1, Vector3i *v2)
+Vectorc *add_vectorc_3i(const Vectorc *v1, const Vector3i *v2)
 {
     Vectorc *res = (Vectorc *)malloc(sizeof(Vectorc));
     if (res == NULL)
@@ -3305,7 +3305,7 @@ Vectorc *add_vectorc_3i(Vectorc *v1, Vector3i *v2)
     return res;
 }
 
-Vectorc *add_vectorc_3f(Vectorc *v1, Vector3f *v2)
+Vectorc *add_vectorc_3f(const Vectorc *v1, const Vector3f *v2)
 {
     Vectorc *res = (Vectorc *)malloc(sizeof(Vectorc));
     if (res == NULL)
@@ -3324,7 +3324,7 @@ Vectorc *add_vectorc_3f(Vectorc *v1, Vector3f *v2)
     return res;
 }
 
-Vectorc *add_vectorc_3d(Vectorc *v1, Vector3d *v2)
+Vectorc *add_vectorc_3d(const Vectorc *v1, const Vector3d *v2)
 {
     Vectorc *res = (Vectorc *)malloc(sizeof(Vectorc));
     if (res == NULL)
@@ -3343,7 +3343,7 @@ Vectorc *add_vectorc_3d(Vectorc *v1, Vector3d *v2)
     return res;
 }
 
-Vectorc *add_vectorc_3c(Vectorc *v1, Vector3c *v2)
+Vectorc *add_vectorc_3c(const Vectorc *v1, const Vector3c *v2)
 {
     Vectorc *res = (Vectorc *)malloc(sizeof(Vectorc));
     if (res == NULL)
@@ -3362,7 +3362,7 @@ Vectorc *add_vectorc_3c(Vectorc *v1, Vector3c *v2)
     return res;
 }
 
-Vectorc *add_vectorc_i(Vectorc *v1, Vectori *v2)
+Vectorc *add_vectorc_i(const Vectorc *v1, const Vectori *v2)
 {
     if (v1->len == 0 && v2->len == 0)
     {
@@ -3393,7 +3393,7 @@ Vectorc *add_vectorc_i(Vectorc *v1, Vectori *v2)
     return res;
 }
 
-Vectorc *add_vectorc_f(Vectorc *v1, Vectorf *v2)
+Vectorc *add_vectorc_f(const Vectorc *v1, const Vectorf *v2)
 {
     if (v1->len == 0 && v2->len == 0)
     {
@@ -3424,7 +3424,7 @@ Vectorc *add_vectorc_f(Vectorc *v1, Vectorf *v2)
     return res;
 }
 
-Vectorc *add_vectorc_d(Vectorc *v1, Vectord *v2)
+Vectorc *add_vectorc_d(const Vectorc *v1, const Vectord *v2)
 {
     if (v1->len == 0 && v2->len == 0)
     {
@@ -3455,7 +3455,7 @@ Vectorc *add_vectorc_d(Vectorc *v1, Vectord *v2)
     return res;
 }
 
-Vectorc *add_vectorc_c(Vectorc *v1, Vectorc *v2)
+Vectorc *add_vectorc_c(const Vectorc *v1, const Vectorc *v2)
 {
     if (v1->len == 0 && v2->len == 0)
     {
