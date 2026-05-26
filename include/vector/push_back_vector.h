@@ -27,4 +27,12 @@ void push_back_vectord_d(Vectord **v, double push_number);
 
 void push_back_vectord_c(Vectord **v, Complex push_number);
 
+void push_back_vectorc_i(Vectorc **v, int push_number);
+
+void push_back_vectorc_f(Vectorc **v, float push_number);
+
+void push_back_vectorc_d(Vectorc **v, double push_number);
+
+void push_back_vectorc_c(Vectorc **v, Complex push_number);
+
 #endif // PUSH_BACK_VECTOR_H
