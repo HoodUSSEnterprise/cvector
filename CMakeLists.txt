@@ -24,11 +24,34 @@ set(LIB_SOURCES_COMPLEX
     src/complex/copy_complex.c
 )
 
+set(LIB_SOURCES_VECTOR
+    src/vector/add_vector.c
+    src/vector/create_vector.c
+    src/vector/mul_vector.c
+    src/vector/sub_vector.c
+    src/vector/norm_vector.c
+    src/vector/print_vector.c
+    src/complex/operator_complex.c
+    src/vector/replace_vector.c
+    src/vector/remove_vector.c
+    src/vector/free_vector.c
+    src/vector/find_vector.c
+    src/vector/copy_vector.c
+    src/complex/print_complex.c
+)
+
 # 创建库
 add_library(complex_lib ${LIB_SOURCES_COMPLEX})
 
 target_include_directories(complex_lib PUBLIC ${PROJECT_SOURCE_DIR}/include)
 
+add_library(vector_lib ${LIB_SOURCES_VECTOR})
+
+target_include_directories(vector_lib PUBLIC ${PROJECT_SOURCE_DIR}/include)
+
 # 创建测试可执行文件
 add_executable(test_program_complex example/complex_example.c)
 target_link_libraries(test_program_complex complex_lib)
+
+add_executable(test_program_vector example/vector_example.c)
+target_link_libraries(test_program_vector vector_lib)
