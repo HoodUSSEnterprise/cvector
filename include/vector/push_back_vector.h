@@ -35,4 +35,26 @@ void push_back_vectorc_d(Vectorc **v, double push_number);
 
 void push_back_vectorc_c(Vectorc **v, Complex push_number);
 
+#define push_back(x, y) _Generic((x),      \
+    Vectori * *: _Generic((y),             \
+            int: push_back_vectori_i,      \
+            float: push_back_vectori_f,    \
+            double: push_back_vectori_d,   \
+            Complex: push_back_vectori_c), \
+    Vectorf * *: _Generic((y),             \
+            int: push_back_vectorf_i,      \
+            float: push_back_vectorf_f,    \
+            double: push_back_vectorf_d,   \
+            Complex: push_back_vectorf_c), \
+    Vectord * *: _Generic((y),             \
+            int: push_back_vectord_i,      \
+            float: push_back_vectord_f,    \
+            double: push_back_vectord_d,   \
+            Complex: push_back_vectord_c), \
+    Vectorc * *: _Generic((y),             \
+            int: push_back_vectorc_i,      \
+            float: push_back_vectorc_f,    \
+            double: push_back_vectorc_d,   \
+            Complex: push_back_vectorc_c))(x, y)
+
 #endif // PUSH_BACK_VECTOR_H
