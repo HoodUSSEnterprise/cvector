@@ -27,4 +27,18 @@ void reverse_vectord(Vectord **v);
 
 void reverse_vectorc(Vectorc **v);
 
+#define reverse(x) _Generic((x),    \
+    Vector2i * *: reverse_vector2i, \
+    Vector2f * *: reverse_vector2f, \
+    Vector2d * *: reverse_vector2d, \
+    Vector2f * *: reverse_vector2f, \
+    Vector3i * *: reverse_vector3i, \
+    Vector3f * *: reverse_vector3f, \
+    Vector3d * *: reverse_vector3d, \
+    Vector3f * *: reverse_vector3f, \
+    Vectori * *: reverse_vectori,   \
+    Vectorf * *: reverse_vectorf,   \
+    Vectord * *: reverse_vectord,   \
+    Vectorf * *: reverse_vectorf)(x)
+
 #endif // REVERSE_VECTOR_H
