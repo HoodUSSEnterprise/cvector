@@ -6,6 +6,17 @@
 #include <string.h>
 #include "complex/base_complex.h"
 
+#ifndef DEBUG
+#define DEBUG 0
+#endif
+
+#if DEBUG
+#define DEBUG_LOG(fmt, ...) \
+    printf("[FILE:%s, FUNCTION:%s, LINE:%d] " fmt, __FILE__, __FUNCTION__, __LINE__, ##__VA_ARGS__)
+#else
+#define DEBUG_LOG(fmt, ...) ((void)0)
+#endif
+
 typedef struct Vector2i
 {
     int x;

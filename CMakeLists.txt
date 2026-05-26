@@ -22,6 +22,8 @@ set(LIB_SOURCES_COMPLEX
     src/complex/operator_complex.c
     src/complex/print_complex.c
     src/complex/copy_complex.c
+    src/complex/create_complex.c
+    src/complex/free_complex.c
 )
 
 set(LIB_SOURCES_VECTOR
