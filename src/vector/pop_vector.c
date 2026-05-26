@@ -2,22 +2,22 @@
 
 void pop_vectori(Vectori **v, int *elem)
 {
-    if(v == NULL || *v == NULL)
+    if (v == NULL || *v == NULL)
     {
         return;
     }
-    if((*v)->len == 0)
+    if ((*v)->len == 0)
     {
         return;
     }
-    Vectori *res = (Vectori*)malloc(sizeof(Vectori));
+    Vectori *res = (Vectori *)malloc(sizeof(Vectori));
     if (res == NULL)
     {
         printf("No memory\n");
         return;
     }
     res->len = (*v)->len - 1;
-    res->data = (int*)malloc(sizeof(int) * res->len);
+    res->data = (int *)malloc(sizeof(int) * res->len);
     if (res->data == NULL)
     {
         printf("No memory\n");
@@ -35,26 +35,26 @@ void pop_vectori(Vectori **v, int *elem)
 
 void pop_vectorf(Vectorf **v, float *elem)
 {
-    if(v == NULL || *v == NULL)
+    if (v == NULL || *v == NULL)
     {
         return;
     }
-    if((*v)->len == 0)
+    if ((*v)->len == 0)
     {
         return;
     }
-    Vectorf *res = (Vectorf*)malloc(sizeof(Vectorf));
+    Vectorf *res = (Vectorf *)malloc(sizeof(Vectorf));
     if (res == NULL)
     {
         printf("No memory\n");
-        return ;
+        return;
     }
     res->len = (*v)->len - 1;
-    res->data = (float*)malloc(sizeof(float) * res->len);
+    res->data = (float *)malloc(sizeof(float) * res->len);
     if (res->data == NULL)
     {
         printf("No memory\n");
-        return ;
+        return;
     }
     for (size_t i = 0; i < res->len; i++)
     {
@@ -68,16 +68,27 @@ void pop_vectorf(Vectorf **v, float *elem)
 
 void pop_vectord(Vectord **v, double *elem)
 {
-    if(v == NULL || *v == NULL)
+    if (v == NULL || *v == NULL)
     {
         return;
     }
-    if((*v)->len == 0)
+    if ((*v)->len == 0)
     {
         return;
     }
-    Vectord *res = (Vectord*)malloc(sizeof(Vectord));
+    Vectord *res = (Vectord *)malloc(sizeof(Vectord));
+    if (res == NULL)
+    {
+        printf("No memory\n");
+        return;
+    }
     res->len = (*v)->len - 1;
+    res->data = (double *)malloc(sizeof(double) * res->len);
+    if (res->data == NULL)
+    {
+        printf("No memory\n");
+        return;
+    }
     for (size_t i = 0; i < res->len; i++)
     {
         res->data[i] = (*v)->data[i];
@@ -90,16 +101,27 @@ void pop_vectord(Vectord **v, double *elem)
 
 void pop_vectorc(Vectorc **v, Complex *elem)
 {
-    if(v == NULL || *v == NULL)
+    if (v == NULL || *v == NULL)
     {
         return;
     }
-    if((*v)->len == 0)
+    if ((*v)->len == 0)
     {
         return;
     }
-    Vectorc *res = (Vectorc*)malloc(sizeof(Vectorc));
+    Vectorc *res = (Vectorc *)malloc(sizeof(Vectorc));
+    if (res == NULL)
+    {
+        printf("No memory\n");
+        return;
+    }
     res->len = (*v)->len - 1;
+    res->data = (Complex *)malloc(sizeof(Complex) * res->len);
+    if (res->data == NULL)
+    {
+        printf("No memory\n");
+        return;
+    }
     for (size_t i = 0; i < res->len; i++)
     {
         res->data[i] = (*v)->data[i];
