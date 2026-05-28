@@ -35,4 +35,26 @@ void insert_vectorc_d(Vectorc **v, size_t pos, double value);
 
 void insert_vectorc_c(Vectorc **v, size_t pos, Complex value);
 
+#define insert(x, y, z) _Generic((x),   \
+    Vectori * *: _Generic((z),          \
+            int: insert_vectori_i,      \
+            float: insert_vectori_f,    \
+            double: insert_vectori_d,   \
+            Complex: insert_vectori_c), \
+    Vectorf * *: _Generic((z),          \
+            int: insert_vectorf_i,      \
+            float: insert_vectorf_f,    \
+            double: insert_vectorf_d,   \
+            Complex: insert_vectorf_c), \
+    Vectord * *: _Generic((z),          \
+            int: insert_vectord_i,      \
+            float: insert_vectord_f,    \
+            double: insert_vectord_d,   \
+            Complex: insert_vectord_c), \
+    Vectorc * *: _Generic((z),          \
+            int: insert_vectorc_i,      \
+            float: insert_vectorc_f,    \
+            double: insert_vectorc_d,   \
+            Complex: insert_vectorc_c))(x, y, z)
+
 #endif // INSERT_VECTOR_H
