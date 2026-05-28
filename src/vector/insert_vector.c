@@ -2,22 +2,22 @@
 
 void insert_vectori_i(Vectori **v, size_t pos, int value)
 {
-    if(v == NULL || (*v) == NULL)
+    if (v == NULL || (*v) == NULL)
     {
         return;
     }
-    Vectori *res = (Vectori*)malloc(sizeof(Vectori));
+    Vectori *res = (Vectori *)malloc(sizeof(Vectori));
     if (res == NULL)
     {
         printf("No memory\n");
     }
     res->len = (*v)->len + 1;
-    res->data = (int*)malloc(sizeof(int) * res->len);
+    res->data = (int *)malloc(sizeof(int) * res->len);
     if (res->data == NULL)
     {
         printf("No memory\n");
     }
-    if(pos > (*v)->len - 1) // 默认pos大于数组长度，直接插入到最后
+    if (pos > (*v)->len - 1) // 默认pos大于数组长度，直接插入到最后
     {
         memcpy(res->data, (*v)->data, sizeof(int) * (*v)->len);
         res->data[(res->len) - 1] = value;
@@ -26,7 +26,7 @@ void insert_vectori_i(Vectori **v, size_t pos, int value)
     {
         for (int i = 0, j = 0; i < res->len, j < (*v)->len; i++, j++)
         {
-            if(i == pos)
+            if (i == pos)
             {
                 res->data[i] = value;
                 continue;
@@ -38,3 +38,144 @@ void insert_vectori_i(Vectori **v, size_t pos, int value)
     free((*v));
     *v = res;
 }
+
+void insert_vectori_f(Vectori **v, size_t pos, float value)
+{
+    if (v == NULL || (*v) == NULL)
+    {
+        return;
+    }
+    Vectori *res = (Vectori *)malloc(sizeof(Vectori));
+    if (res == NULL)
+    {
+        printf("No memory\n");
+    }
+    res->len = (*v)->len + 1;
+    res->data = (int *)malloc(sizeof(int) * res->len);
+    if (res->data == NULL)
+    {
+        printf("No memory\n");
+    }
+    if (pos > (*v)->len - 1) // 默认pos大于数组长度，直接插入到最后
+    {
+        memcpy(res->data, (*v)->data, sizeof(int) * (*v)->len);
+        res->data[(res->len) - 1] = (int)value;
+    }
+    else
+    {
+        for (int i = 0, j = 0; i < res->len, j < (*v)->len; i++, j++)
+        {
+            if (i == pos)
+            {
+                res->data[i] = (int)value;
+                continue;
+            }
+            res->data[i] = (*v)->data[j];
+        }
+    }
+    free((*v)->data);
+    free((*v));
+    *v = res;
+}
+
+void insert_vectori_d(Vectori **v, size_t pos, double value)
+{
+    if (v == NULL || (*v) == NULL)
+    {
+        return;
+    }
+    Vectori *res = (Vectori *)malloc(sizeof(Vectori));
+    if (res == NULL)
+    {
+        printf("No memory\n");
+    }
+    res->len = (*v)->len + 1;
+    res->data = (int *)malloc(sizeof(int) * res->len);
+    if (res->data == NULL)
+    {
+        printf("No memory\n");
+    }
+    if (pos > (*v)->len - 1) // 默认pos大于数组长度，直接插入到最后
+    {
+        memcpy(res->data, (*v)->data, sizeof(int) * (*v)->len);
+        res->data[(res->len) - 1] = (int)value;
+    }
+    else
+    {
+        for (int i = 0, j = 0; i < res->len, j < (*v)->len; i++, j++)
+        {
+            if (i == pos)
+            {
+                res->data[i] = (int)value;
+                continue;
+            }
+            res->data[i] = (*v)->data[j];
+        }
+    }
+    free((*v)->data);
+    free((*v));
+    *v = res;
+}
+
+void insert_vectori_c(Vectori **v, size_t pos, Complex value)
+{
+    if (v == NULL || (*v) == NULL)
+    {
+        return;
+    }
+    Vectori *res = (Vectori *)malloc(sizeof(Vectori));
+    if (res == NULL)
+    {
+        printf("No memory\n");
+    }
+    res->len = (*v)->len + 1;
+    res->data = (int *)malloc(sizeof(int) * res->len);
+    if (res->data == NULL)
+    {
+        printf("No memory\n");
+    }
+    if (pos > (*v)->len - 1) // 默认pos大于数组长度，直接插入到最后
+    {
+        memcpy(res->data, (*v)->data, sizeof(int) * (*v)->len);
+        res->data[(res->len) - 1] = (int)value.real;
+    }
+    else
+    {
+        for (int i = 0, j = 0; i < res->len, j < (*v)->len; i++, j++)
+        {
+            if (i == pos)
+            {
+                res->data[i] = (int)value.real;
+                continue;
+            }
+            res->data[i] = (*v)->data[j];
+        }
+    }
+    free((*v)->data);
+    free((*v));
+    *v = res;
+}
+
+void insert_vectorf_i(Vectorf **v, size_t pos, int value);
+
+void insert_vectorf_f(Vectorf **v, size_t pos, float value);
+
+void insert_vectorf_d(Vectorf **v, size_t pos, double value);
+
+void insert_vectorf_c(Vectorf **v, size_t pos, Complex value);
+
+void insert_vectord_i(Vectord **v, size_t pos, int value);
+
+void insert_vectord_f(Vectord **v, size_t pos, float value);
+
+void insert_vectord_d(Vectord **v, size_t pos, double value);
+
+void insert_vectord_c(Vectord **v, size_t pos, Complex value);
+
+void insert_vectorc_i(Vectorc **v, size_t pos, int value);
+
+void insert_vectorc_f(Vectorc **v, size_t pos, float value);
+
+void insert_vectorc_d(Vectorc **v, size_t pos, double value);
+
+void insert_vectorc_c(Vectorc **v, size_t pos, Complex value);
