@@ -86,6 +86,8 @@ set(LIB_SOURCES_MATRIX
     src/matrix/special_matrix.c
     src/matrix/sub_matrix.c
     src/matrix/transpose_matrix.c
+    src/tools/max_min.c
+    src/tools/pointer_transform.c
 )
 
 add_library(matrix_lib ${LIB_SOURCES_MATRIX})

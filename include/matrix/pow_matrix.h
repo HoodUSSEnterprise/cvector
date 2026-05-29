@@ -6,9 +6,9 @@
 #include "matrix/inv_matrix.h"
 #include "matrix/special_matrix.h"
 
-MatrixI *pow_matrixi(MatrixI *m, int index);
+MatrixD *pow_matrixi(MatrixI *m, int index);
 
-MatrixF *pow_matrixf(MatrixF *m, int index);
+MatrixD *pow_matrixf(MatrixF *m, int index);
 
 MatrixD *pow_matrixd(MatrixD *m, int index);
 

@@ -78,6 +78,7 @@ MatrixI *diag_matrixi_i(const int *data, size_t len)
         printf("No memory\n");
         return NULL;
     }
+    memset(new_data, 0, sizeof(int) * len * len);
     for (size_t i = 0; i < len; i++)
     {
         new_data[i * len + i] = data[i];
@@ -98,6 +99,7 @@ MatrixI *diag_matrixi_f(const float *data, size_t len)
         printf("No memory\n");
         return NULL;
     }
+    memset(new_data, 0, sizeof(int) * len * len);
     for (size_t i = 0; i < len; i++)
     {
         new_data[i * len + i] = (int)data[i];
@@ -118,6 +120,7 @@ MatrixI *diag_matrixi_d(const double *data, size_t len)
         printf("No memory\n");
         return NULL;
     }
+    memset(new_data, 0, sizeof(int) * len * len);
     for (size_t i = 0; i < len; i++)
     {
         new_data[i * len + i] = (int)data[i];
@@ -138,6 +141,7 @@ MatrixI *diag_matrixi_c(const Complex *data, size_t len)
         printf("No memory\n");
         return NULL;
     }
+    memset(new_data, 0, sizeof(int) * len * len);
     for (size_t i = 0; i < len; i++)
     {
         new_data[i * len + i] = (int)data[i].real;
@@ -158,6 +162,7 @@ MatrixF *diag_matrixf_i(const int *data, size_t len)
         printf("No memory\n");
         return NULL;
     }
+    memset(new_data, 0, sizeof(float) * len * len);
     for (size_t i = 0; i < len; i++)
     {
         new_data[i * len + i] = (float)data[i];
@@ -178,6 +183,7 @@ MatrixF *diag_matrixf_f(const float *data, size_t len)
         printf("No memory\n");
         return NULL;
     }
+    memset(new_data, 0, sizeof(float) * len * len);
     for (size_t i = 0; i < len; i++)
     {
         new_data[i * len + i] = data[i];
@@ -198,6 +204,7 @@ MatrixF *diag_matrixf_d(const double *data, size_t len)
         printf("No memory\n");
         return NULL;
     }
+    memset(new_data, 0, sizeof(float) * len * len);
     for (size_t i = 0; i < len; i++)
     {
         new_data[i * len + i] = (float)data[i];
@@ -218,6 +225,7 @@ MatrixF *diag_matrixf_c(const Complex *data, size_t len)
         printf("No memory\n");
         return NULL;
     }
+    memset(new_data, 0, sizeof(float) * len * len);
     for (size_t i = 0; i < len; i++)
     {
         new_data[i * len + i] = (float)data[i].real;
@@ -238,6 +246,7 @@ MatrixD *diag_matrixd_i(const int *data, size_t len)
         printf("No memory\n");
         return NULL;
     }
+    memset(new_data, 0, sizeof(double) * len * len);
     for (size_t i = 0; i < len; i++)
     {
         new_data[i * len + i] = (double)data[i];
@@ -258,6 +267,7 @@ MatrixD *diag_matrixd_f(const float *data, size_t len)
         printf("No memory\n");
         return NULL;
     }
+    memset(new_data, 0, sizeof(double) * len * len);
     for (size_t i = 0; i < len; i++)
     {
         new_data[i * len + i] = (double)data[i];
@@ -278,6 +288,7 @@ MatrixD *diag_matrixd_d(const double *data, size_t len)
         printf("No memory\n");
         return NULL;
     }
+    memset(new_data, 0, sizeof(double) * len * len);
     for (size_t i = 0; i < len; i++)
     {
         new_data[i * len + i] = data[i];
@@ -298,6 +309,7 @@ MatrixD *diag_matrixd_c(const Complex *data, size_t len)
         printf("No memory\n");
         return NULL;
     }
+    memset(new_data, 0, sizeof(double) * len * len);
     for (size_t i = 0; i < len; i++)
     {
         new_data[i * len + i] = (double)data[i].real;
@@ -318,6 +330,7 @@ MatrixC *diag_matrixc_i(const int *data, size_t len)
         printf("No memory\n");
         return NULL;
     }
+    memset(new_data, 0, sizeof(Complex) * len * len);
     for (size_t i = 0; i < len; i++)
     {
         new_data[i * len + i] = (Complex){data[i], 0};
@@ -338,6 +351,7 @@ MatrixC *diag_matrixc_f(const float *data, size_t len)
         printf("No memory\n");
         return NULL;
     }
+    memset(new_data, 0, sizeof(Complex) * len * len);
     for (size_t i = 0; i < len; i++)
     {
         new_data[i * len + i] = (Complex){data[i], 0};
@@ -358,6 +372,7 @@ MatrixC *diag_matrixc_d(const double *data, size_t len)
         printf("No memory\n");
         return NULL;
     }
+    memset(new_data, 0, sizeof(Complex) * len * len);
     for (size_t i = 0; i < len; i++)
     {
         new_data[i * len + i] = (Complex){data[i], 0};
@@ -378,6 +393,7 @@ MatrixC *diag_matrixc_c(const Complex *data, size_t len)
         printf("No memory\n");
         return NULL;
     }
+    memset(new_data, 0, sizeof(Complex) * len * len);
     for (size_t i = 0; i < len; i++)
     {
         new_data[i * len + i] = data[i];
@@ -394,6 +410,7 @@ MatrixI *eye_matrixi(int rows, int cols)
         printf("No memory\n");
         return NULL;
     }
+    memset(data, 0, sizeof(int) * rows * cols);
     for (int i = 0; i < min_val; i++)
     {
         data[i * cols + i] = 1;
@@ -410,6 +427,7 @@ MatrixF *eye_matrixf(int rows, int cols)
         printf("No memory\n");
         return NULL;
     }
+    memset(data, 0, sizeof(float) * rows * cols);
     for (int i = 0; i < min_val; i++)
     {
         data[i * cols + i] = 1.0f;
@@ -426,6 +444,7 @@ MatrixD *eye_matrixd(int rows, int cols)
         printf("No memory\n");
         return NULL;
     }
+    memset(data, 0, sizeof(double) * rows * cols);
     for (int i = 0; i < min_val; i++)
     {
         data[i * cols + i] = 1.0;
@@ -442,6 +461,7 @@ MatrixC *eye_matrixc(int rows, int cols)
         printf("No memory\n");
         return NULL;
     }
+    memset(data, 0, sizeof(Complex) * rows * cols);
     for (int i = 0; i < min_val; i++)
     {
         data[i * cols + i] = (Complex){1, 0};

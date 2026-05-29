@@ -112,21 +112,21 @@ void gram_schmidt_matrixc(MatrixC *m, MatrixC **Q)
         {
             // dot(cols[i], cols[j]) 注意复数内积需要用 cols[j] 的共轭
             Complex dot_ij = {0.0, 0.0};
-            double dot_jj = 0.0;  // 模平方，实数
-            
+            double dot_jj = 0.0; // 模平方，实数
+
             for (int r = 0; r < n; r++)
             {
                 // dot_ij += cols[i][r] * conj(cols[j][r])
                 Complex temp = mul_complex(cols[i].data[r], (Complex){cols[j].data[r].real, -cols[j].data[r].imag});
                 dot_ij = add_complex(dot_ij, temp);
-                
+
                 // dot_jj += |cols[j][r]|^2
-                dot_jj += complex_norm2(cols[j].data[r]);
+                dot_jj += (cols[j].data[r].real * cols[j].data[r].real + cols[j].data[r].imag * cols[j].data[r].imag);
             }
-            
+
             // factor = dot_ij / dot_jj (复数)
             Complex factor = (Complex){dot_ij.real / dot_jj, dot_ij.imag / dot_jj};
-            
+
             for (int r = 0; r < n; r++)
             {
                 // cols[i] -= factor * cols[j]
@@ -139,35 +139,34 @@ void gram_schmidt_matrixc(MatrixC *m, MatrixC **Q)
         double norm = 0.0;
         for (int r = 0; r < n; r++)
         {
-            norm += complex_norm2(cols[i].data[r]);
+            norm += (cols[i].data[r].real * cols[i].data[r].real + cols[i].data[r].imag * cols[i].data[r].imag);
+            norm = sqrt(norm);
+
+            if (norm > EPS)
+            {
+                for (int r = 0; r < n; r++)
+                {
+                    cols[i].data[r] = (Complex){cols[i].data[r].real / norm, cols[i].data[r].imag / norm};
+                }
+            }
         }
-        norm = sqrt(norm);
-        
-        if (norm > EPS)
+
+        // 写入 (*Q)
+        for (int i = 0; i < p; i++)
         {
             for (int r = 0; r < n; r++)
             {
-                cols[i].data[r] = (Complex){cols[i].data[r].real / norm, cols[i].data[r].imag / norm};
+                (*Q)->data[r * p + i] = cols[i].data[r];
             }
         }
-    }
 
-    // 写入 (*Q)
-    for (int i = 0; i < p; i++)
-    {
-        for (int r = 0; r < n; r++)
+        for (int i = 0; i < p; i++)
         {
-            (*Q)->data[r * p + i] = cols[i].data[r];
+            free(cols[i].data);
         }
+        free(cols);
     }
-
-    for (int i = 0; i < p; i++)
-    {
-        free(cols[i].data);
-    }
-    free(cols);
 }
-
 // ==================== QR 分解 (Gram-Schmidt) ====================
 
 void qr_gs_matrixd(MatrixD *m, MatrixD **Q, MatrixD **R)
@@ -182,7 +181,7 @@ void qr_gs_matrixd(MatrixD *m, MatrixD **Q, MatrixD **R)
         return;
     }
 
-    gram_schmidt_matrixd(m, (*Q));
+    gram_schmidt_matrixd(m, Q);
 
     // (*R) = (*Q)^T * m
     MatrixD *Qt = transpose_matrixd((*Q));
@@ -331,9 +330,9 @@ void qr_householder_matrixc(MatrixC *m, MatrixC **Q, MatrixC **R)
     int n = m->rows, p = m->cols;
     if ((*Q)->rows != n || (*Q)->cols != n || (*R)->rows != n || (*R)->cols != p)
     {
-        return;  // Q 应为 n×n，R 应为 n×p
+        return; // Q 应为 n×n，R 应为 n×p
     }
-    
+
     // 复制一份到临时矩阵 A
     MatrixC A;
     A.rows = n;
@@ -343,7 +342,7 @@ void qr_householder_matrixc(MatrixC *m, MatrixC **Q, MatrixC **R)
     {
         A.data[i] = m->data[i];
     }
-    
+
     // (*Q) 初始化为单位矩阵 (n×n)
     for (int i = 0; i < n; i++)
     {
@@ -353,69 +352,75 @@ void qr_householder_matrixc(MatrixC *m, MatrixC **Q, MatrixC **R)
             (*Q)->data[i * n + j].imag = 0.0;
         }
     }
-    
+
     for (int k = 0; k < p && k < n - 1; k++)
     {
         int len = n - k;
-        
+
         // 提取列向量 x
         Complex *x = (Complex *)malloc(sizeof(Complex) * len);
         for (int i = 0; i < len; i++)
         {
             x[i] = A.data[(k + i) * p + k];
         }
-        
+
         // 计算 norm_x = ||x||
         double norm_x = 0.0;
         for (int i = 0; i < len; i++)
         {
-            norm_x += complex_norm2(x[i]);
+            norm_x += (x[i].real * x[i].real + x[i].imag * x[i].imag);
         }
         norm_x = sqrt(norm_x);
-        
+
         if (norm_x < EPS)
         {
             free(x);
             continue;
         }
-        
+
         // 计算 alpha = - (norm_x / |x[0]|) * x[0]
-        double abs_x0 = complex_abs(x[0]);
+        double abs_x0 = sqrt((x[0].real * x[0].real + x[0].imag * x[0].imag));
         Complex alpha;
-        if (abs_x0 < EPS) {
+        if (abs_x0 < EPS)
+        {
             alpha.real = -norm_x;
             alpha.imag = 0.0;
-        } else {
+        }
+        else
+        {
             double factor = -norm_x / abs_x0;
             alpha.real = factor * x[0].real;
             alpha.imag = factor * x[0].imag;
         }
-        
+
         // 计算 Householder 向量 u
         Complex *u = (Complex *)malloc(sizeof(Complex) * len);
         for (int i = 0; i < len; i++)
         {
-            if (i == 0) {
+            if (i == 0)
+            {
                 u[i] = sub_complex(x[0], alpha);
-            } else {
+            }
+            else
+            {
                 u[i] = x[i];
             }
         }
-        
+
         // 计算 u_norm2 = u^H * u (实数)
         double u_norm2 = 0.0;
         for (int i = 0; i < len; i++)
         {
-            u_norm2 += complex_norm2(u[i]);
+            u_norm2 += (u[i].real * u[i].real + u[i].imag * u[i].imag);
         }
-        
+
         if (u_norm2 < EPS)
         {
             free(x);
             free(u);
             continue;
         }
-        
+
         // 更新 A = H * A
         // H = I - (2 / (u^H u)) * u * u^H
         for (int j = k; j < p; j++)
@@ -427,11 +432,11 @@ void qr_householder_matrixc(MatrixC *m, MatrixC **Q, MatrixC **R)
                 Complex temp = mul_complex((Complex){u[i].real, -u[i].imag}, A.data[(k + i) * p + j]);
                 dot = add_complex(dot, temp);
             }
-            
+
             // factor = 2 * dot / u_norm2
             Complex factor = (Complex){dot.real * 2.0, dot.imag * 2.0};
             factor = (Complex){factor.real / u_norm2, factor.imag / u_norm2};
-            
+
             // A = A - factor * u
             for (int i = 0; i < len; i++)
             {
@@ -439,7 +444,7 @@ void qr_householder_matrixc(MatrixC *m, MatrixC **Q, MatrixC **R)
                 A.data[(k + i) * p + j] = sub_complex(A.data[(k + i) * p + j], temp);
             }
         }
-        
+
         // 更新 Q = Q * H
         // 先计算 t = Q * u (n 维向量)
         Complex *t = (Complex *)malloc(sizeof(Complex) * n);
@@ -453,7 +458,7 @@ void qr_householder_matrixc(MatrixC *m, MatrixC **Q, MatrixC **R)
                 t[i] = add_complex(t[i], temp);
             }
         }
-        
+
         // Q = Q - (2/u_norm2) * t * u^H
         for (int i = 0; i < n; i++)
         {
@@ -464,12 +469,12 @@ void qr_householder_matrixc(MatrixC *m, MatrixC **Q, MatrixC **R)
                 (*Q)->data[i * n + (k + j)] = sub_complex((*Q)->data[i * n + (k + j)], temp);
             }
         }
-        
+
         free(t);
         free(x);
         free(u);
     }
-    
+
     // 复制 A 的上三角部分到 (*R)
     for (int i = 0; i < n; i++)
     {
@@ -486,7 +491,7 @@ void qr_householder_matrixc(MatrixC *m, MatrixC **Q, MatrixC **R)
             }
         }
     }
-    
+
     free(A.data);
 }
 
@@ -523,7 +528,7 @@ bool qr_iter_stop_matrixc(MatrixC *m)
     {
         for (int j = i + 1; j < m->cols; j++)
         {
-            if (is_equal_complex(m->data[j * m->cols + i], (Complex){0 ,0}))
+            if (is_equal_complex(m->data[j * m->cols + i], (Complex){0, 0}))
             {
                 return false;
             }

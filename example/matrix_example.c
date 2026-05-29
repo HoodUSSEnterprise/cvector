@@ -18,7 +18,7 @@ int main(void)
     print_matrix(m_i);
 
     // Create a double matrix (3x3) from a double array
-    double data_d[] = {1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 10.0};
+    double data_d[] = {1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0};
     MatrixD *m_d = create_matrixd(3, 3, data_d, 9);
     printf("m_d (double 3x3):\n");
     print_matrix(m_d);
