@@ -24,6 +24,7 @@ MatrixI *mul_matrixi_i(MatrixI *m1, MatrixI *m2)
     if (res->data == NULL)
     {
         printf("No memory\n");
+        free(res);
         return NULL;
     }
     memset(res->data, 0, sizeof(int) * res->rows * res->cols);
@@ -64,6 +65,7 @@ MatrixF *mul_matrixi_f(MatrixI *m1, MatrixF *m2)
     if (res->data == NULL)
     {
         printf("No memory\n");
+        free(res);
         return NULL;
     }
     memset(res->data, 0, sizeof(float) * res->rows * res->cols);
@@ -104,6 +106,7 @@ MatrixD *mul_matrixi_d(MatrixI *m1, MatrixD *m2)
     if (res->data == NULL)
     {
         printf("No memory\n");
+        free(res);
         return NULL;
     }
     memset(res->data, 0, sizeof(double) * res->rows * res->cols);
@@ -144,6 +147,7 @@ MatrixC *mul_matrixi_c(MatrixI *m1, MatrixC *m2)
     if (res->data == NULL)
     {
         printf("No memory\n");
+        free(res);
         return NULL;
     }
     memset(res->data, 0, sizeof(Complex) * res->rows * res->cols);
@@ -186,6 +190,7 @@ MatrixF *mul_matrixf_i(MatrixF *m1, MatrixI *m2)
     if (res->data == NULL)
     {
         printf("No memory\n");
+        free(res);
         return NULL;
     }
     memset(res->data, 0, sizeof(float) * res->rows * res->cols);
@@ -226,6 +231,7 @@ MatrixF *mul_matrixf_f(MatrixF *m1, MatrixF *m2)
     if (res->data == NULL)
     {
         printf("No memory\n");
+        free(res);
         return NULL;
     }
     memset(res->data, 0, sizeof(float) * res->rows * res->cols);
@@ -266,6 +272,7 @@ MatrixD *mul_matrixf_d(MatrixF *m1, MatrixD *m2)
     if (res->data == NULL)
     {
         printf("No memory\n");
+        free(res);
         return NULL;
     }
     memset(res->data, 0, sizeof(double) * res->rows * res->cols);
@@ -306,6 +313,7 @@ MatrixC *mul_matrixf_c(MatrixF *m1, MatrixC *m2)
     if (res->data == NULL)
     {
         printf("No memory\n");
+        free(res);
         return NULL;
     }
     memset(res->data, 0, sizeof(Complex) * res->rows * res->cols);
@@ -348,6 +356,7 @@ MatrixD *mul_matrixd_i(MatrixD *m1, MatrixI *m2)
     if (res->data == NULL)
     {
         printf("No memory\n");
+        free(res);
         return NULL;
     }
     memset(res->data, 0, sizeof(double) * res->rows * res->cols);
@@ -388,6 +397,7 @@ MatrixD *mul_matrixd_f(MatrixD *m1, MatrixF *m2)
     if (res->data == NULL)
     {
         printf("No memory\n");
+        free(res);
         return NULL;
     }
     memset(res->data, 0, sizeof(double) * res->rows * res->cols);
@@ -428,6 +438,7 @@ MatrixD *mul_matrixd_d(MatrixD *m1, MatrixD *m2)
     if (res->data == NULL)
     {
         printf("No memory\n");
+        free(res);
         return NULL;
     }
     memset(res->data, 0, sizeof(double) * res->rows * res->cols);
@@ -468,6 +479,7 @@ MatrixC *mul_matrixd_c(MatrixD *m1, MatrixC *m2)
     if (res->data == NULL)
     {
         printf("No memory\n");
+        free(res);
         return NULL;
     }
     memset(res->data, 0, sizeof(Complex) * res->rows * res->cols);
@@ -510,6 +522,7 @@ MatrixC *mul_matrixc_i(MatrixC *m1, MatrixI *m2)
     if (res->data == NULL)
     {
         printf("No memory\n");
+        free(res);
         return NULL;
     }
     memset(res->data, 0, sizeof(Complex) * res->rows * res->cols);
@@ -552,6 +565,7 @@ MatrixC *mul_matrixc_f(MatrixC *m1, MatrixF *m2)
     if (res->data == NULL)
     {
         printf("No memory\n");
+        free(res);
         return NULL;
     }
     memset(res->data, 0, sizeof(Complex) * res->rows * res->cols);
@@ -594,6 +608,7 @@ MatrixC *mul_matrixc_d(MatrixC *m1, MatrixD *m2)
     if (res->data == NULL)
     {
         printf("No memory\n");
+        free(res);
         return NULL;
     }
     memset(res->data, 0, sizeof(Complex) * res->rows * res->cols);
@@ -636,6 +651,7 @@ MatrixC *mul_matrixc_c(MatrixC *m1, MatrixC *m2)
     if (res->data == NULL)
     {
         printf("No memory\n");
+        free(res);
         return NULL;
     }
     memset(res->data, 0, sizeof(Complex) * res->rows * res->cols);

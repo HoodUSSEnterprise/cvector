@@ -20,6 +20,7 @@ MatrixI *create_matrixi_i(int rows, int cols, int *data, size_t len)
     if (res->data == NULL)
     {
         printf("No memory\n");
+        free(res);
         return NULL;
     }
     memset(res->data, 0, sizeof(int) * res->cols * res->rows);
@@ -60,6 +61,7 @@ MatrixI *create_matrixi_f(int rows, int cols, float *data, size_t len)
     if (res->data == NULL)
     {
         printf("No memory\n");
+        free(res);
         return NULL;
     }
     memset(res->data, 0, sizeof(int) * res->cols * res->rows);
@@ -100,6 +102,7 @@ MatrixI *create_matrixi_d(int rows, int cols, double *data, size_t len)
     if (res->data == NULL)
     {
         printf("No memory\n");
+        free(res);
         return NULL;
     }
     memset(res->data, 0, sizeof(int) * res->cols * res->rows);
@@ -140,6 +143,7 @@ MatrixI *create_matrixi_c(int rows, int cols, Complex *data, size_t len)
     if (res->data == NULL)
     {
         printf("No memory\n");
+        free(res);
         return NULL;
     }
     memset(res->data, 0, sizeof(int) * res->cols * res->rows);
@@ -180,6 +184,7 @@ MatrixF *create_matrixf_i(int rows, int cols, int *data, size_t len)
     if (res->data == NULL)
     {
         printf("No memory\n");
+        free(res);
         return NULL;
     }
     memset(res->data, 0, sizeof(float) * res->cols * res->rows);
@@ -219,6 +224,7 @@ MatrixF *create_matrixf_f(int rows, int cols, float *data, size_t len)
     if (res->data == NULL)
     {
         printf("No memory\n");
+        free(res);
         return NULL;
     }
     memset(res->data, 0, sizeof(float) * res->cols * res->rows);
@@ -259,6 +265,7 @@ MatrixF *create_matrixf_d(int rows, int cols, double *data, size_t len)
     if (res->data == NULL)
     {
         printf("No memory\n");
+        free(res);
         return NULL;
     }
     memset(res->data, 0, sizeof(float) * res->cols * res->rows);
@@ -299,6 +306,7 @@ MatrixF *create_matrixf_c(int rows, int cols, Complex *data, size_t len)
     if (res->data == NULL)
     {
         printf("No memory\n");
+        free(res);
         return NULL;
     }
     memset(res->data, 0, sizeof(float) * res->cols * res->rows);
@@ -339,6 +347,7 @@ MatrixD *create_matrixd_i(int rows, int cols, int *data, size_t len)
     if (res->data == NULL)
     {
         printf("No memory\n");
+        free(res);
         return NULL;
     }
     memset(res->data, 0, sizeof(double) * res->cols * res->rows);
@@ -379,6 +388,7 @@ MatrixD *create_matrixd_f(int rows, int cols, float *data, size_t len)
     if (res->data == NULL)
     {
         printf("No memory\n");
+        free(res);
         return NULL;
     }
     memset(res->data, 0, sizeof(double) * res->cols * res->rows);
@@ -418,6 +428,7 @@ MatrixD *create_matrixd_d(int rows, int cols, double *data, size_t len)
     if (res->data == NULL)
     {
         printf("No memory\n");
+        free(res);
         return NULL;
     }
     memset(res->data, 0, sizeof(double) * res->cols * res->rows);
@@ -458,6 +469,7 @@ MatrixD *create_matrixd_c(int rows, int cols, Complex *data, size_t len)
     if (res->data == NULL)
     {
         printf("No memory\n");
+        free(res);
         return NULL;
     }
     memset(res->data, 0, sizeof(double) * res->cols * res->rows);
@@ -498,6 +510,7 @@ MatrixC *create_matrixc_i(int rows, int cols, int *data, size_t len)
     if (res->data == NULL)
     {
         printf("No memory\n");
+        free(res);
         return NULL;
     }
     memset(res->data, 0, sizeof(Complex) * res->cols * res->rows);
@@ -538,6 +551,7 @@ MatrixC *create_matrixc_f(int rows, int cols, float *data, size_t len)
     if (res->data == NULL)
     {
         printf("No memory\n");
+        free(res);
         return NULL;
     }
     memset(res->data, 0, sizeof(Complex) * res->cols * res->rows);
@@ -578,6 +592,7 @@ MatrixC *create_matrixc_d(int rows, int cols, double *data, size_t len)
     if (res->data == NULL)
     {
         printf("No memory\n");
+        free(res);
         return NULL;
     }
     memset(res->data, 0, sizeof(Complex) * res->cols * res->rows);
@@ -617,6 +632,7 @@ MatrixC *create_matrixc_c(int rows, int cols, Complex *data, size_t len)
     if (res->data == NULL)
     {
         printf("No memory\n");
+        free(res);
         return NULL;
     }
     memset(res->data, 0, sizeof(Complex) * res->cols * res->rows);

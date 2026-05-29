@@ -2362,6 +2362,7 @@ Vectori *add_vectori_2i(const Vectori *v1, const Vector2i *v2)
     if (res->data == NULL)
     {
         printf("No memory\n");
+        free(res);
         return NULL;
     }
     for (size_t i = 0; i < res->len; i++)
@@ -2443,6 +2444,7 @@ Vectori *add_vectori_3i(const Vectori *v1, const Vector3i *v2)
     if (res->data == NULL)
     {
         printf("No memory\n");
+        free(res);
         return NULL;
     }
     for (size_t i = 0; i < res->len; i++)

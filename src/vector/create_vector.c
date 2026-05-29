@@ -121,6 +121,7 @@ Vectori *create_vectori(int *data, size_t len)
     if (res->data == NULL)
     {
         printf("No memory\n");
+        free(res);
         return NULL;
     }
     memcpy(res->data, data, sizeof(int) * res->len);
@@ -140,6 +141,7 @@ Vectorf *create_vectorf(float *data, size_t len)
     if (res->data == NULL)
     {
         printf("No memory\n");
+        free(res);
         return NULL;
     }
     memcpy(res->data, data, sizeof(float) * res->len);
@@ -159,6 +161,7 @@ Vectord *create_vectord(double *data, size_t len)
     if (res->data == NULL)
     {
         printf("No memory\n");
+        free(res);
         return NULL;
     }
     memcpy(res->data, data, sizeof(double) * res->len);
@@ -178,6 +181,7 @@ Vectorc *create_vectorc(Complex *data, size_t len)
     if (res->data == NULL)
     {
         printf("No memory\n");
+        free(res);
         return NULL;
     }
     memcpy(res->data, data, sizeof(Complex) * res->len);
