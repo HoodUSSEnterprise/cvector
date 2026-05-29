@@ -6,6 +6,6 @@
 #include "matrix/mul_matrix.h"
 #include "matrix/inv_matrix.h"
 #include "matrix/pow_matrix.h"
-#include "matrix/subdeterminant_matrix.h"
+#include "matrix/determinant_matrix.h"
 
 #endif // OPERATOR_MATRIX_H

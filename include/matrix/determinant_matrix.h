@@ -16,12 +16,6 @@ MatrixF *minor_matrixf(MatrixF *m, int row, int col);
 MatrixD *minor_matrixd(MatrixD *m, int row, int col);
 MatrixC *minor_matrixc(MatrixC *m, int row, int col);
 
-// ========== 代数余子式矩阵 ==========
-
-MatrixI *cofactor_matrixi(MatrixI *m);
-MatrixF *cofactor_matrixf(MatrixF *m);
-MatrixD *cofactor_matrixd(MatrixD *m);
-MatrixC *cofactor_matrixc(MatrixC *m);
 
 // ========== Generic 宏 ==========
 
@@ -30,12 +24,6 @@ MatrixC *cofactor_matrixc(MatrixC *m);
     MatrixF *: minor_matrixf,                   \
     MatrixD *: minor_matrixd,                   \
     MatrixC *: minor_matrixc)(m, row, col)
-
-#define cofactor_matrix(m) _Generic((m), \
-    MatrixI *: cofactor_matrixi,         \
-    MatrixF *: cofactor_matrixf,         \
-    MatrixD *: cofactor_matrixd,         \
-    MatrixC *: cofactor_matrixc)(m)
 
 #define det_matrix(m) _Generic((m), \
     MatrixI *: det_matrixi,         \
