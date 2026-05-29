@@ -10,7 +10,7 @@ MatrixI *identity_matrixi(int order)
         return NULL;
     }
     memset(data, 0, sizeof(int) * order * order);
-    for (size_t i = 0; i < order; i++)
+    for (int i = 0; i < order; i++)
     {
         data[i * order + i] = 1;
     }
@@ -26,7 +26,7 @@ MatrixF *identity_matrixf(int order)
         return NULL;
     }
     memset(data, 0, sizeof(float) * order * order);
-    for (size_t i = 0; i < order; i++)
+    for (int i = 0; i < order; i++)
     {
         data[i * order + i] = 1.0f;
     }
@@ -42,7 +42,7 @@ MatrixD *identity_matrixd(int order)
         return NULL;
     }
     memset(data, 0, sizeof(double) * order * order);
-    for (size_t i = 0; i < order; i++)
+    for (int i = 0; i < order; i++)
     {
         data[i * order + i] = 1.0;
     }
@@ -58,7 +58,7 @@ MatrixC *identity_matrixc(int order)
         return NULL;
     }
     memset(data, 0, sizeof(Complex) * order * order);
-    for (size_t i = 0; i < order; i++)
+    for (int i = 0; i < order; i++)
     {
         data[i * order + i] = (Complex){1, 0};
     }
@@ -394,7 +394,7 @@ MatrixI *eye_matrixi(int rows, int cols)
         printf("No memory\n");
         return NULL;
     }
-    for (size_t i = 0; i < min_val; i++)
+    for (int i = 0; i < min_val; i++)
     {
         data[i * cols + i] = 1;
     }
@@ -410,7 +410,7 @@ MatrixF *eye_matrixf(int rows, int cols)
         printf("No memory\n");
         return NULL;
     }
-    for (size_t i = 0; i < min_val; i++)
+    for (int i = 0; i < min_val; i++)
     {
         data[i * cols + i] = 1.0f;
     }
@@ -426,7 +426,7 @@ MatrixD *eye_matrixd(int rows, int cols)
         printf("No memory\n");
         return NULL;
     }
-    for (size_t i = 0; i < min_val; i++)
+    for (int i = 0; i < min_val; i++)
     {
         data[i * cols + i] = 1.0;
     }
@@ -442,7 +442,7 @@ MatrixC *eye_matrixc(int rows, int cols)
         printf("No memory\n");
         return NULL;
     }
-    for (size_t i = 0; i < min_val; i++)
+    for (int i = 0; i < min_val; i++)
     {
         data[i * cols + i] = (Complex){1, 0};
     }

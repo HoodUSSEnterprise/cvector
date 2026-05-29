@@ -42,7 +42,7 @@ MatrixF *replace_matrixf_elem(MatrixF *m, float old_elem, float new_elem)
     return res;
 }
 
-MatrixD *replace_matrixd_elem(MatrixD *m, int old_elem, int new_elem)
+MatrixD *replace_matrixd_elem(MatrixD *m, double old_elem, double new_elem)
 {
     if (m == NULL || m->data == NULL)
     {

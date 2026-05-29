@@ -57,3 +57,41 @@ target_link_libraries(test_program_complex complex_lib)
 
 add_executable(test_program_vector example/vector_example.c)
 target_link_libraries(test_program_vector vector_lib)
+
+set(LIB_SOURCES_MATRIX
+    src/matrix/add_matrix.c
+    src/matrix/adjugate_matrix.c
+    src/matrix/cat_matrix.c
+    src/matrix/check_matrix.c
+    src/matrix/cofactor_matrix.c
+    src/matrix/compare_matrix.c
+    src/matrix/copy_matrix.c
+    src/matrix/create_matrix.c
+    src/matrix/determinant_matrix.c
+    src/matrix/eigen_matrix.c
+    src/matrix/extract_matrix.c
+    src/matrix/find_matrix.c
+    src/matrix/free_matrix.c
+    src/matrix/inv_matrix.c
+    src/matrix/lu_matrix.c
+    src/matrix/mul_matrix.c
+    src/matrix/pow_matrix.c
+    src/matrix/print_matrix.c
+    src/matrix/qr_matrix.c
+    src/matrix/random_tool.c
+    src/matrix/rank_trace_matrix.c
+    src/matrix/remove_line_matrix.c
+    src/matrix/replace_matrix.c
+    src/matrix/scalar_mul_matrix.c
+    src/matrix/special_matrix.c
+    src/matrix/sub_matrix.c
+    src/matrix/transpose_matrix.c
+)
+
+add_library(matrix_lib ${LIB_SOURCES_MATRIX})
+
+target_include_directories(matrix_lib PUBLIC ${PROJECT_SOURCE_DIR}/include)
+target_link_libraries(matrix_lib complex_lib)
+
+add_executable(test_program_matrix example/matrix_example.c)
+target_link_libraries(test_program_matrix matrix_lib)
