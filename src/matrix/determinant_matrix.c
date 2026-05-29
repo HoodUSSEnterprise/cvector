@@ -5,8 +5,6 @@ static float Nonef = INT_MAX;
 static double Noned = INT_MAX;
 static Complex Nonec = (Complex){INT_MAX, INT_MAX};
 
-// ==================== 行列式值（递归 Laplace 展开） ====================
-
 int det_matrixi(MatrixI *m)
 {
     if (m == NULL || m->data == NULL)
@@ -21,18 +19,15 @@ int det_matrixi(MatrixI *m)
     }
     int n = m->rows;
 
-    // 1×1
     if (n == 1)
     {
         return m->data[0];
     }
-    // 2×2
     if (n == 2)
     {
         return m->data[0] * m->data[3] - m->data[1] * m->data[2];
     }
 
-    // n×n：沿第 0 行 Laplace 展开
     int det = 0;
     for (int j = 0; j < n; j++)
     {
@@ -192,7 +187,6 @@ Complex det_matrixc(MatrixC *m)
     }
     return det;
 }
-// ==================== 余子式（移除指定行和列） ====================
 
 MatrixI *minor_matrixi(MatrixI *m, int row, int col)
 {

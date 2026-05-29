@@ -9,15 +9,10 @@ float det_matrixf(MatrixF *m);
 double det_matrixd(MatrixD *m);
 Complex det_matrixc(MatrixC *m);
 
-// ========== 余子式（移除指定行和列后的子矩阵） ==========
-
 MatrixI *minor_matrixi(MatrixI *m, int row, int col);
 MatrixF *minor_matrixf(MatrixF *m, int row, int col);
 MatrixD *minor_matrixd(MatrixD *m, int row, int col);
 MatrixC *minor_matrixc(MatrixC *m, int row, int col);
-
-
-// ========== Generic 宏 ==========
 
 #define minor_matrix(m, row, col) _Generic((m), \
     MatrixI *: minor_matrixi,                   \
