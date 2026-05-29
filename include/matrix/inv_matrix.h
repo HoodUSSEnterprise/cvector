@@ -3,6 +3,10 @@
 
 #include "matrix/base_matrix.h"
 #include "complex/operator_complex.h"
+#include "matrix/adjugate_matrix.h"
+#include "matrix/determinant_matrix.h"
+#include "matrix/create_matrix.h"
+#include "matrix/free_matrix.h"
 
 MatrixD *inv_matrixi(MatrixI *m);
 
