@@ -2,6 +2,7 @@
 #define SUB_MATRIX_H
 
 #include "matrix/base_matrix.h"
+#include "complex/operator_complex.h"
 
 MatrixI *sub_matrixi_i(MatrixI *m1, MatrixI *m2);
 
