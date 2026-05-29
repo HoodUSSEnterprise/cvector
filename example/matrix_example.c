@@ -1,4 +1,5 @@
 #include "matrix/matrix.h"
+#include "complex/complex.h"
 #include <stdio.h>
 #include <math.h>
 
@@ -382,7 +383,7 @@ int main(void)
     print_matrix(m_fib);
 
     // M^5 = [[F6,F5],[F5,F4]] = [[8,5],[5,3]]
-    MatrixI *m_fib5 = pow_matrix(m_fib, 5);
+    MatrixD *m_fib5 = pow_matrix(m_fib, 5);
     printf("M^5 (Fibonacci F6=8, F5=5):\n");
     print_matrix(m_fib5);
 
