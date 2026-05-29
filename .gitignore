@@ -4,6 +4,7 @@ build/
 # IDE
 .vscode/
 *.code-workspace
+.hsnip
 
 # OS
 Thumbs.db

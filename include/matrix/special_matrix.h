@@ -4,13 +4,13 @@
 #include "matrix/base_matrix.h"
 #include "matrix/create_matrix.h"
 
-MatrixI *indentity_matrixi(int order);
+MatrixI *identity_matrixi(int order);
 
-MatrixF *indentity_matrixf(int order);
+MatrixF *identity_matrixf(int order);
 
-MatrixD *indentity_matrixd(int order);
+MatrixD *identity_matrixd(int order);
 
-MatrixC *indentity_matrixc(int order);
+MatrixC *identity_matrixc(int order);
 
 MatrixI *diag_matrixi_i(const int *data, size_t len);
 
@@ -43,6 +43,14 @@ MatrixC *diag_matrixc_f(const float *data, size_t len);
 MatrixC *diag_matrixc_d(const double *data, size_t len);
 
 MatrixC *diag_matrixc_c(const Complex *data, size_t len);
+
+MatrixI *eye_matrixi(int rows, int cols);
+
+MatrixF *eye_matrixf(int rows, int cols);
+
+MatrixD *eye_matrixd(int rows, int cols);
+
+MatrixC *eye_matrixc(int rows, int cols);
 
 #define diag_matrixi(data, len) _Generic((data), \
     int *: diag_matrixi_i,            \

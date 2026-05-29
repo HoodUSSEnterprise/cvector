@@ -1,6 +1,7 @@
 #include "matrix/special_matrix.h"
+#include "tools/max_min.h"
 
-MatrixI *indentity_matrixi(int order)
+MatrixI *identity_matrixi(int order)
 {
     int *data = (int*)malloc(sizeof(int) * order * order);
     if (data == NULL)
@@ -16,7 +17,7 @@ MatrixI *indentity_matrixi(int order)
     return create_matrixi(order, order, data, order * order);
 }
 
-MatrixF *indentity_matrixf(int order)
+MatrixF *identity_matrixf(int order)
 {
     float *data = (float*)malloc(sizeof(float) * order * order);
     if (data == NULL)
@@ -32,7 +33,7 @@ MatrixF *indentity_matrixf(int order)
     return create_matrixf(order, order, data, order * order);
 }
 
-MatrixD *indentity_matrixd(int order)
+MatrixD *identity_matrixd(int order)
 {
     double *data = (double*)malloc(sizeof(double) * order * order);
     if (data == NULL)
@@ -48,7 +49,7 @@ MatrixD *indentity_matrixd(int order)
     return create_matrixd(order, order, data, order * order);
 }
 
-MatrixC *indentity_matrixc(int order)
+MatrixC *identity_matrixc(int order)
 {
     Complex *data = (Complex*)malloc(sizeof(Complex) * order * order);
     if (data == NULL)
@@ -382,4 +383,68 @@ MatrixC *diag_matrixc_c(const Complex *data, size_t len)
         new_data[i * len + i] = data[i];
     }
     return create_matrixc(len, len, new_data, len * len);
+}
+
+MatrixI *eye_matrixi(int rows, int cols)
+{
+    int min_val = min(rows, cols);
+    int *data = (int*)malloc(sizeof(int) * rows * cols);
+    if (data == NULL)
+    {
+        printf("No memory\n");
+        return NULL;
+    }
+    for (size_t i = 0; i < min_val; i++)
+    {
+        data[i * cols + i] = 1;
+    }
+    return create_matrixi(rows, cols, data, rows * cols);
+}
+
+MatrixF *eye_matrixf(int rows, int cols)
+{
+    int min_val = min(rows, cols);
+    float *data = (float*)malloc(sizeof(float) * rows * cols);
+    if (data == NULL)
+    {
+        printf("No memory\n");
+        return NULL;
+    }
+    for (size_t i = 0; i < min_val; i++)
+    {
+        data[i * cols + i] = 1.0f;
+    }
+    return create_matrixf(rows, cols, data, rows * cols);
+}
+
+MatrixD *eye_matrixd(int rows, int cols)
+{
+    int min_val = min(rows, cols);
+    double *data = (double*)malloc(sizeof(double) * rows * cols);
+    if (data == NULL)
+    {
+        printf("No memory\n");
+        return NULL;
+    }
+    for (size_t i = 0; i < min_val; i++)
+    {
+        data[i * cols + i] = 1.0;
+    }
+    return create_matrixd(rows, cols, data, rows * cols);
+}
+
+MatrixC *eye_matrixc(int rows, int cols)
+{
+    int min_val = min(rows, cols);
+    Complex *data = (Complex*)malloc(sizeof(Complex) * rows * cols);
+    if (data == NULL)
+    {
+        printf("No memory\n");
+        return NULL;
+    }
+    for (size_t i = 0; i < min_val; i++)
+    {
+        data[i * cols + i] = (Complex){1, 0};
+    }
+    return create_matrixc(rows, cols, data, rows * cols);
 }
