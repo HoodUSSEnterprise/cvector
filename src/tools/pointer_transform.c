@@ -4,7 +4,7 @@ int *transfrom_pointerf2i(float *data, size_t len)
 {
     if(data == NULL || len == 0)
     {
-        printf("Invaild param!\n");
+        printf("Invalid param!\n");
         return NULL;
     }
     int *res = (int*)malloc(sizeof(int) * len);
@@ -24,7 +24,7 @@ int *transfrom_pointerd2i(double *data, size_t len)
 {
     if(data == NULL || len == 0)
     {
-        printf("Invaild param!\n");
+        printf("Invalid param!\n");
         return NULL;
     }
     int *res = (int*)malloc(sizeof(int) * len);
@@ -44,7 +44,7 @@ int *transfrom_pointerc2i(Complex *data, size_t len)
 {
     if(data == NULL || len == 0)
     {
-        printf("Invaild param!\n");
+        printf("Invalid param!\n");
         return NULL;
     }
     int *res = (int*)malloc(sizeof(int) * len);
@@ -64,7 +64,7 @@ float *transfrom_pointeri2f(int *data, size_t len)
 {
     if(data == NULL || len == 0)
     {
-        printf("Invaild param!\n");
+        printf("Invalid param!\n");
         return NULL;
     }
     float *res = (float*)malloc(sizeof(float) * len);
@@ -84,7 +84,7 @@ float *transfrom_pointerd2f(double *data, size_t len)
 {
     if(data == NULL || len == 0)
     {
-        printf("Invaild param!\n");
+        printf("Invalid param!\n");
         return NULL;
     }
     float *res = (float*)malloc(sizeof(float) * len);
@@ -104,7 +104,7 @@ float *transfrom_pointerc2f(Complex *data, size_t len)
 {
     if(data == NULL || len == 0)
     {
-        printf("Invaild param!\n");
+        printf("Invalid param!\n");
         return NULL;
     }
     float *res = (float*)malloc(sizeof(float) * len);
@@ -124,7 +124,7 @@ double *transfrom_pointeri2d(int *data, size_t len)
 {
     if(data == NULL || len == 0)
     {
-        printf("Invaild param!\n");
+        printf("Invalid param!\n");
         return NULL;
     }
     double *res = (double*)malloc(sizeof(double) * len);
@@ -144,7 +144,7 @@ double *transfrom_pointerf2d(float *data, size_t len)
 {
     if(data == NULL || len == 0)
     {
-        printf("Invaild param!\n");
+        printf("Invalid param!\n");
         return NULL;
     }
     double *res = (double*)malloc(sizeof(double) * len);
@@ -164,7 +164,7 @@ double *transfrom_pointerc2d(Complex *data, size_t len)
 {
     if(data == NULL || len == 0)
     {
-        printf("Invaild param!\n");
+        printf("Invalid param!\n");
         return NULL;
     }
     double *res = (double*)malloc(sizeof(double) * len);
@@ -184,7 +184,7 @@ Complex *transfrom_pointeri2c(int *data, size_t len)
 {
     if(data == NULL || len == 0)
     {
-        printf("Invaild param!\n");
+        printf("Invalid param!\n");
         return NULL;
     }
     Complex *res = (Complex*)malloc(sizeof(Complex) * len);
@@ -204,7 +204,7 @@ Complex *transfrom_pointerf2c(float *data, size_t len)
 {
     if(data == NULL || len == 0)
     {
-        printf("Invaild param!\n");
+        printf("Invalid param!\n");
         return NULL;
     }
     Complex *res = (Complex*)malloc(sizeof(Complex) * len);
@@ -225,7 +225,7 @@ Complex *transfrom_pointerd2c(double *data, size_t len)
 {
     if(data == NULL || len == 0)
     {
-        printf("Invaild param!\n");
+        printf("Invalid param!\n");
         return NULL;
     }
     Complex *res = (Complex*)malloc(sizeof(Complex) * len);

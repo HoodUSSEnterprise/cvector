@@ -36,26 +36,26 @@ MatrixC *sub_matrixc_d(MatrixC *m1, MatrixD *m2);
 
 MatrixC *sub_matrixc_c(MatrixC *m1, MatrixC *m2);
 
-#define sub_matrix(x, y) _Generic((x), \
-    MatrixC *: _Generic((y),           \
+#define sub_matrix(m1, m2) _Generic((m1), \
+    MatrixC *: _Generic((m2),           \
         MatrixC *: sub_matrixc_c,      \
         MatrixD *: sub_matrixc_d,      \
         MatrixF *: sub_matrixc_f,      \
         MatrixI *: sub_matrixc_i),     \
-    MatrixD *: _Generic((y),           \
+    MatrixD *: _Generic((m2),           \
         MatrixC *: sub_matrixd_c,      \
         MatrixD *: sub_matrixd_d,      \
         MatrixF *: sub_matrixd_f,      \
         MatrixI *: sub_matrixd_i),     \
-    MatrixF *: _Generic((y),           \
+    MatrixF *: _Generic((m2),           \
         MatrixC *: sub_matrixf_c,      \
         MatrixD *: sub_matrixf_d,      \
         MatrixF *: sub_matrixf_f,      \
         MatrixI *: sub_matrixf_i),     \
-    MatrixI *: _Generic((y),           \
+    MatrixI *: _Generic((m2),           \
         MatrixC *: sub_matrixi_c,      \
         MatrixD *: sub_matrixi_d,      \
         MatrixF *: sub_matrixi_f,      \
-        MatrixI *: sub_matrixi_i))(x, y)
+        MatrixI *: sub_matrixi_i))(m1, m2)
 
 #endif // SUB_MATRIX_H

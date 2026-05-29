@@ -29,7 +29,7 @@ int find_vectord(Vectord *v, double elem);
 
 int find_vectorc(Vectorc *v, Complex elem);
 
-#define find_elem(x, y) _Generic((x), \
+#define find_elem(v, elem) _Generic((v), \
     Vector2c *: find_vector2c,        \
     Vector2d *: find_vector2d,        \
     Vector2f *: find_vector2f,        \
@@ -41,6 +41,6 @@ int find_vectorc(Vectorc *v, Complex elem);
     Vectorc *: find_vectorc,          \
     Vectord *: find_vectord,          \
     Vectorf *: find_vectorf,          \
-    Vectori *: find_vectori)(x, y)
+    Vectori *: find_vectori)(v, elem)
 
 #endif // FIND_VECTOR_H

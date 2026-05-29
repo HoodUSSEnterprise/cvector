@@ -5,7 +5,7 @@ MatrixI *sub_matrixi_i(MatrixI *m1, MatrixI *m2)
     // 参数检查
     if (m1 == NULL || m2 == NULL || m1->data == NULL || m2->data == NULL)
     {
-        printf("Invaild param!\n");
+        printf("Invalid param!\n");
         return NULL;
     }
     // 维度检查
@@ -40,7 +40,7 @@ MatrixF *sub_matrixi_f(MatrixI *m1, MatrixF *m2)
     // 参数检查
     if (m1 == NULL || m2 == NULL || m1->data == NULL || m2->data == NULL)
     {
-        printf("Invaild param!\n");
+        printf("Invalid param!\n");
         return NULL;
     }
     // 维度检查
@@ -75,7 +75,7 @@ MatrixD *sub_matrixi_d(MatrixI *m1, MatrixD *m2)
     // 参数检查
     if (m1 == NULL || m2 == NULL || m1->data == NULL || m2->data == NULL)
     {
-        printf("Invaild param!\n");
+        printf("Invalid param!\n");
         return NULL;
     }
     // 维度检查
@@ -110,7 +110,7 @@ MatrixC *sub_matrixi_c(MatrixI *m1, MatrixC *m2)
     // 参数检查
     if (m1 == NULL || m2 == NULL || m1->data == NULL || m2->data == NULL)
     {
-        printf("Invaild param!\n");
+        printf("Invalid param!\n");
         return NULL;
     }
     // 维度检查
@@ -145,7 +145,7 @@ MatrixF *sub_matrixf_i(MatrixF *m1, MatrixI *m2)
     // 参数检查
     if (m1 == NULL || m2 == NULL || m1->data == NULL || m2->data == NULL)
     {
-        printf("Invaild param!\n");
+        printf("Invalid param!\n");
         return NULL;
     }
     // 维度检查
@@ -180,7 +180,7 @@ MatrixF *sub_matrixf_f(MatrixF *m1, MatrixF *m2)
     // 参数检查
     if (m1 == NULL || m2 == NULL || m1->data == NULL || m2->data == NULL)
     {
-        printf("Invaild param!\n");
+        printf("Invalid param!\n");
         return NULL;
     }
     // 维度检查
@@ -215,7 +215,7 @@ MatrixD *sub_matrixf_d(MatrixF *m1, MatrixD *m2)
     // 参数检查
     if (m1 == NULL || m2 == NULL || m1->data == NULL || m2->data == NULL)
     {
-        printf("Invaild param!\n");
+        printf("Invalid param!\n");
         return NULL;
     }
     // 维度检查
@@ -250,7 +250,7 @@ MatrixC *sub_matrixf_c(MatrixF *m1, MatrixC *m2)
     // 参数检查
     if (m1 == NULL || m2 == NULL || m1->data == NULL || m2->data == NULL)
     {
-        printf("Invaild param!\n");
+        printf("Invalid param!\n");
         return NULL;
     }
     // 维度检查
@@ -285,7 +285,7 @@ MatrixD *sub_matrixd_i(MatrixD *m1, MatrixI *m2)
     // 参数检查
     if (m1 == NULL || m2 == NULL || m1->data == NULL || m2->data == NULL)
     {
-        printf("Invaild param!\n");
+        printf("Invalid param!\n");
         return NULL;
     }
     // 维度检查
@@ -320,7 +320,7 @@ MatrixD *sub_matrixd_f(MatrixD *m1, MatrixF *m2)
     // 参数检查
     if (m1 == NULL || m2 == NULL || m1->data == NULL || m2->data == NULL)
     {
-        printf("Invaild param!\n");
+        printf("Invalid param!\n");
         return NULL;
     }
     // 维度检查
@@ -355,7 +355,7 @@ MatrixD *sub_matrixd_d(MatrixD *m1, MatrixD *m2)
     // 参数检查
     if (m1 == NULL || m2 == NULL || m1->data == NULL || m2->data == NULL)
     {
-        printf("Invaild param!\n");
+        printf("Invalid param!\n");
         return NULL;
     }
     // 维度检查
@@ -390,7 +390,7 @@ MatrixC *sub_matrixd_c(MatrixD *m1, MatrixC *m2)
     // 参数检查
     if (m1 == NULL || m2 == NULL || m1->data == NULL || m2->data == NULL)
     {
-        printf("Invaild param!\n");
+        printf("Invalid param!\n");
         return NULL;
     }
     // 维度检查
@@ -425,7 +425,7 @@ MatrixC *sub_matrixc_i(MatrixC *m1, MatrixI *m2)
     // 参数检查
     if (m1 == NULL || m2 == NULL || m1->data == NULL || m2->data == NULL)
     {
-        printf("Invaild param!\n");
+        printf("Invalid param!\n");
         return NULL;
     }
     // 维度检查
@@ -460,7 +460,7 @@ MatrixC *sub_matrixc_f(MatrixC *m1, MatrixF *m2)
     // 参数检查
     if (m1 == NULL || m2 == NULL || m1->data == NULL || m2->data == NULL)
     {
-        printf("Invaild param!\n");
+        printf("Invalid param!\n");
         return NULL;
     }
     // 维度检查
@@ -495,7 +495,7 @@ MatrixC *sub_matrixc_d(MatrixC *m1, MatrixD *m2)
     // 参数检查
     if (m1 == NULL || m2 == NULL || m1->data == NULL || m2->data == NULL)
     {
-        printf("Invaild param!\n");
+        printf("Invalid param!\n");
         return NULL;
     }
     // 维度检查
@@ -530,7 +530,7 @@ MatrixC *sub_matrixc_c(MatrixC *m1, MatrixC *m2)
     // 参数检查
     if (m1 == NULL || m2 == NULL || m1->data == NULL || m2->data == NULL)
     {
-        printf("Invaild param!\n");
+        printf("Invalid param!\n");
         return NULL;
     }
     // 维度检查

@@ -11,10 +11,10 @@ void pop_vectord(Vectord **v, double *elem);
 
 void pop_vectorc(Vectorc **v, Complex *elem);
 
-#define pop(x, y) _Generic((x), \
+#define pop(v, elem) _Generic((v), \
     Vectori * *: pop_vectori,   \
     Vectorf * *: pop_vectorf,   \
     Vectord * *: pop_vectord,   \
-    Vectorc * *: pop_vectorc)(x, y)
+    Vectorc * *: pop_vectorc)(v, elem)
 
 #endif // POP_VECTOR_H

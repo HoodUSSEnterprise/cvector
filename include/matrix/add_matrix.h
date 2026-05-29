@@ -36,26 +36,26 @@ MatrixC *add_matrixc_d(MatrixC *m1, MatrixD *m2);
 
 MatrixC *add_matrixc_c(MatrixC *m1, MatrixC *m2);
 
-#define add_matrix(x, y) _Generic((x), \
-    MatrixC *: _Generic((y),           \
+#define add_matrix(m1, m2) _Generic((m1), \
+    MatrixC *: _Generic((m2),           \
         MatrixC *: add_matrixc_c,      \
         MatrixD *: add_matrixc_d,      \
         MatrixF *: add_matrixc_f,      \
         MatrixI *: add_matrixc_i),     \
-    MatrixD *: _Generic((y),           \
+    MatrixD *: _Generic((m2),           \
         MatrixC *: add_matrixd_c,      \
         MatrixD *: add_matrixd_d,      \
         MatrixF *: add_matrixd_f,      \
         MatrixI *: add_matrixd_i),     \
-    MatrixF *: _Generic((y),           \
+    MatrixF *: _Generic((m2),           \
         MatrixC *: add_matrixf_c,      \
         MatrixD *: add_matrixf_d,      \
         MatrixF *: add_matrixf_f,      \
         MatrixI *: add_matrixf_i),     \
-    MatrixI *: _Generic((y),           \
+    MatrixI *: _Generic((m2),           \
         MatrixC *: add_matrixi_c,      \
         MatrixD *: add_matrixi_d,      \
         MatrixF *: add_matrixi_f,      \
-        MatrixI *: add_matrixi_i))(x, y)
+        MatrixI *: add_matrixi_i))(m1, m2)
 
 #endif // ADD_MATRIX_H

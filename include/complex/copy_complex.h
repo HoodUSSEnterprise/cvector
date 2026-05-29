@@ -11,12 +11,12 @@ void copy_complex_c_ptr(Complex c1, Complex *c2);
 
 void copy_complex_c_c(Complex c1, Complex c2);
 
-#define copy_complex(x, y) _Generic((x), \
-    Complex *: _Generic((y),             \
+#define copy_complex(c1, c2) _Generic((c1), \
+    Complex *: _Generic((c2),             \
         Complex *: copy_complex_ptr_ptr, \
         Complex: copy_complex_ptr_c),    \
-    Complex: _Generic((y),               \
+    Complex: _Generic((c2),               \
         Complex *: copy_complex_c_ptr,   \
-        Complex: copy_complex_c_c))(x, y)
+        Complex: copy_complex_c_c))(c1, c2)
 
 #endif // COPY_COMPLEX_H

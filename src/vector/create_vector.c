@@ -108,7 +108,7 @@ Vector3c *create_vector3c(Complex x, Complex y, Complex z)
     return res;
 }
 
-Vectori *create_vectori(unsigned int len, int *data)
+Vectori *create_vectori(int *data, size_t len)
 {
     Vectori *res = (Vectori *)malloc(sizeof(Vectori));
     if (res == NULL)
@@ -127,7 +127,7 @@ Vectori *create_vectori(unsigned int len, int *data)
     return res;
 }
 
-Vectorf *create_vectorf(unsigned int len, float *data)
+Vectorf *create_vectorf(float *data, size_t len)
 {
     Vectorf *res = (Vectorf *)malloc(sizeof(Vectorf));
     if (res == NULL)
@@ -146,7 +146,7 @@ Vectorf *create_vectorf(unsigned int len, float *data)
     return res;
 }
 
-Vectord *create_vectord(unsigned int len, double *data)
+Vectord *create_vectord(double *data, size_t len)
 {
     Vectord *res = (Vectord *)malloc(sizeof(Vectord));
     if (res == NULL)
@@ -165,7 +165,7 @@ Vectord *create_vectord(unsigned int len, double *data)
     return res;
 }
 
-Vectorc *create_vectorc(unsigned int len, Complex *data)
+Vectorc *create_vectorc(Complex *data, size_t len)
 {
     Vectorc *res = (Vectorc *)malloc(sizeof(Vectorc));
     if (res == NULL)

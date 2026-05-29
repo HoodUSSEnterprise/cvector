@@ -31,7 +31,7 @@ double norm_vectord(Vectord *v, double norm);
 
 double norm_vectorc(Vectorc *v, double norm);
 
-#define norm_vec(x, y) _Generic((x), \
+#define norm_vec(v, norm) _Generic((v), \
     Vector2c *: norm_vector2c,       \
     Vector2d *: norm_vector2d,       \
     Vector2f *: norm_vector2f,       \
@@ -43,6 +43,6 @@ double norm_vectorc(Vectorc *v, double norm);
     Vectorc *: norm_vectorc,         \
     Vectord *: norm_vectord,         \
     Vectorf *: norm_vectorf,         \
-    Vectori *: norm_vectori)(x, y)
+    Vectori *: norm_vectori)(v, norm)
 
 #endif // NORM_VECTOR_H

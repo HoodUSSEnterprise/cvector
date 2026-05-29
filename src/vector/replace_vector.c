@@ -282,7 +282,7 @@ Vectorc *replace_vectorc_elem(Vectorc *v, Complex old_elem, Complex new_elem)
     }
     else
     {
-        Vectorc *res = create_vectorc(v->len, v->data);
+        Vectorc *res = create_vectorc(v->data, v->len);
         res->len = v->len;
         for (size_t i = 0; i < v->len; i++)
         {

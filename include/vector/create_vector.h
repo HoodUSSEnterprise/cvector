@@ -20,13 +20,13 @@ Vector3d *create_vector3d(double x, double y, double z);
 
 Vector3c *create_vector3c(Complex x, Complex y, Complex z);
 
-Vectori *create_vectori(unsigned int len, int *data);
+Vectori *create_vectori(int *data, size_t len);
 
-Vectorf *create_vectorf(unsigned int len, float *data);
+Vectorf *create_vectorf(float *data, size_t len);
 
-Vectord *create_vectord(unsigned int len, double *data);
+Vectord *create_vectord(double *data, size_t len);
 
-Vectorc *create_vectorc(unsigned int len, Complex *data);
+Vectorc *create_vectorc(Complex *data, size_t len);
 
 #define create_vec2(x, y) _Generic((x), \
     Complex: create_vector2c,           \
@@ -100,10 +100,10 @@ Vectorc *create_vectorc(unsigned int len, Complex *data);
             float: create_vector3f,        \
             int: create_vector3i), ))(x, y, z)
 
-#define create_vec(x, y) _Generic((y), \
+#define create_vec(len, y) _Generic((y), \
     int *: create_vectori,             \
     float *: create_vectorf,           \
     double *: create_vectord,          \
-    Complex *: create_vectorc)(x, y)
+    Complex *: create_vectorc)(len, y)
 
 #endif // CREATE_VECTOR_H
