@@ -52,6 +52,14 @@ MatrixD *eye_matrixd(int rows, int cols);
 
 MatrixC *eye_matrixc(int rows, int cols);
 
+MatrixI *zero_matrixi(int rows, int cols);
+
+MatrixF *zero_matrixf(int rows, int cols);
+
+MatrixD *zero_matrixd(int rows, int cols);
+
+MatrixC *zero_matrixc(int rows, int cols);
+
 #define diag_matrixi(data, len) _Generic((data), \
     int *: diag_matrixi_i,            \
     float *: diag_matrixi_f,          \

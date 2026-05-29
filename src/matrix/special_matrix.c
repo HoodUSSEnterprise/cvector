@@ -3,7 +3,7 @@
 
 MatrixI *identity_matrixi(int order)
 {
-    int *data = (int*)malloc(sizeof(int) * order * order);
+    int *data = (int *)malloc(sizeof(int) * order * order);
     if (data == NULL)
     {
         printf("No memory\n");
@@ -19,7 +19,7 @@ MatrixI *identity_matrixi(int order)
 
 MatrixF *identity_matrixf(int order)
 {
-    float *data = (float*)malloc(sizeof(float) * order * order);
+    float *data = (float *)malloc(sizeof(float) * order * order);
     if (data == NULL)
     {
         printf("No memory\n");
@@ -35,7 +35,7 @@ MatrixF *identity_matrixf(int order)
 
 MatrixD *identity_matrixd(int order)
 {
-    double *data = (double*)malloc(sizeof(double) * order * order);
+    double *data = (double *)malloc(sizeof(double) * order * order);
     if (data == NULL)
     {
         printf("No memory\n");
@@ -51,7 +51,7 @@ MatrixD *identity_matrixd(int order)
 
 MatrixC *identity_matrixc(int order)
 {
-    Complex *data = (Complex*)malloc(sizeof(Complex) * order * order);
+    Complex *data = (Complex *)malloc(sizeof(Complex) * order * order);
     if (data == NULL)
     {
         printf("No memory\n");
@@ -67,12 +67,12 @@ MatrixC *identity_matrixc(int order)
 
 MatrixI *diag_matrixi_i(const int *data, size_t len)
 {
-    if(data == NULL || len == 0)
+    if (data == NULL || len == 0)
     {
         printf("Invalid param\n");
         return NULL;
     }
-    int *new_data = (int*)malloc(sizeof(int) * len * len);
+    int *new_data = (int *)malloc(sizeof(int) * len * len);
     if (new_data == NULL)
     {
         printf("No memory\n");
@@ -87,12 +87,12 @@ MatrixI *diag_matrixi_i(const int *data, size_t len)
 
 MatrixI *diag_matrixi_f(const float *data, size_t len)
 {
-    if(data == NULL || len == 0)
+    if (data == NULL || len == 0)
     {
         printf("Invalid param\n");
         return NULL;
     }
-    int *new_data = (int*)malloc(sizeof(int) * len * len);
+    int *new_data = (int *)malloc(sizeof(int) * len * len);
     if (new_data == NULL)
     {
         printf("No memory\n");
@@ -107,12 +107,12 @@ MatrixI *diag_matrixi_f(const float *data, size_t len)
 
 MatrixI *diag_matrixi_d(const double *data, size_t len)
 {
-    if(data == NULL || len == 0)
+    if (data == NULL || len == 0)
     {
         printf("Invalid param\n");
         return NULL;
     }
-    int *new_data = (int*)malloc(sizeof(int) * len * len);
+    int *new_data = (int *)malloc(sizeof(int) * len * len);
     if (new_data == NULL)
     {
         printf("No memory\n");
@@ -127,12 +127,12 @@ MatrixI *diag_matrixi_d(const double *data, size_t len)
 
 MatrixI *diag_matrixi_c(const Complex *data, size_t len)
 {
-    if(data == NULL || len == 0)
+    if (data == NULL || len == 0)
     {
         printf("Invalid param\n");
         return NULL;
     }
-    int *new_data = (int*)malloc(sizeof(int) * len * len);
+    int *new_data = (int *)malloc(sizeof(int) * len * len);
     if (new_data == NULL)
     {
         printf("No memory\n");
@@ -147,12 +147,12 @@ MatrixI *diag_matrixi_c(const Complex *data, size_t len)
 
 MatrixF *diag_matrixf_i(const int *data, size_t len)
 {
-    if(data == NULL || len == 0)
+    if (data == NULL || len == 0)
     {
         printf("Invalid param\n");
         return NULL;
     }
-    float *new_data = (float*)malloc(sizeof(float) * len * len);
+    float *new_data = (float *)malloc(sizeof(float) * len * len);
     if (new_data == NULL)
     {
         printf("No memory\n");
@@ -167,12 +167,12 @@ MatrixF *diag_matrixf_i(const int *data, size_t len)
 
 MatrixF *diag_matrixf_f(const float *data, size_t len)
 {
-    if(data == NULL || len == 0)
+    if (data == NULL || len == 0)
     {
         printf("Invalid param\n");
         return NULL;
     }
-    float *new_data = (float*)malloc(sizeof(float) * len * len);
+    float *new_data = (float *)malloc(sizeof(float) * len * len);
     if (new_data == NULL)
     {
         printf("No memory\n");
@@ -187,12 +187,12 @@ MatrixF *diag_matrixf_f(const float *data, size_t len)
 
 MatrixF *diag_matrixf_d(const double *data, size_t len)
 {
-    if(data == NULL || len == 0)
+    if (data == NULL || len == 0)
     {
         printf("Invalid param\n");
         return NULL;
     }
-    float *new_data = (float*)malloc(sizeof(float) * len * len);
+    float *new_data = (float *)malloc(sizeof(float) * len * len);
     if (new_data == NULL)
     {
         printf("No memory\n");
@@ -207,12 +207,12 @@ MatrixF *diag_matrixf_d(const double *data, size_t len)
 
 MatrixF *diag_matrixf_c(const Complex *data, size_t len)
 {
-    if(data == NULL || len == 0)
+    if (data == NULL || len == 0)
     {
         printf("Invalid param\n");
         return NULL;
     }
-    float *new_data = (float*)malloc(sizeof(float) * len * len);
+    float *new_data = (float *)malloc(sizeof(float) * len * len);
     if (new_data == NULL)
     {
         printf("No memory\n");
@@ -227,12 +227,12 @@ MatrixF *diag_matrixf_c(const Complex *data, size_t len)
 
 MatrixD *diag_matrixd_i(const int *data, size_t len)
 {
-    if(data == NULL || len == 0)
+    if (data == NULL || len == 0)
     {
         printf("Invalid param\n");
         return NULL;
     }
-    double *new_data = (double*)malloc(sizeof(double) * len * len);
+    double *new_data = (double *)malloc(sizeof(double) * len * len);
     if (new_data == NULL)
     {
         printf("No memory\n");
@@ -247,12 +247,12 @@ MatrixD *diag_matrixd_i(const int *data, size_t len)
 
 MatrixD *diag_matrixd_f(const float *data, size_t len)
 {
-    if(data == NULL || len == 0)
+    if (data == NULL || len == 0)
     {
         printf("Invalid param\n");
         return NULL;
     }
-    double *new_data = (double*)malloc(sizeof(double) * len * len);
+    double *new_data = (double *)malloc(sizeof(double) * len * len);
     if (new_data == NULL)
     {
         printf("No memory\n");
@@ -267,12 +267,12 @@ MatrixD *diag_matrixd_f(const float *data, size_t len)
 
 MatrixD *diag_matrixd_d(const double *data, size_t len)
 {
-    if(data == NULL || len == 0)
+    if (data == NULL || len == 0)
     {
         printf("Invalid param\n");
         return NULL;
     }
-    double *new_data = (double*)malloc(sizeof(double) * len * len);
+    double *new_data = (double *)malloc(sizeof(double) * len * len);
     if (new_data == NULL)
     {
         printf("No memory\n");
@@ -287,12 +287,12 @@ MatrixD *diag_matrixd_d(const double *data, size_t len)
 
 MatrixD *diag_matrixd_c(const Complex *data, size_t len)
 {
-    if(data == NULL || len == 0)
+    if (data == NULL || len == 0)
     {
         printf("Invalid param\n");
         return NULL;
     }
-    double *new_data = (double*)malloc(sizeof(double) * len * len);
+    double *new_data = (double *)malloc(sizeof(double) * len * len);
     if (new_data == NULL)
     {
         printf("No memory\n");
@@ -307,12 +307,12 @@ MatrixD *diag_matrixd_c(const Complex *data, size_t len)
 
 MatrixC *diag_matrixc_i(const int *data, size_t len)
 {
-    if(data == NULL || len == 0)
+    if (data == NULL || len == 0)
     {
         printf("Invalid param\n");
         return NULL;
     }
-    Complex *new_data = (Complex*)malloc(sizeof(Complex) * len * len);
+    Complex *new_data = (Complex *)malloc(sizeof(Complex) * len * len);
     if (new_data == NULL)
     {
         printf("No memory\n");
@@ -327,12 +327,12 @@ MatrixC *diag_matrixc_i(const int *data, size_t len)
 
 MatrixC *diag_matrixc_f(const float *data, size_t len)
 {
-    if(data == NULL || len == 0)
+    if (data == NULL || len == 0)
     {
         printf("Invalid param\n");
         return NULL;
     }
-    Complex *new_data = (Complex*)malloc(sizeof(Complex) * len * len);
+    Complex *new_data = (Complex *)malloc(sizeof(Complex) * len * len);
     if (new_data == NULL)
     {
         printf("No memory\n");
@@ -347,12 +347,12 @@ MatrixC *diag_matrixc_f(const float *data, size_t len)
 
 MatrixC *diag_matrixc_d(const double *data, size_t len)
 {
-    if(data == NULL || len == 0)
+    if (data == NULL || len == 0)
     {
         printf("Invalid param\n");
         return NULL;
     }
-    Complex *new_data = (Complex*)malloc(sizeof(Complex) * len * len);
+    Complex *new_data = (Complex *)malloc(sizeof(Complex) * len * len);
     if (new_data == NULL)
     {
         printf("No memory\n");
@@ -367,12 +367,12 @@ MatrixC *diag_matrixc_d(const double *data, size_t len)
 
 MatrixC *diag_matrixc_c(const Complex *data, size_t len)
 {
-    if(data == NULL || len == 0)
+    if (data == NULL || len == 0)
     {
         printf("Invalid param\n");
         return NULL;
     }
-    Complex *new_data = (Complex*)malloc(sizeof(Complex) * len * len);
+    Complex *new_data = (Complex *)malloc(sizeof(Complex) * len * len);
     if (new_data == NULL)
     {
         printf("No memory\n");
@@ -388,7 +388,7 @@ MatrixC *diag_matrixc_c(const Complex *data, size_t len)
 MatrixI *eye_matrixi(int rows, int cols)
 {
     int min_val = min(rows, cols);
-    int *data = (int*)malloc(sizeof(int) * rows * cols);
+    int *data = (int *)malloc(sizeof(int) * rows * cols);
     if (data == NULL)
     {
         printf("No memory\n");
@@ -404,7 +404,7 @@ MatrixI *eye_matrixi(int rows, int cols)
 MatrixF *eye_matrixf(int rows, int cols)
 {
     int min_val = min(rows, cols);
-    float *data = (float*)malloc(sizeof(float) * rows * cols);
+    float *data = (float *)malloc(sizeof(float) * rows * cols);
     if (data == NULL)
     {
         printf("No memory\n");
@@ -420,7 +420,7 @@ MatrixF *eye_matrixf(int rows, int cols)
 MatrixD *eye_matrixd(int rows, int cols)
 {
     int min_val = min(rows, cols);
-    double *data = (double*)malloc(sizeof(double) * rows * cols);
+    double *data = (double *)malloc(sizeof(double) * rows * cols);
     if (data == NULL)
     {
         printf("No memory\n");
@@ -436,7 +436,7 @@ MatrixD *eye_matrixd(int rows, int cols)
 MatrixC *eye_matrixc(int rows, int cols)
 {
     int min_val = min(rows, cols);
-    Complex *data = (Complex*)malloc(sizeof(Complex) * rows * cols);
+    Complex *data = (Complex *)malloc(sizeof(Complex) * rows * cols);
     if (data == NULL)
     {
         printf("No memory\n");
@@ -446,5 +446,53 @@ MatrixC *eye_matrixc(int rows, int cols)
     {
         data[i * cols + i] = (Complex){1, 0};
     }
+    return create_matrixc(rows, cols, data, rows * cols);
+}
+
+MatrixI *zero_matrixi(int rows, int cols)
+{
+    int *data = (int *)malloc(sizeof(int) * rows * cols);
+    if (data == NULL)
+    {
+        printf("No memory\n");
+        return NULL;
+    }
+    memset(data, 0, sizeof(int) * rows * cols);
+    return create_matrixi(rows, cols, data, rows * cols);
+}
+
+MatrixF *zero_matrixf(int rows, int cols)
+{
+    float *data = (float *)malloc(sizeof(float) * rows * cols);
+    if (data == NULL)
+    {
+        printf("No memory\n");
+        return NULL;
+    }
+    memset(data, 0, sizeof(float) * rows * cols);
+    return create_matrixf(rows, cols, data, rows * cols);
+}
+
+MatrixD *zero_matrixd(int rows, int cols)
+{
+    double *data = (double *)malloc(sizeof(double) * rows * cols);
+    if (data == NULL)
+    {
+        printf("No memory\n");
+        return NULL;
+    }
+    memset(data, 0, sizeof(double) * rows * cols);
+    return create_matrixd(rows, cols, data, rows * cols);
+}
+
+MatrixC *zero_matrixc(int rows, int cols)
+{
+    Complex *data = (Complex *)malloc(sizeof(Complex) * rows * cols);
+    if (data == NULL)
+    {
+        printf("No memory\n");
+        return NULL;
+    }
+    memset(data, 0, sizeof(Complex) * rows * cols);
     return create_matrixc(rows, cols, data, rows * cols);
 }
