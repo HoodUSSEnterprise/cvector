@@ -11,7 +11,7 @@ MatrixI *transpose_matrixi(MatrixI *m)
     MatrixI *res = (MatrixI *)malloc(sizeof(MatrixI));
     if (res == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return NULL;
     }
     res->rows = m->cols;
@@ -19,7 +19,7 @@ MatrixI *transpose_matrixi(MatrixI *m)
     res->data = (int *)malloc(sizeof(int) * res->rows * res->cols);
     if (res->data == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         free(res);
         return NULL;
     }
@@ -46,7 +46,7 @@ MatrixF *transpose_matrixf(MatrixF *m)
     MatrixF *res = (MatrixF *)malloc(sizeof(MatrixF));
     if (res == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return NULL;
     }
     res->rows = m->cols;
@@ -54,7 +54,7 @@ MatrixF *transpose_matrixf(MatrixF *m)
     res->data = (float *)malloc(sizeof(float) * res->rows * res->cols);
     if (res->data == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         free(res);
         return NULL;
     }
@@ -81,7 +81,7 @@ MatrixD *transpose_matrixd(MatrixD *m)
     MatrixD *res = (MatrixD *)malloc(sizeof(MatrixD));
     if (res == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return NULL;
     }
     res->rows = m->cols;
@@ -89,7 +89,7 @@ MatrixD *transpose_matrixd(MatrixD *m)
     res->data = (double *)malloc(sizeof(double) * res->rows * res->cols);
     if (res->data == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         free(res);
         return NULL;
     }
@@ -116,7 +116,7 @@ MatrixC *transpose_matrixc(MatrixC *m)
     MatrixC *res = (MatrixC *)malloc(sizeof(MatrixC));
     if (res == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return NULL;
     }
     res->rows = m->cols;
@@ -124,7 +124,7 @@ MatrixC *transpose_matrixc(MatrixC *m)
     res->data = (Complex *)malloc(sizeof(Complex) * res->rows * res->cols);
     if (res->data == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         free(res);
         return NULL;
     }

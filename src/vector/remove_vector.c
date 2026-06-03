@@ -29,14 +29,14 @@ Vectori *remove_vectori_elem(Vectori *v, int elem)
     Vectori *res = (Vectori *)malloc(sizeof(Vectori));
     if (res == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         exit(0);
     }
     res->len = v->len - count;
     res->data = (int *)malloc(sizeof(int) * res->len);
     if (res->data == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         exit(0);
     }
 
@@ -78,14 +78,14 @@ Vectorf *remove_vectorf_elem(Vectorf *v, float elem)
     Vectorf *res = (Vectorf *)malloc(sizeof(Vectorf));
     if (res == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         exit(0);
     }
     res->len = v->len - count;
     res->data = (float *)malloc(sizeof(float) * res->len);
     if (res->data == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         exit(0);
     }
 
@@ -125,14 +125,14 @@ Vectord *remove_vectord_elem(Vectord *v, double elem)
     Vectord *res = (Vectord *)malloc(sizeof(Vectord));
     if (res == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         exit(0);
     }
     res->len = v->len - count;
     res->data = (double *)malloc(sizeof(double) * res->len);
     if (res->data == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         exit(0);
     }
 
@@ -171,14 +171,14 @@ Vectorc *remove_vectorc_elem(Vectorc *v, Complex elem)
     Vectorc *res = (Vectorc *)malloc(sizeof(Vectorc));
     if (res == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         exit(0);
     }
     res->len = v->len - count;
     res->data = (Complex *)malloc(sizeof(Complex) * res->len);
     if (res->data == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         exit(0);
     }
 
@@ -197,14 +197,14 @@ Vectori *remove_vectori_array(Vectori *v, int *array, size_t len)
     Vectori *res = (Vectori *)malloc(sizeof(Vectori));
     if (res == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         exit(0);
     }
     res->len = v->len;
     res->data = (int *)malloc(sizeof(int) * res->len);
     if (res->data == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         exit(0);
     }
     memcpy(res->data, v->data, sizeof(int) * res->len);
@@ -221,7 +221,7 @@ Vectorf *remove_vectorf_array(Vectorf *v, float *array, size_t len)
     Vectorf *res = (Vectorf *)malloc(sizeof(Vectorf));
     if (res == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         exit(0);
     }
     res->len = v->len;
@@ -240,7 +240,7 @@ Vectord *remove_vectord_array(Vectord *v, double *array, size_t len)
     Vectord *res = (Vectord *)malloc(sizeof(Vectord));
     if (res == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         exit(0);
     }
     res->len = v->len;
@@ -259,7 +259,7 @@ Vectorc *remove_vectorc_array(Vectorc *v, Complex *array, size_t len)
     Vectorc *res = (Vectorc *)malloc(sizeof(Vectorc));
     if (res == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         exit(0);
     }
     res->len = v->len;

@@ -310,14 +310,14 @@ Vectori *replace_vectori_array(Vectori *v, int *old_array, int *new_array, size_
         Vectori *res = (Vectori *)malloc(sizeof(Vectori));
         if (res == NULL)
         {
-            printf("No memory\n");
+            fprintf(stderr, "Memory allocation failed\n");
             exit(0);
         }
         res->len = v->len;
         res->data = (int *)malloc(sizeof(int) * res->len);
         if (res->data == NULL)
         {
-            printf("No memory\n");
+            fprintf(stderr, "Memory allocation failed\n");
             exit(0);
         }
         memcpy(res->data, v->data, sizeof(int) * res->len);
@@ -348,14 +348,14 @@ Vectorf *replace_vectorf_array(Vectorf *v, float *old_array, float *new_array, s
         Vectorf *res = (Vectorf *)malloc(sizeof(Vectorf));
         if (res == NULL)
         {
-            printf("No memory\n");
+            fprintf(stderr, "Memory allocation failed\n");
             exit(0);
         }
         res->len = v->len;
         res->data = (float *)malloc(sizeof(float) * res->len);
         if (res->data == NULL)
         {
-            printf("No memory\n");
+            fprintf(stderr, "Memory allocation failed\n");
             exit(0);
         }
         memcpy(res->data, v->data, sizeof(float) * res->len);
@@ -385,14 +385,14 @@ Vectord *replace_vectord_array(Vectord *v, double *old_array, double *new_array,
         Vectord *res = (Vectord *)malloc(sizeof(Vectord));
         if (res == NULL)
         {
-            printf("No memory\n");
+            fprintf(stderr, "Memory allocation failed\n");
             exit(0);
         }
         res->len = v->len;
         res->data = (double *)malloc(sizeof(double) * res->len);
         if (res->data == NULL)
         {
-            printf("No memory\n");
+            fprintf(stderr, "Memory allocation failed\n");
             exit(0);
         }
         memcpy(res->data, v->data, sizeof(double) * res->len);
@@ -422,14 +422,14 @@ Vectorc *replace_vectorc_array(Vectorc *v, Complex *old_array, Complex *new_arra
         Vectorc *res = (Vectorc *)malloc(sizeof(Vectorc));
         if (res == NULL)
         {
-            printf("No memory\n");
+            fprintf(stderr, "Memory allocation failed\n");
             exit(0);
         }
         res->len = v->len;
         res->data = (Complex *)malloc(sizeof(Complex) * res->len);
         if (res->data == NULL)
         {
-            printf("No memory\n");
+            fprintf(stderr, "Memory allocation failed\n");
             exit(0);
         }
         memcpy(res->data, v->data, sizeof(Complex) * res->len);

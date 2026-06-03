@@ -17,7 +17,7 @@ MatrixI *adjugate_matrixi(MatrixI *m)
     MatrixI *res = (MatrixI *)malloc(sizeof(MatrixI));
     if (res == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return NULL;
     }
     res->rows = n;
@@ -25,7 +25,7 @@ MatrixI *adjugate_matrixi(MatrixI *m)
     res->data = (int *)malloc(sizeof(int) * n * n);
     if (res->data == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         free(res);
         return NULL;
     }
@@ -72,7 +72,7 @@ MatrixF *adjugate_matrixf(MatrixF *m)
     MatrixF *res = (MatrixF *)malloc(sizeof(MatrixF));
     if (res == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return NULL;
     }
     res->rows = n;
@@ -80,7 +80,7 @@ MatrixF *adjugate_matrixf(MatrixF *m)
     res->data = (float *)malloc(sizeof(float) * n * n);
     if (res->data == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         free(res);
         return NULL;
     }
@@ -126,7 +126,7 @@ MatrixD *adjugate_matrixd(MatrixD *m)
     MatrixD *res = (MatrixD *)malloc(sizeof(MatrixD));
     if (res == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return NULL;
     }
     res->rows = n;
@@ -134,7 +134,7 @@ MatrixD *adjugate_matrixd(MatrixD *m)
     res->data = (double *)malloc(sizeof(double) * n * n);
     if (res->data == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         free(res);
         return NULL;
     }
@@ -183,7 +183,7 @@ MatrixC *adjugate_matrixc(MatrixC *m)
     MatrixC *res = (MatrixC *)malloc(sizeof(MatrixC));
     if (res == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return NULL;
     }
     res->rows = n;
@@ -191,7 +191,7 @@ MatrixC *adjugate_matrixc(MatrixC *m)
     res->data = (Complex *)malloc(sizeof(Complex) * n * n);
     if (res->data == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         free(res);
         return NULL;
     }

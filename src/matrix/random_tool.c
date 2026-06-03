@@ -22,7 +22,7 @@ MatrixD *random_matrixd(int n, int m, double lower, double upper)
     MatrixD *res = (MatrixD *)malloc(sizeof(MatrixD));
     if (res == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return NULL;
     }
     res->rows = n;
@@ -30,7 +30,7 @@ MatrixD *random_matrixd(int n, int m, double lower, double upper)
     res->data = (double *)malloc(sizeof(double) * n * m);
     if (res->data == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         free(res);
         return NULL;
     }
@@ -52,7 +52,7 @@ MatrixF *random_matrixf(int n, int m, float lower, float upper)
     MatrixF *res = (MatrixF *)malloc(sizeof(MatrixF));
     if (res == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return NULL;
     }
     res->rows = n;
@@ -60,7 +60,7 @@ MatrixF *random_matrixf(int n, int m, float lower, float upper)
     res->data = (float *)malloc(sizeof(float) * n * m);
     if (res->data == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         free(res);
         return NULL;
     }

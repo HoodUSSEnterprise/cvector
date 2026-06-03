@@ -15,7 +15,7 @@ MatrixI *mul_matrixi_i(MatrixI *m1, MatrixI *m2)
     MatrixI *res = (MatrixI *)malloc(sizeof(MatrixI));
     if (res == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return NULL;
     }
     res->rows = m1->rows;
@@ -23,7 +23,7 @@ MatrixI *mul_matrixi_i(MatrixI *m1, MatrixI *m2)
     res->data = (int *)malloc(sizeof(int) * res->rows * res->cols);
     if (res->data == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         free(res);
         return NULL;
     }
@@ -56,7 +56,7 @@ MatrixF *mul_matrixi_f(MatrixI *m1, MatrixF *m2)
     MatrixF *res = (MatrixF *)malloc(sizeof(MatrixF));
     if (res == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return NULL;
     }
     res->rows = m1->rows;
@@ -64,7 +64,7 @@ MatrixF *mul_matrixi_f(MatrixI *m1, MatrixF *m2)
     res->data = (float *)malloc(sizeof(float) * res->rows * res->cols);
     if (res->data == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         free(res);
         return NULL;
     }
@@ -97,7 +97,7 @@ MatrixD *mul_matrixi_d(MatrixI *m1, MatrixD *m2)
     MatrixD *res = (MatrixD *)malloc(sizeof(MatrixD));
     if (res == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return NULL;
     }
     res->rows = m1->rows;
@@ -105,7 +105,7 @@ MatrixD *mul_matrixi_d(MatrixI *m1, MatrixD *m2)
     res->data = (double *)malloc(sizeof(double) * res->rows * res->cols);
     if (res->data == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         free(res);
         return NULL;
     }
@@ -138,7 +138,7 @@ MatrixC *mul_matrixi_c(MatrixI *m1, MatrixC *m2)
     MatrixC *res = (MatrixC *)malloc(sizeof(MatrixC));
     if (res == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return NULL;
     }
     res->rows = m1->rows;
@@ -146,7 +146,7 @@ MatrixC *mul_matrixi_c(MatrixI *m1, MatrixC *m2)
     res->data = (Complex *)malloc(sizeof(Complex) * res->rows * res->cols);
     if (res->data == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         free(res);
         return NULL;
     }
@@ -181,7 +181,7 @@ MatrixF *mul_matrixf_i(MatrixF *m1, MatrixI *m2)
     MatrixF *res = (MatrixF *)malloc(sizeof(MatrixF));
     if (res == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return NULL;
     }
     res->rows = m1->rows;
@@ -189,7 +189,7 @@ MatrixF *mul_matrixf_i(MatrixF *m1, MatrixI *m2)
     res->data = (float *)malloc(sizeof(float) * res->rows * res->cols);
     if (res->data == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         free(res);
         return NULL;
     }
@@ -222,7 +222,7 @@ MatrixF *mul_matrixf_f(MatrixF *m1, MatrixF *m2)
     MatrixF *res = (MatrixF *)malloc(sizeof(MatrixF));
     if (res == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return NULL;
     }
     res->rows = m1->rows;
@@ -230,7 +230,7 @@ MatrixF *mul_matrixf_f(MatrixF *m1, MatrixF *m2)
     res->data = (float *)malloc(sizeof(float) * res->rows * res->cols);
     if (res->data == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         free(res);
         return NULL;
     }
@@ -263,7 +263,7 @@ MatrixD *mul_matrixf_d(MatrixF *m1, MatrixD *m2)
     MatrixD *res = (MatrixD *)malloc(sizeof(MatrixD));
     if (res == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return NULL;
     }
     res->rows = m1->rows;
@@ -271,7 +271,7 @@ MatrixD *mul_matrixf_d(MatrixF *m1, MatrixD *m2)
     res->data = (double *)malloc(sizeof(double) * res->rows * res->cols);
     if (res->data == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         free(res);
         return NULL;
     }
@@ -304,7 +304,7 @@ MatrixC *mul_matrixf_c(MatrixF *m1, MatrixC *m2)
     MatrixC *res = (MatrixC *)malloc(sizeof(MatrixC));
     if (res == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return NULL;
     }
     res->rows = m1->rows;
@@ -312,7 +312,7 @@ MatrixC *mul_matrixf_c(MatrixF *m1, MatrixC *m2)
     res->data = (Complex *)malloc(sizeof(Complex) * res->rows * res->cols);
     if (res->data == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         free(res);
         return NULL;
     }
@@ -347,7 +347,7 @@ MatrixD *mul_matrixd_i(MatrixD *m1, MatrixI *m2)
     MatrixD *res = (MatrixD *)malloc(sizeof(MatrixD));
     if (res == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return NULL;
     }
     res->rows = m1->rows;
@@ -355,7 +355,7 @@ MatrixD *mul_matrixd_i(MatrixD *m1, MatrixI *m2)
     res->data = (double *)malloc(sizeof(double) * res->rows * res->cols);
     if (res->data == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         free(res);
         return NULL;
     }
@@ -388,7 +388,7 @@ MatrixD *mul_matrixd_f(MatrixD *m1, MatrixF *m2)
     MatrixD *res = (MatrixD *)malloc(sizeof(MatrixD));
     if (res == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return NULL;
     }
     res->rows = m1->rows;
@@ -396,7 +396,7 @@ MatrixD *mul_matrixd_f(MatrixD *m1, MatrixF *m2)
     res->data = (double *)malloc(sizeof(double) * res->rows * res->cols);
     if (res->data == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         free(res);
         return NULL;
     }
@@ -429,7 +429,7 @@ MatrixD *mul_matrixd_d(MatrixD *m1, MatrixD *m2)
     MatrixD *res = (MatrixD *)malloc(sizeof(MatrixD));
     if (res == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return NULL;
     }
     res->rows = m1->rows;
@@ -437,7 +437,7 @@ MatrixD *mul_matrixd_d(MatrixD *m1, MatrixD *m2)
     res->data = (double *)malloc(sizeof(double) * res->rows * res->cols);
     if (res->data == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         free(res);
         return NULL;
     }
@@ -470,7 +470,7 @@ MatrixC *mul_matrixd_c(MatrixD *m1, MatrixC *m2)
     MatrixC *res = (MatrixC *)malloc(sizeof(MatrixC));
     if (res == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return NULL;
     }
     res->rows = m1->rows;
@@ -478,7 +478,7 @@ MatrixC *mul_matrixd_c(MatrixD *m1, MatrixC *m2)
     res->data = (Complex *)malloc(sizeof(Complex) * res->rows * res->cols);
     if (res->data == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         free(res);
         return NULL;
     }
@@ -513,7 +513,7 @@ MatrixC *mul_matrixc_i(MatrixC *m1, MatrixI *m2)
     MatrixC *res = (MatrixC *)malloc(sizeof(MatrixC));
     if (res == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return NULL;
     }
     res->rows = m1->rows;
@@ -521,7 +521,7 @@ MatrixC *mul_matrixc_i(MatrixC *m1, MatrixI *m2)
     res->data = (Complex *)malloc(sizeof(Complex) * res->rows * res->cols);
     if (res->data == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         free(res);
         return NULL;
     }
@@ -556,7 +556,7 @@ MatrixC *mul_matrixc_f(MatrixC *m1, MatrixF *m2)
     MatrixC *res = (MatrixC *)malloc(sizeof(MatrixC));
     if (res == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return NULL;
     }
     res->rows = m1->rows;
@@ -564,7 +564,7 @@ MatrixC *mul_matrixc_f(MatrixC *m1, MatrixF *m2)
     res->data = (Complex *)malloc(sizeof(Complex) * res->rows * res->cols);
     if (res->data == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         free(res);
         return NULL;
     }
@@ -599,7 +599,7 @@ MatrixC *mul_matrixc_d(MatrixC *m1, MatrixD *m2)
     MatrixC *res = (MatrixC *)malloc(sizeof(MatrixC));
     if (res == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return NULL;
     }
     res->rows = m1->rows;
@@ -607,7 +607,7 @@ MatrixC *mul_matrixc_d(MatrixC *m1, MatrixD *m2)
     res->data = (Complex *)malloc(sizeof(Complex) * res->rows * res->cols);
     if (res->data == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         free(res);
         return NULL;
     }
@@ -642,7 +642,7 @@ MatrixC *mul_matrixc_c(MatrixC *m1, MatrixC *m2)
     MatrixC *res = (MatrixC *)malloc(sizeof(MatrixC));
     if (res == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return NULL;
     }
     res->rows = m1->rows;
@@ -650,7 +650,7 @@ MatrixC *mul_matrixc_c(MatrixC *m1, MatrixC *m2)
     res->data = (Complex *)malloc(sizeof(Complex) * res->rows * res->cols);
     if (res->data == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         free(res);
         return NULL;
     }

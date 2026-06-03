@@ -9,13 +9,13 @@ void insert_vectori_i(Vectori **v, size_t pos, int value)
     Vectori *res = (Vectori *)malloc(sizeof(Vectori));
     if (res == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
     }
     res->len = (*v)->len + 1;
     res->data = (int *)malloc(sizeof(int) * res->len);
     if (res->data == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
     }
     if (pos > (*v)->len - 1) // 默认pos大于数组长度，直接插入到最后
     {
@@ -48,13 +48,13 @@ void insert_vectori_f(Vectori **v, size_t pos, float value)
     Vectori *res = (Vectori *)malloc(sizeof(Vectori));
     if (res == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
     }
     res->len = (*v)->len + 1;
     res->data = (int *)malloc(sizeof(int) * res->len);
     if (res->data == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
     }
     if (pos > (*v)->len - 1) // 默认pos大于数组长度，直接插入到最后
     {
@@ -87,13 +87,13 @@ void insert_vectori_d(Vectori **v, size_t pos, double value)
     Vectori *res = (Vectori *)malloc(sizeof(Vectori));
     if (res == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
     }
     res->len = (*v)->len + 1;
     res->data = (int *)malloc(sizeof(int) * res->len);
     if (res->data == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
     }
     if (pos > (*v)->len - 1) // 默认pos大于数组长度，直接插入到最后
     {
@@ -126,13 +126,13 @@ void insert_vectori_c(Vectori **v, size_t pos, Complex value)
     Vectori *res = (Vectori *)malloc(sizeof(Vectori));
     if (res == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
     }
     res->len = (*v)->len + 1;
     res->data = (int *)malloc(sizeof(int) * res->len);
     if (res->data == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
     }
     if (pos > (*v)->len - 1) // 默认pos大于数组长度，直接插入到最后
     {
@@ -165,14 +165,14 @@ void insert_vectorf_i(Vectorf **v, size_t pos, int value)
     Vectorf *res = (Vectorf *)malloc(sizeof(Vectorf));
     if (res == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return;
     }
     res->len = (*v)->len + 1;
     res->data = (float *)malloc(sizeof(float) * res->len);
     if (res->data == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         free(res);
         return;
     }
@@ -208,14 +208,14 @@ void insert_vectorf_f(Vectorf **v, size_t pos, float value)
     Vectorf *res = (Vectorf *)malloc(sizeof(Vectorf));
     if (res == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return;
     }
     res->len = (*v)->len + 1;
     res->data = (float *)malloc(sizeof(float) * res->len);
     if (res->data == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         free(res);
         return;
     }
@@ -251,14 +251,14 @@ void insert_vectorf_d(Vectorf **v, size_t pos, double value)
     Vectorf *res = (Vectorf *)malloc(sizeof(Vectorf));
     if (res == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return;
     }
     res->len = (*v)->len + 1;
     res->data = (float *)malloc(sizeof(float) * res->len);
     if (res->data == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         free(res);
         return;
     }
@@ -294,14 +294,14 @@ void insert_vectorf_c(Vectorf **v, size_t pos, Complex value)
     Vectorf *res = (Vectorf *)malloc(sizeof(Vectorf));
     if (res == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return;
     }
     res->len = (*v)->len + 1;
     res->data = (float *)malloc(sizeof(float) * res->len);
     if (res->data == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         free(res);
         return;
     }
@@ -337,14 +337,14 @@ void insert_vectord_i(Vectord **v, size_t pos, int value)
     Vectord *res = (Vectord *)malloc(sizeof(Vectord));
     if (res == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return;
     }
     res->len = (*v)->len + 1;
     res->data = (double *)malloc(sizeof(double) * res->len);
     if (res->data == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         free(res);
         return;
     }
@@ -380,14 +380,14 @@ void insert_vectord_f(Vectord **v, size_t pos, float value)
     Vectord *res = (Vectord *)malloc(sizeof(Vectord));
     if (res == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return;
     }
     res->len = (*v)->len + 1;
     res->data = (double *)malloc(sizeof(double) * res->len);
     if (res->data == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         free(res);
         return;
     }
@@ -423,14 +423,14 @@ void insert_vectord_d(Vectord **v, size_t pos, double value)
     Vectord *res = (Vectord *)malloc(sizeof(Vectord));
     if (res == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return;
     }
     res->len = (*v)->len + 1;
     res->data = (double *)malloc(sizeof(double) * res->len);
     if (res->data == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         free(res);
         return;
     }
@@ -466,14 +466,14 @@ void insert_vectord_c(Vectord **v, size_t pos, Complex value)
     Vectord *res = (Vectord *)malloc(sizeof(Vectord));
     if (res == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return;
     }
     res->len = (*v)->len + 1;
     res->data = (double *)malloc(sizeof(double) * res->len);
     if (res->data == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         free(res);
         return;
     }
@@ -509,14 +509,14 @@ void insert_vectorc_i(Vectorc **v, size_t pos, int value)
     Vectorc *res = (Vectorc *)malloc(sizeof(Vectorc));
     if (res == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return;
     }
     res->len = (*v)->len + 1;
     res->data = (Complex *)malloc(sizeof(Complex) * res->len);
     if (res->data == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         free(res);
         return;
     }
@@ -554,14 +554,14 @@ void insert_vectorc_f(Vectorc **v, size_t pos, float value)
     Vectorc *res = (Vectorc *)malloc(sizeof(Vectorc));
     if (res == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return;
     }
     res->len = (*v)->len + 1;
     res->data = (Complex *)malloc(sizeof(Complex) * res->len);
     if (res->data == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         free(res);
         return;
     }
@@ -599,14 +599,14 @@ void insert_vectorc_d(Vectorc **v, size_t pos, double value)
     Vectorc *res = (Vectorc *)malloc(sizeof(Vectorc));
     if (res == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return;
     }
     res->len = (*v)->len + 1;
     res->data = (Complex *)malloc(sizeof(Complex) * res->len);
     if (res->data == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         free(res);
         return;
     }
@@ -644,14 +644,14 @@ void insert_vectorc_c(Vectorc **v, size_t pos, Complex value)
     Vectorc *res = (Vectorc *)malloc(sizeof(Vectorc));
     if (res == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return;
     }
     res->len = (*v)->len + 1;
     res->data = (Complex *)malloc(sizeof(Complex) * res->len);
     if (res->data == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         free(res);
         return;
     }

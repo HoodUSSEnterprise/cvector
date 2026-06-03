@@ -6,7 +6,7 @@ MatrixI *identity_matrixi(int order)
     int *data = (int *)malloc(sizeof(int) * order * order);
     if (data == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return NULL;
     }
     memset(data, 0, sizeof(int) * order * order);
@@ -22,7 +22,7 @@ MatrixF *identity_matrixf(int order)
     float *data = (float *)malloc(sizeof(float) * order * order);
     if (data == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return NULL;
     }
     memset(data, 0, sizeof(float) * order * order);
@@ -38,7 +38,7 @@ MatrixD *identity_matrixd(int order)
     double *data = (double *)malloc(sizeof(double) * order * order);
     if (data == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return NULL;
     }
     memset(data, 0, sizeof(double) * order * order);
@@ -54,7 +54,7 @@ MatrixC *identity_matrixc(int order)
     Complex *data = (Complex *)malloc(sizeof(Complex) * order * order);
     if (data == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return NULL;
     }
     memset(data, 0, sizeof(Complex) * order * order);
@@ -75,7 +75,7 @@ MatrixI *diag_matrixi_i(const int *data, size_t len)
     int *new_data = (int *)malloc(sizeof(int) * len * len);
     if (new_data == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return NULL;
     }
     memset(new_data, 0, sizeof(int) * len * len);
@@ -96,7 +96,7 @@ MatrixI *diag_matrixi_f(const float *data, size_t len)
     int *new_data = (int *)malloc(sizeof(int) * len * len);
     if (new_data == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return NULL;
     }
     memset(new_data, 0, sizeof(int) * len * len);
@@ -117,7 +117,7 @@ MatrixI *diag_matrixi_d(const double *data, size_t len)
     int *new_data = (int *)malloc(sizeof(int) * len * len);
     if (new_data == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return NULL;
     }
     memset(new_data, 0, sizeof(int) * len * len);
@@ -138,7 +138,7 @@ MatrixI *diag_matrixi_c(const Complex *data, size_t len)
     int *new_data = (int *)malloc(sizeof(int) * len * len);
     if (new_data == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return NULL;
     }
     memset(new_data, 0, sizeof(int) * len * len);
@@ -159,7 +159,7 @@ MatrixF *diag_matrixf_i(const int *data, size_t len)
     float *new_data = (float *)malloc(sizeof(float) * len * len);
     if (new_data == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return NULL;
     }
     memset(new_data, 0, sizeof(float) * len * len);
@@ -180,7 +180,7 @@ MatrixF *diag_matrixf_f(const float *data, size_t len)
     float *new_data = (float *)malloc(sizeof(float) * len * len);
     if (new_data == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return NULL;
     }
     memset(new_data, 0, sizeof(float) * len * len);
@@ -201,7 +201,7 @@ MatrixF *diag_matrixf_d(const double *data, size_t len)
     float *new_data = (float *)malloc(sizeof(float) * len * len);
     if (new_data == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return NULL;
     }
     memset(new_data, 0, sizeof(float) * len * len);
@@ -222,7 +222,7 @@ MatrixF *diag_matrixf_c(const Complex *data, size_t len)
     float *new_data = (float *)malloc(sizeof(float) * len * len);
     if (new_data == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return NULL;
     }
     memset(new_data, 0, sizeof(float) * len * len);
@@ -243,7 +243,7 @@ MatrixD *diag_matrixd_i(const int *data, size_t len)
     double *new_data = (double *)malloc(sizeof(double) * len * len);
     if (new_data == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return NULL;
     }
     memset(new_data, 0, sizeof(double) * len * len);
@@ -264,7 +264,7 @@ MatrixD *diag_matrixd_f(const float *data, size_t len)
     double *new_data = (double *)malloc(sizeof(double) * len * len);
     if (new_data == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return NULL;
     }
     memset(new_data, 0, sizeof(double) * len * len);
@@ -285,7 +285,7 @@ MatrixD *diag_matrixd_d(const double *data, size_t len)
     double *new_data = (double *)malloc(sizeof(double) * len * len);
     if (new_data == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return NULL;
     }
     memset(new_data, 0, sizeof(double) * len * len);
@@ -306,7 +306,7 @@ MatrixD *diag_matrixd_c(const Complex *data, size_t len)
     double *new_data = (double *)malloc(sizeof(double) * len * len);
     if (new_data == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return NULL;
     }
     memset(new_data, 0, sizeof(double) * len * len);
@@ -327,7 +327,7 @@ MatrixC *diag_matrixc_i(const int *data, size_t len)
     Complex *new_data = (Complex *)malloc(sizeof(Complex) * len * len);
     if (new_data == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return NULL;
     }
     memset(new_data, 0, sizeof(Complex) * len * len);
@@ -348,7 +348,7 @@ MatrixC *diag_matrixc_f(const float *data, size_t len)
     Complex *new_data = (Complex *)malloc(sizeof(Complex) * len * len);
     if (new_data == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return NULL;
     }
     memset(new_data, 0, sizeof(Complex) * len * len);
@@ -369,7 +369,7 @@ MatrixC *diag_matrixc_d(const double *data, size_t len)
     Complex *new_data = (Complex *)malloc(sizeof(Complex) * len * len);
     if (new_data == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return NULL;
     }
     memset(new_data, 0, sizeof(Complex) * len * len);
@@ -390,7 +390,7 @@ MatrixC *diag_matrixc_c(const Complex *data, size_t len)
     Complex *new_data = (Complex *)malloc(sizeof(Complex) * len * len);
     if (new_data == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return NULL;
     }
     memset(new_data, 0, sizeof(Complex) * len * len);
@@ -407,7 +407,7 @@ MatrixI *eye_matrixi(int rows, int cols)
     int *data = (int *)malloc(sizeof(int) * rows * cols);
     if (data == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return NULL;
     }
     memset(data, 0, sizeof(int) * rows * cols);
@@ -424,7 +424,7 @@ MatrixF *eye_matrixf(int rows, int cols)
     float *data = (float *)malloc(sizeof(float) * rows * cols);
     if (data == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return NULL;
     }
     memset(data, 0, sizeof(float) * rows * cols);
@@ -441,7 +441,7 @@ MatrixD *eye_matrixd(int rows, int cols)
     double *data = (double *)malloc(sizeof(double) * rows * cols);
     if (data == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return NULL;
     }
     memset(data, 0, sizeof(double) * rows * cols);
@@ -458,7 +458,7 @@ MatrixC *eye_matrixc(int rows, int cols)
     Complex *data = (Complex *)malloc(sizeof(Complex) * rows * cols);
     if (data == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return NULL;
     }
     memset(data, 0, sizeof(Complex) * rows * cols);
@@ -474,7 +474,7 @@ MatrixI *zero_matrixi(int rows, int cols)
     int *data = (int *)malloc(sizeof(int) * rows * cols);
     if (data == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return NULL;
     }
     memset(data, 0, sizeof(int) * rows * cols);
@@ -486,7 +486,7 @@ MatrixF *zero_matrixf(int rows, int cols)
     float *data = (float *)malloc(sizeof(float) * rows * cols);
     if (data == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return NULL;
     }
     memset(data, 0, sizeof(float) * rows * cols);
@@ -498,7 +498,7 @@ MatrixD *zero_matrixd(int rows, int cols)
     double *data = (double *)malloc(sizeof(double) * rows * cols);
     if (data == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return NULL;
     }
     memset(data, 0, sizeof(double) * rows * cols);
@@ -510,7 +510,7 @@ MatrixC *zero_matrixc(int rows, int cols)
     Complex *data = (Complex *)malloc(sizeof(Complex) * rows * cols);
     if (data == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return NULL;
     }
     memset(data, 0, sizeof(Complex) * rows * cols);

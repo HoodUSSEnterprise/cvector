@@ -13,14 +13,14 @@ void pop_vectori(Vectori **v, int *elem)
     Vectori *res = (Vectori *)malloc(sizeof(Vectori));
     if (res == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return;
     }
     res->len = (*v)->len - 1;
     res->data = (int *)malloc(sizeof(int) * res->len);
     if (res->data == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return;
     }
     for (size_t i = 0; i < res->len; i++)
@@ -46,14 +46,14 @@ void pop_vectorf(Vectorf **v, float *elem)
     Vectorf *res = (Vectorf *)malloc(sizeof(Vectorf));
     if (res == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return;
     }
     res->len = (*v)->len - 1;
     res->data = (float *)malloc(sizeof(float) * res->len);
     if (res->data == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return;
     }
     for (size_t i = 0; i < res->len; i++)
@@ -79,14 +79,14 @@ void pop_vectord(Vectord **v, double *elem)
     Vectord *res = (Vectord *)malloc(sizeof(Vectord));
     if (res == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return;
     }
     res->len = (*v)->len - 1;
     res->data = (double *)malloc(sizeof(double) * res->len);
     if (res->data == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return;
     }
     for (size_t i = 0; i < res->len; i++)
@@ -112,14 +112,14 @@ void pop_vectorc(Vectorc **v, Complex *elem)
     Vectorc *res = (Vectorc *)malloc(sizeof(Vectorc));
     if (res == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return;
     }
     res->len = (*v)->len - 1;
     res->data = (Complex *)malloc(sizeof(Complex) * res->len);
     if (res->data == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return;
     }
     for (size_t i = 0; i < res->len; i++)

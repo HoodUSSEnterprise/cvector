@@ -37,7 +37,7 @@ double *eigenvalue_matrixd(MatrixD *m)
         free(Ak.data);
         free(Q.data);
         free(R.data);
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return NULL;
     }
 
@@ -69,7 +69,7 @@ double *eigenvalue_matrixd(MatrixD *m)
     double *ev = (double *)malloc(sizeof(double) * n);
     if (ev == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         free(Ak.data);
         free(Q.data);
         free(R.data);
@@ -119,7 +119,7 @@ Complex *eigenvalue_matrixc(MatrixC *m)
         free(Ak.data);
         free(Q.data);
         free(R.data);
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return NULL;
     }
 
@@ -153,7 +153,7 @@ Complex *eigenvalue_matrixc(MatrixC *m)
     Complex *ev = (Complex *)malloc(sizeof(Complex) * n);
     if (ev == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         free(Ak.data);
         free(Q.data);
         free(R.data);
@@ -187,7 +187,7 @@ MatrixD *eigenvector_matrixd(MatrixD *m, const double *eigenvalues, int num_ev)
     MatrixD *result = (MatrixD *)malloc(sizeof(MatrixD));
     if (result == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return NULL;
     }
     result->rows = n;
@@ -195,7 +195,7 @@ MatrixD *eigenvector_matrixd(MatrixD *m, const double *eigenvalues, int num_ev)
     result->data = (double *)calloc(n * num_ev, sizeof(double));
     if (result->data == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         free(result);
         return NULL;
     }

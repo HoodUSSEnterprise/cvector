@@ -10,7 +10,7 @@ int *transfrom_pointerf2i(float *data, size_t len)
     int *res = (int*)malloc(sizeof(int) * len);
     if (res == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return NULL;
     }
     for (size_t i = 0; i < len; i++)
@@ -30,7 +30,7 @@ int *transfrom_pointerd2i(double *data, size_t len)
     int *res = (int*)malloc(sizeof(int) * len);
     if (res == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return NULL;
     }
     for (size_t i = 0; i < len; i++)
@@ -50,7 +50,7 @@ int *transfrom_pointerc2i(Complex *data, size_t len)
     int *res = (int*)malloc(sizeof(int) * len);
     if (res == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return NULL;
     }
     for (size_t i = 0; i < len; i++)
@@ -70,7 +70,7 @@ float *transfrom_pointeri2f(int *data, size_t len)
     float *res = (float*)malloc(sizeof(float) * len);
     if (res == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return NULL;
     }
     for (size_t i = 0; i < len; i++)
@@ -90,7 +90,7 @@ float *transfrom_pointerd2f(double *data, size_t len)
     float *res = (float*)malloc(sizeof(float) * len);
     if (res == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return NULL;
     }
     for (size_t i = 0; i < len; i++)
@@ -110,7 +110,7 @@ float *transfrom_pointerc2f(Complex *data, size_t len)
     float *res = (float*)malloc(sizeof(float) * len);
     if (res == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return NULL;
     }
     for (size_t i = 0; i < len; i++)
@@ -130,7 +130,7 @@ double *transfrom_pointeri2d(int *data, size_t len)
     double *res = (double*)malloc(sizeof(double) * len);
     if (res == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return NULL;
     }
     for (size_t i = 0; i < len; i++)
@@ -150,7 +150,7 @@ double *transfrom_pointerf2d(float *data, size_t len)
     double *res = (double*)malloc(sizeof(double) * len);
     if (res == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return NULL;
     }
     for (size_t i = 0; i < len; i++)
@@ -170,7 +170,7 @@ double *transfrom_pointerc2d(Complex *data, size_t len)
     double *res = (double*)malloc(sizeof(double) * len);
     if (res == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return NULL;
     }
     for (size_t i = 0; i < len; i++)
@@ -190,7 +190,7 @@ Complex *transfrom_pointeri2c(int *data, size_t len)
     Complex *res = (Complex*)malloc(sizeof(Complex) * len);
     if (res == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return NULL;
     }
     for (size_t i = 0; i < len; i++)
@@ -210,7 +210,7 @@ Complex *transfrom_pointerf2c(float *data, size_t len)
     Complex *res = (Complex*)malloc(sizeof(Complex) * len);
     if (res == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return NULL;
     }
     for (size_t i = 0; i < len; i++)
@@ -231,7 +231,7 @@ Complex *transfrom_pointerd2c(double *data, size_t len)
     Complex *res = (Complex*)malloc(sizeof(Complex) * len);
     if (res == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return NULL;
     }
     for (size_t i = 0; i < len; i++)

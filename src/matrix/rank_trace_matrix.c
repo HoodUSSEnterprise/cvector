@@ -16,7 +16,7 @@ static int rank_matrix_generic(int n, int m, double *data)
     double *cp = (double *)malloc(sizeof(double) * n * m);
     if (cp == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return 0;
     }
     for (int i = 0; i < n * m; i++)
@@ -87,7 +87,7 @@ static int rank_matrix_generic_complex(int n, int m, Complex *data)
     Complex *cp = (Complex *)malloc(sizeof(Complex) * n * m);
     if (cp == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return 0;
     }
     for (int i = 0; i < n * m; i++)
@@ -163,7 +163,7 @@ int rank_matrixi(MatrixI *m)
     double *temp = (double *)malloc(sizeof(double) * m->rows * m->cols);
     if (temp == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return 0;
     }
     for (int i = 0; i < m->rows * m->cols; i++)
@@ -185,7 +185,7 @@ int rank_matrixf(MatrixF *m)
     double *temp = (double *)malloc(sizeof(double) * m->rows * m->cols);
     if (temp == NULL)
     {
-        printf("No memory\n");
+        fprintf(stderr, "Memory allocation failed\n");
         return 0;
     }
     for (int i = 0; i < m->rows * m->cols; i++)
