@@ -129,6 +129,7 @@ Vectori *add_vector2i_i(const Vector2i *v1, const Vectori *v2)
         if (res->data == NULL)
         {
             fprintf(stderr, "Memory allocation failed\n");
+            free(res);
             return NULL;
         }
         res->data[0] = v1->x;
@@ -148,6 +149,7 @@ Vectori *add_vector2i_i(const Vector2i *v1, const Vectori *v2)
         if (res->data == NULL)
         {
             fprintf(stderr, "Memory allocation failed\n");
+            free(res);
             return NULL;
         }
         for (size_t i = 0; i < res->len; i++)
@@ -1234,6 +1236,7 @@ Vectori *add_vector3i_i(const Vector3i *v1, const Vectori *v2)
         if (res->data == NULL)
         {
             fprintf(stderr, "Memory allocation failed\n");
+            free(res);
             return NULL;
         }
         for (size_t i = 0; i < res->len; i++)
@@ -2532,6 +2535,7 @@ Vectori *add_vectori_i(const Vectori *v1, const Vectori *v2)
         if (res->data == NULL)
         {
             fprintf(stderr, "Memory allocation failed\n");
+            free(res);
             return NULL;
         }
         for (size_t i = 0; i < res->len; i++)
@@ -2547,6 +2551,7 @@ Vectori *add_vectori_i(const Vectori *v1, const Vectori *v2)
         if (res->data == NULL)
         {
             fprintf(stderr, "Memory allocation failed\n");
+            free(res);
             return NULL;
         }
         for (size_t i = 0; i < res->len; i++)
