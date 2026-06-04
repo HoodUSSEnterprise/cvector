@@ -1,7 +1,6 @@
 #include "complex/free_complex.h"
 
-void free_complex(Complex *c)
+void free_complex(Complex **c)
 {
-    free(c);
-    c = NULL;
+    free(&c);
 }

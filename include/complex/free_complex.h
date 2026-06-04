@@ -3,6 +3,6 @@
 
 #include "complex/base_complex.h"
 
-void free_complex(Complex *c);
+void free_complex(Complex **c);
 
 #endif // FREE_COMPLEX_H
