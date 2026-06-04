@@ -25,7 +25,7 @@ void qr_householder_matrixd(MatrixD *m, MatrixD **Q, MatrixD **R);
 void qr_householder_matrixc(MatrixC *m, MatrixC **Q, MatrixC **R);
 
 // ========== QR 迭代是否收敛（次对角线是否接近 0） ==========
-bool qr_iter_stop_matrixd(MatrixD *m);
-bool qr_iter_stop_matrixc(MatrixC *m);
+bool qr_iter_stop_matrixd(const MatrixD *m);
+bool qr_iter_stop_matrixc(const MatrixC *m);
 
 #endif // QR_MATRIX_H

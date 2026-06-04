@@ -10,12 +10,15 @@ void insert_vectori_i(Vectori **v, size_t pos, int value)
     if (res == NULL)
     {
         fprintf(stderr, "Memory allocation failed\n");
+        return;
     }
     res->len = (*v)->len + 1;
     res->data = (int *)malloc(sizeof(int) * res->len);
     if (res->data == NULL)
     {
         fprintf(stderr, "Memory allocation failed\n");
+        free(res);
+        return;
     }
     if (pos > (*v)->len - 1) // 默认pos大于数组长度，直接插入到最后
     {
@@ -49,12 +52,15 @@ void insert_vectori_f(Vectori **v, size_t pos, float value)
     if (res == NULL)
     {
         fprintf(stderr, "Memory allocation failed\n");
+        return;
     }
     res->len = (*v)->len + 1;
     res->data = (int *)malloc(sizeof(int) * res->len);
     if (res->data == NULL)
     {
         fprintf(stderr, "Memory allocation failed\n");
+        free(res);
+        return;
     }
     if (pos > (*v)->len - 1) // 默认pos大于数组长度，直接插入到最后
     {
@@ -88,12 +94,15 @@ void insert_vectori_d(Vectori **v, size_t pos, double value)
     if (res == NULL)
     {
         fprintf(stderr, "Memory allocation failed\n");
+        return;
     }
     res->len = (*v)->len + 1;
     res->data = (int *)malloc(sizeof(int) * res->len);
     if (res->data == NULL)
     {
         fprintf(stderr, "Memory allocation failed\n");
+        free(res);
+        return;
     }
     if (pos > (*v)->len - 1) // 默认pos大于数组长度，直接插入到最后
     {
@@ -127,12 +136,15 @@ void insert_vectori_c(Vectori **v, size_t pos, Complex value)
     if (res == NULL)
     {
         fprintf(stderr, "Memory allocation failed\n");
+        return;
     }
     res->len = (*v)->len + 1;
     res->data = (int *)malloc(sizeof(int) * res->len);
     if (res->data == NULL)
     {
         fprintf(stderr, "Memory allocation failed\n");
+        free(res);
+        return;
     }
     if (pos > (*v)->len - 1) // 默认pos大于数组长度，直接插入到最后
     {

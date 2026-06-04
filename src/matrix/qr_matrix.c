@@ -18,6 +18,11 @@ void gram_schmidt_matrixd(MatrixD *m, MatrixD **Q)
 
     // 提取每一列
     MatrixD *cols = (MatrixD *)malloc(sizeof(MatrixD) * p);
+    if (cols == NULL)
+    {
+        fprintf(stderr, "Memory allocation failed\n");
+        return;
+    }
     for (int i = 0; i < p; i++)
     {
         cols[i].rows = n;
@@ -94,6 +99,11 @@ void gram_schmidt_matrixc(MatrixC *m, MatrixC **Q)
 
     // 提取每一列
     MatrixC *cols = (MatrixC *)malloc(sizeof(MatrixC) * p);
+    if (cols == NULL)
+    {
+        fprintf(stderr, "Memory allocation failed\n");
+        return;
+    }
     for (int i = 0; i < p; i++)
     {
         cols[i].rows = n;
@@ -140,32 +150,31 @@ void gram_schmidt_matrixc(MatrixC *m, MatrixC **Q)
         for (int r = 0; r < n; r++)
         {
             norm += (cols[i].data[r].real * cols[i].data[r].real + cols[i].data[r].imag * cols[i].data[r].imag);
-            norm = sqrt(norm);
-
-            if (norm > EPS)
-            {
-                for (int r = 0; r < n; r++)
-                {
-                    cols[i].data[r] = (Complex){cols[i].data[r].real / norm, cols[i].data[r].imag / norm};
-                }
-            }
         }
-
-        // 写入 (*Q)
-        for (int i = 0; i < p; i++)
+        norm = sqrt(norm);
+        double inv_norm = 1.0 / norm; // 计算一次倒数
+        if (norm > EPS)
         {
             for (int r = 0; r < n; r++)
             {
-                (*Q)->data[r * p + i] = cols[i].data[r];
+                cols[i].data[r] = (Complex){cols[i].data[r].real * inv_norm, cols[i].data[r].imag * inv_norm};
             }
         }
-
-        for (int i = 0; i < p; i++)
-        {
-            free(cols[i].data);
-        }
-        free(cols);
     }
+
+    // 写入 (*Q)
+    for (int i = 0; i < p; i++)
+    {
+        for (int r = 0; r < n; r++)
+        {
+            (*Q)->data[r * p + i] = cols[i].data[r];
+        }
+    }
+    for (int i = 0; i < p; i++)
+    {
+        free(cols[i].data);
+    }
+    free(cols);
 }
 // ==================== QR 分解 (Gram-Schmidt) ====================
 
@@ -218,6 +227,11 @@ void qr_householder_matrixd(MatrixD *m, MatrixD **Q, MatrixD **R)
     A.rows = n;
     A.cols = p;
     A.data = (double *)malloc(sizeof(double) * n * p);
+    if (A.data == NULL)
+    {
+        fprintf(stderr, "Memory allocation failed\n");
+        return;
+    }
     for (int i = 0; i < n * p; i++)
     {
         A.data[i] = m->data[i];
@@ -237,8 +251,16 @@ void qr_householder_matrixd(MatrixD *m, MatrixD **Q, MatrixD **R)
         // 计算 Householder 向量 u
         int len = n - k;
         double *x = (double *)malloc(sizeof(double) * len);
+        if (x == NULL)
+        {
+            fprintf(stderr, "Memory allocation failed\n");
+            free(A.data);
+            return;
+        }
         for (int i = 0; i < len; i++)
+        {
             x[i] = A.data[(k + i) * p + k];
+        }
 
         double norm_x = 0.0;
         for (int i = 0; i < len; i++)
@@ -255,6 +277,13 @@ void qr_householder_matrixd(MatrixD *m, MatrixD **Q, MatrixD **R)
 
         double alpha = (x[0] >= 0) ? -norm_x : norm_x;
         double *u = (double *)malloc(sizeof(double) * len);
+        if (u == NULL)
+        {
+            fprintf(stderr, "Memory allocation failed\n");
+            free(A.data);
+            free(x);
+            return;
+        }
         for (int i = 0; i < len; i++)
         {
             u[i] = (i == 0) ? x[0] - alpha : x[i];
@@ -359,6 +388,12 @@ void qr_householder_matrixc(MatrixC *m, MatrixC **Q, MatrixC **R)
 
         // 提取列向量 x
         Complex *x = (Complex *)malloc(sizeof(Complex) * len);
+        if (x == NULL)
+        {
+            fprintf(stderr, "Memory allocation failed\n");
+            free(A.data);
+            return;
+        }
         for (int i = 0; i < len; i++)
         {
             x[i] = A.data[(k + i) * p + k];
@@ -395,6 +430,13 @@ void qr_householder_matrixc(MatrixC *m, MatrixC **Q, MatrixC **R)
 
         // 计算 Householder 向量 u
         Complex *u = (Complex *)malloc(sizeof(Complex) * len);
+        if (u == NULL)
+        {
+            fprintf(stderr, "Memory allocation failed\n");
+            free(A.data);
+            free(x);
+            return;
+        }
         for (int i = 0; i < len; i++)
         {
             if (i == 0)
@@ -448,6 +490,14 @@ void qr_householder_matrixc(MatrixC *m, MatrixC **Q, MatrixC **R)
         // 更新 Q = Q * H
         // 先计算 t = Q * u (n 维向量)
         Complex *t = (Complex *)malloc(sizeof(Complex) * n);
+        if (t == NULL)
+        {
+            fprintf(stderr, "Memory allocation failed\n");
+            free(A.data);
+            free(x);
+            free(u);
+            return;
+        }
         for (int i = 0; i < n; i++)
         {
             t[i].real = 0.0;
@@ -497,7 +547,7 @@ void qr_householder_matrixc(MatrixC *m, MatrixC **Q, MatrixC **R)
 
 // ==================== QR 迭代收敛判断 ====================
 
-bool qr_iter_stop_matrixd(MatrixD *m)
+bool qr_iter_stop_matrixd(const MatrixD *m)
 {
     if (m == NULL || m->data == NULL)
     {
@@ -517,7 +567,7 @@ bool qr_iter_stop_matrixd(MatrixD *m)
     return true;
 }
 
-bool qr_iter_stop_matrixc(MatrixC *m)
+bool qr_iter_stop_matrixc(const MatrixC *m)
 {
     if (m == NULL || m->data == NULL)
     {

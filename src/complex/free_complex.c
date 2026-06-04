@@ -2,5 +2,13 @@
 
 void free_complex(Complex **c)
 {
-    free(&c);
+    if (c == NULL || *c == NULL)
+    {
+        return;
+    }
+    else
+    {
+        free(*c);
+        *c = NULL;
+    }
 }

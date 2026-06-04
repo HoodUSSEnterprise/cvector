@@ -165,7 +165,6 @@ MatrixD *adjugate_matrixd(MatrixD *m)
 
 MatrixC *adjugate_matrixc(MatrixC *m)
 {
-    Complex zero = {0.0, 0.0};
     Complex minus_one = {-1.0, 0.0};
 
     if (m == NULL || m->data == NULL)
