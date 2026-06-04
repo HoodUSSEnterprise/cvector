@@ -1,7 +1,7 @@
 #include "vector/remove_vector.h"
 #include "vector/copy_vector.h"
 
-Vectori *remove_vectori_elem(Vectori *v, int elem)
+Vectori *remove_vectori_elem(const Vectori *v, int elem)
 {
     // 先统计有多少个要删除的元素
     int count = 0;
@@ -51,7 +51,7 @@ Vectori *remove_vectori_elem(Vectori *v, int elem)
     return res;
 }
 
-Vectorf *remove_vectorf_elem(Vectorf *v, float elem)
+Vectorf *remove_vectorf_elem(const Vectorf *v, float elem)
 {
     // 统计要删除的元素个数（注意：浮点数比较需考虑精度）
     int count = 0;
@@ -100,7 +100,7 @@ Vectorf *remove_vectorf_elem(Vectorf *v, float elem)
     return res;
 }
 
-Vectord *remove_vectord_elem(Vectord *v, double elem)
+Vectord *remove_vectord_elem(const Vectord *v, double elem)
 {
     // 统计要删除的元素个数
     int count = 0;
@@ -146,7 +146,7 @@ Vectord *remove_vectord_elem(Vectord *v, double elem)
     return res;
 }
 
-Vectorc *remove_vectorc_elem(Vectorc *v, Complex elem)
+Vectorc *remove_vectorc_elem(const Vectorc *v, Complex elem)
 {
     // 统计要删除的元素个数
     int count = 0;
@@ -192,7 +192,7 @@ Vectorc *remove_vectorc_elem(Vectorc *v, Complex elem)
     return res;
 }
 
-Vectori *remove_vectori_array(Vectori *v, int *array, size_t len)
+Vectori *remove_vectori_array(const Vectori *v, const int *array, size_t len)
 {
     Vectori *res = (Vectori *)malloc(sizeof(Vectori));
     if (res == NULL)
@@ -216,7 +216,7 @@ Vectori *remove_vectori_array(Vectori *v, int *array, size_t len)
     return res;
 }
 
-Vectorf *remove_vectorf_array(Vectorf *v, float *array, size_t len)
+Vectorf *remove_vectorf_array(const Vectorf *v, const float *array, size_t len)
 {
     Vectorf *res = (Vectorf *)malloc(sizeof(Vectorf));
     if (res == NULL)
@@ -235,7 +235,7 @@ Vectorf *remove_vectorf_array(Vectorf *v, float *array, size_t len)
     return res;
 }
 
-Vectord *remove_vectord_array(Vectord *v, double *array, size_t len)
+Vectord *remove_vectord_array(const Vectord *v, const double *array, size_t len)
 {
     Vectord *res = (Vectord *)malloc(sizeof(Vectord));
     if (res == NULL)
@@ -254,7 +254,7 @@ Vectord *remove_vectord_array(Vectord *v, double *array, size_t len)
     return res;
 }
 
-Vectorc *remove_vectorc_array(Vectorc *v, Complex *array, size_t len)
+Vectorc *remove_vectorc_array(const Vectorc *v, const Complex *array, size_t len)
 {
     Vectorc *res = (Vectorc *)malloc(sizeof(Vectorc));
     if (res == NULL)
