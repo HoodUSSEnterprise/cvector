@@ -2542,7 +2542,6 @@ Vectori *add_vectori_i(const Vectori *v1, const Vectori *v2)
         {
             res->data[i] = v1->data[i] + v2->data[i];
         }
-        return 0;
     }
     else
     {
@@ -2560,8 +2559,8 @@ Vectori *add_vectori_i(const Vectori *v1, const Vectori *v2)
             int b = (v2->len - 1 >= i ? v2->data[i] : 0);
             res->data[i] = a + b;
         }
-        return res;
     }
+    return res;
 }
 
 Vectorf *add_vectori_f(const Vectori *v1, const Vectorf *v2)
@@ -2646,7 +2645,6 @@ Vectorc *add_vectori_c(const Vectori *v1, const Vectorc *v2)
         {
             res->data[i] = add_complex((Complex){v1->data[i], 0}, v2->data[i]);
         }
-        return 0;
     }
     else
     {
@@ -2658,8 +2656,8 @@ Vectorc *add_vectori_c(const Vectori *v1, const Vectorc *v2)
             Complex b = (v2->len - 1 >= i ? v2->data[i] : (Complex){0, 0});
             res->data[i] = add_complex((Complex){a, 0}, b);
         }
-        return res;
     }
+    return res;
 }
 
 // ============ Vectorf  ============
@@ -3482,7 +3480,6 @@ Vectorc *add_vectorc_c(const Vectorc *v1, const Vectorc *v2)
         {
             res->data[i] = add_complex(v1->data[i], v2->data[i]);
         }
-        return 0;
     }
     else
     {
@@ -3494,6 +3491,6 @@ Vectorc *add_vectorc_c(const Vectorc *v1, const Vectorc *v2)
             Complex b = (v2->len - 1 >= i ? v2->data[i] : (Complex){0, 0});
             res->data[i] = add_complex(a, b);
         }
-        return res;
     }
+    return res;
 }

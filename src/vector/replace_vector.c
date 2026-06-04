@@ -299,7 +299,7 @@ Vectorc *replace_vectorc_elem(Vectorc *v, Complex old_elem, Complex new_elem)
     }
 }
 
-Vectori *replace_vectori_array(Vectori *v, int *old_array, int *new_array, size_t len)
+Vectori *replace_vectori_array(Vectori *v, const int *old_array, const int *new_array, size_t len)
 {
     if (v->len < len)
     {
@@ -337,7 +337,7 @@ Vectori *replace_vectori_array(Vectori *v, int *old_array, int *new_array, size_
     }
 }
 
-Vectorf *replace_vectorf_array(Vectorf *v, float *old_array, float *new_array, size_t len)
+Vectorf *replace_vectorf_array(Vectorf *v, const float *old_array, const float *new_array, size_t len)
 {
     if (v->len < len)
     {
@@ -374,7 +374,7 @@ Vectorf *replace_vectorf_array(Vectorf *v, float *old_array, float *new_array, s
     }
 }
 
-Vectord *replace_vectord_array(Vectord *v, double *old_array, double *new_array, size_t len)
+Vectord *replace_vectord_array(Vectord *v, const double *old_array, const double *new_array, size_t len)
 {
     if (v->len < len)
     {
@@ -411,7 +411,7 @@ Vectord *replace_vectord_array(Vectord *v, double *old_array, double *new_array,
     }
 }
 
-Vectorc *replace_vectorc_array(Vectorc *v, Complex *old_array, Complex *new_array, size_t len)
+Vectorc *replace_vectorc_array(Vectorc *v, const Complex *old_array, const Complex *new_array, size_t len)
 {
     if (v->len < len)
     {
