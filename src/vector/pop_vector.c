@@ -21,6 +21,7 @@ void pop_vectori(Vectori **v, int *elem)
     if (res->data == NULL)
     {
         fprintf(stderr, "Memory allocation failed\n");
+        free(res);
         return;
     }
     for (size_t i = 0; i < res->len; i++)
@@ -54,6 +55,7 @@ void pop_vectorf(Vectorf **v, float *elem)
     if (res->data == NULL)
     {
         fprintf(stderr, "Memory allocation failed\n");
+        free(res);
         return;
     }
     for (size_t i = 0; i < res->len; i++)
@@ -87,6 +89,7 @@ void pop_vectord(Vectord **v, double *elem)
     if (res->data == NULL)
     {
         fprintf(stderr, "Memory allocation failed\n");
+        free(res);
         return;
     }
     for (size_t i = 0; i < res->len; i++)
@@ -120,6 +123,7 @@ void pop_vectorc(Vectorc **v, Complex *elem)
     if (res->data == NULL)
     {
         fprintf(stderr, "Memory allocation failed\n");
+        free(res);
         return;
     }
     for (size_t i = 0; i < res->len; i++)

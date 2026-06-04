@@ -17,6 +17,7 @@ void push_back_vectori_i(Vectori **v, int push_number)
     if (res->data == NULL)
     {
         fprintf(stderr, "Memory allocation failed\n");
+        free(res);
         return;
     }
     size_t i;
@@ -47,6 +48,7 @@ void push_back_vectori_f(Vectori **v, float push_number)
     if (res->data == NULL)
     {
         fprintf(stderr, "Memory allocation failed\n");
+        free(res);
         return;
     }
     size_t i;
@@ -77,6 +79,7 @@ void push_back_vectori_d(Vectori **v, double push_number)
     if (res->data == NULL)
     {
         fprintf(stderr, "Memory allocation failed\n");
+        free(res);
         return;
     }
     size_t i;
@@ -107,6 +110,7 @@ void push_back_vectori_c(Vectori **v, Complex push_number)
     if (res->data == NULL)
     {
         fprintf(stderr, "Memory allocation failed\n");
+        free(res);
         return;
     }
     size_t i;
@@ -137,6 +141,7 @@ void push_back_vectorf_i(Vectorf **v, int push_number)
     if (res->data == NULL)
     {
         fprintf(stderr, "Memory allocation failed\n");
+        free(res);
         return;
     }
     size_t i;
@@ -167,6 +172,7 @@ void push_back_vectorf_f(Vectorf **v, float push_number)
     if (res->data == NULL)
     {
         fprintf(stderr, "Memory allocation failed\n");
+        free(res);
         return;
     }
     size_t i;
@@ -197,6 +203,7 @@ void push_back_vectorf_d(Vectorf **v, double push_number)
     if (res->data == NULL)
     {
         fprintf(stderr, "Memory allocation failed\n");
+        free(res);
         return;
     }
     size_t i;
@@ -227,6 +234,7 @@ void push_back_vectorf_c(Vectorf **v, Complex push_number)
     if (res->data == NULL)
     {
         fprintf(stderr, "Memory allocation failed\n");
+        free(res);
         return;
     }
     size_t i;
@@ -257,6 +265,7 @@ void push_back_vectord_i(Vectord **v, int push_number)
     if (res->data == NULL)
     {
         fprintf(stderr, "Memory allocation failed\n");
+        free(res);
         return;
     }
     size_t i;
@@ -287,6 +296,7 @@ void push_back_vectord_f(Vectord **v, float push_number)
     if (res->data == NULL)
     {
         fprintf(stderr, "Memory allocation failed\n");
+        free(res);
         return;
     }
     size_t i;
@@ -317,6 +327,7 @@ void push_back_vectord_d(Vectord **v, double push_number)
     if (res->data == NULL)
     {
         fprintf(stderr, "Memory allocation failed\n");
+        free(res);
         return;
     }
     size_t i;
@@ -347,6 +358,7 @@ void push_back_vectord_c(Vectord **v, Complex push_number)
     if (res->data == NULL)
     {
         fprintf(stderr, "Memory allocation failed\n");
+        free(res);
         return;
     }
     size_t i;
@@ -377,6 +389,7 @@ void push_back_vectorc_i(Vectorc **v, int push_number)
     if (res->data == NULL)
     {
         fprintf(stderr, "Memory allocation failed\n");
+        free(res);
         return;
     }
     size_t i;
@@ -407,6 +420,7 @@ void push_back_vectorc_f(Vectorc **v, float push_number)
     if (res->data == NULL)
     {
         fprintf(stderr, "Memory allocation failed\n");
+        free(res);
         return;
     }
     size_t i;
@@ -437,6 +451,7 @@ void push_back_vectorc_d(Vectorc **v, double push_number)
     if (res->data == NULL)
     {
         fprintf(stderr, "Memory allocation failed\n");
+        free(res);
         return;
     }
     size_t i;
@@ -467,6 +482,7 @@ void push_back_vectorc_c(Vectorc **v, Complex push_number)
     if (res->data == NULL)
     {
         fprintf(stderr, "Memory allocation failed\n");
+        free(res);
         return;
     }
     size_t i;
