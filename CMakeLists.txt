@@ -147,3 +147,26 @@ target_include_directories(stack_lib PUBLIC ${PROJECT_SOURCE_DIR}/include)
 
 add_executable(test_program_stack example/stack_example.c)
 target_link_libraries(test_program_stack stack_lib)
+
+set(LIB_SOURCES_DEQUE
+    src/deque/clear_deque.c
+    src/deque/create_deque.c
+    src/deque/empty_deque.c
+    src/deque/free_deque.c
+    src/deque/front_deque.c
+    src/deque/pop_front_deque.c
+    src/deque/pop_rear_deque.c
+    src/deque/print_deque_reverse.c
+    src/deque/print_deque.c
+    src/deque/push_front_deque.c
+    src/deque/push_rear_deque.c
+    src/deque/rear_deque.c
+    src/deque/size_deque.c
+)
+
+add_library(deque_lib ${LIB_SOURCES_DEQUE})
+
+target_include_directories(deque_lib PUBLIC ${PROJECT_SOURCE_DIR}/include)
+
+add_executable(test_program_deque example/deque_example.c)
+target_link_libraries(test_program_deque deque_lib)

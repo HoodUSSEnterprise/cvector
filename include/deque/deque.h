@@ -33,5 +33,7 @@ int rear(Deque *deque, int *data);
 int is_empty_deque(Deque *deque);
 int get_deque_size(Deque *deque);
 void clear_deque(Deque *deque);
-
+// 打印
+void print_deque(Deque *deque);
+void print_deque_reverse(Deque *deque);
 #endif
