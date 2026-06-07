@@ -206,3 +206,36 @@ target_include_directories(rbtree_lib PUBLIC ${PROJECT_SOURCE_DIR}/include)
 
 add_executable(test_program_rbtree example/rbtree_example.c)
 target_link_libraries(test_program_rbtree rbtree_lib)
+
+set(LIB_SOURCES_SET
+    src/set/create_set.c
+    src/set/insert_set.c
+    src/set/delete_set.c
+    src/set/find_set.c
+    src/set/free_set.c
+    src/set/operator_set.c
+)
+
+add_library(set_lib ${LIB_SOURCES_SET})
+
+target_include_directories(set_lib PUBLIC ${PROJECT_SOURCE_DIR}/include)
+target_link_libraries(set_lib rbtree_lib)
+
+add_executable(test_program_set example/set_example.c)
+target_link_libraries(test_program_set set_lib)
+
+set(LIB_SOURCES_MAP
+    src/map/create_map.c
+    src/map/insert_map.c
+    src/map/delete_map.c
+    src/map/find_map.c
+    src/map/free_map.c
+    src/map/operator_map.c
+)
+
+add_library(map_lib ${LIB_SOURCES_MAP})
+
+target_include_directories(map_lib PUBLIC ${PROJECT_SOURCE_DIR}/include)
+
+add_executable(test_program_map example/map_example.c)
+target_link_libraries(test_program_map map_lib)
