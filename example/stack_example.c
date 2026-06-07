@@ -1,55 +1,70 @@
-#include "stack/stack.h"
+#include "stack.h"
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
+
+// 简单函数1：整数入栈出栈
+void test_int()
+{
+    printf("=== 整数测试 ===\n");
+    Stack *s = create_stack();
+
+    int a = 10, b = 20, c = 30;
+    push(s, &a);
+    push(s, &b);
+    push(s, &c);
+
+    int *p;
+    pop(s, (void **)&p);
+    printf("出栈: %d\n", *p);
+    pop(s, (void **)&p);
+    printf("出栈: %d\n", *p);
+
+    free_stack(s);
+}
+
+// 简单函数2：字符串入栈出栈
+void test_string()
+{
+    printf("\n=== 字符串测试 ===\n");
+    Stack *s = create_stack();
+
+    char *str1 = "Hello";
+    char *str2 = "World";
+    push(s, str1);
+    push(s, str2);
+
+    char *str;
+    pop(s, (void **)&str);
+    printf("出栈: %s\n", str);
+    pop(s, (void **)&str);
+    printf("出栈: %s\n", str);
+
+    free_stack(s);
+}
+
+// 简单函数3：查看栈顶
+void test_top()
+{
+    printf("\n=== 查看栈顶测试 ===\n");
+    Stack *s = create_stack();
+
+    int x = 100;
+    push(s, &x);
+
+    int *p;
+    top(s, (void **)&p);
+    printf("栈顶: %d\n", *p);
+    printf("栈大小: %d\n", get_stack_size(s));
+
+    free_stack(s);
+}
 
 int main()
 {
-    Stack *back_stack = create_stack();    // 后退栈
-    Stack *forward_stack = create_stack(); // 前进栈
-    char current_page[100] = "首页";
-
-    printf("=== 浏览器历史记录演示 ===\n\n");
-
-    // 访问新页面
-    printf("访问新页面: 百度\n");
-    push(back_stack, (int)strdup("百度"));
-    printf("访问新页面: 谷歌\n");
-    push(back_stack, (int)strdup("谷歌"));
-    printf("访问新页面: GitHub\n");
-    push(back_stack, (int)strdup("GitHub"));
-    printf("当前页面: GitHub\n\n");
-
-    // 后退操作
-    int page;
-    printf("后退操作:\n");
-    if (pop(back_stack, &page) == 0)
-    {
-        push(forward_stack, (int)strdup("GitHub"));
-        printf("后退到: %s\n", (char *)page);
-        free((void *)page);
-    }
-
-    if (pop(back_stack, &page) == 0)
-    {
-        push(forward_stack, (int)strdup("谷歌"));
-        printf("后退到: %s\n", (char *)page);
-        free((void *)page);
-    }
-    printf("\n");
-
-    // 前进操作
-    printf("前进操作:\n");
-    if (pop(forward_stack, &page) == 0)
-    {
-        push(back_stack, (int)strdup((char *)page));
-        printf("前进到: %s\n", (char *)page);
-        free((void *)page);
-    }
-    printf("\n");
-
-    // 清理
-    free_stack(back_stack);
-    free_stack(forward_stack);
-
+    system("chcp 65001");
+    test_int();
+    test_string();
+    test_top();
     return 0;
 }
