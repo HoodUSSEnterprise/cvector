@@ -1,4 +1,4 @@
-#include "queue.h"
+#include "queue/queue.h"
 #include <stdlib.h>
 
 void clear_queue(Queue *queue)

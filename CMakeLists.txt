@@ -147,3 +147,22 @@ target_include_directories(stack_lib PUBLIC ${PROJECT_SOURCE_DIR}/include)
 
 add_executable(test_program_stack example/stack_example.c)
 target_link_libraries(test_program_stack stack_lib)
+
+set(LIB_SOURCES_QUEUE
+    src/queue/clear_queue.c
+    src/queue/create_queue.c
+    src/queue/de_queue.c
+    src/queue/empty_queue.c
+    src/queue/en_queue.c
+    src/queue/free_queue.c
+    src/queue/front_queue.c
+    src/queue/print_queue.c
+    src/queue/size_queue.c
+)
+
+add_library(queue_lib ${LIB_SOURCES_QUEUE})
+
+target_include_directories(queue_lib PUBLIC ${PROJECT_SOURCE_DIR}/include)
+
+add_executable(test_program_queue example/queue_example.c)
+target_link_libraries(test_program_queue queue_lib)

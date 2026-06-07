@@ -1,4 +1,4 @@
-#include "queue.h"
+#include "queue/queue.h"
 
 int get_queue_size(Queue *queue)
 {

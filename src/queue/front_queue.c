@@ -1,4 +1,4 @@
-#include "queue.h"
+#include "queue/queue.h"
 
 int front(Queue *queue, int *data)
 {

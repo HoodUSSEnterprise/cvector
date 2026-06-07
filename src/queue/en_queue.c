@@ -1,4 +1,4 @@
-#include "queue.h"
+#include "queue/queue.h"
 #include <stdlib.h>
 
 int enqueue(Queue *queue, int data)

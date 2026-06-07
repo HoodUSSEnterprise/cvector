@@ -1,4 +1,4 @@
-#include "queue.h"
+#include "queue/queue.h"
 
 int is_empty_queue(Queue *queue)
 {

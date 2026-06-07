@@ -1,4 +1,4 @@
-#include "queue.h"
+#include "queue/queue.h"
 #include <stdlib.h>
 
 void free_queue(Queue *queue)

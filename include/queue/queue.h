@@ -1,6 +1,8 @@
 #ifndef QUEUE_H
 #define QUEUE_H
 
+#include <stdio.h>
+
 typedef struct QueueNode
 {
     int data;
@@ -22,5 +24,6 @@ int front(Queue *queue, int *data);   // 查看队头
 int is_empty_queue(Queue *queue);
 int get_queue_size(Queue *queue);
 void clear_queue(Queue *queue);
+void print_queue(Queue *q);
 
 #endif
