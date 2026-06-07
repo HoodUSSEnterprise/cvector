@@ -189,3 +189,20 @@ target_include_directories(deque_lib PUBLIC ${PROJECT_SOURCE_DIR}/include)
 
 add_executable(test_program_deque example/deque_example.c)
 target_link_libraries(test_program_deque deque_lib)
+
+set(LIB_SOURCES_RBTREE
+    src/rbtree/create_rbtree.c
+    src/rbtree/insert_rbtree.c
+    src/rbtree/delete_rbtree.c
+    src/rbtree/find_rbtree.c
+    src/rbtree/free_rbtree.c
+    src/rbtree/print_rbtree.c
+    src/rbtree/operator_rbtree.c
+)
+
+add_library(rbtree_lib ${LIB_SOURCES_RBTREE})
+
+target_include_directories(rbtree_lib PUBLIC ${PROJECT_SOURCE_DIR}/include)
+
+add_executable(test_program_rbtree example/rbtree_example.c)
+target_link_libraries(test_program_rbtree rbtree_lib)
