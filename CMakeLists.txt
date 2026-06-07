@@ -97,3 +97,20 @@ target_link_libraries(matrix_lib complex_lib)
 
 add_executable(test_program_matrix example/matrix_example.c)
 target_link_libraries(test_program_matrix matrix_lib)
+
+set(LIB_SOURCES_STRING
+    src/string/create_string.c
+    src/string/find_string.c
+    src/string/free_string.c
+    src/string/print_string.c
+    src/string/number_string.c
+    src/string/operator_string.c
+)
+
+add_library(string_lib ${LIB_SOURCES_STRING})
+
+target_include_directories(string_lib PUBLIC ${PROJECT_SOURCE_DIR}/include)
+# target_link_libraries(matrix_lib complex_lib)
+
+add_executable(test_program_string example/string_example.c)
+target_link_libraries(test_program_string string_lib)
