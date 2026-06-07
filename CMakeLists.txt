@@ -319,3 +319,20 @@ target_include_directories(unordered_multiset_lib PUBLIC ${PROJECT_SOURCE_DIR}/i
 
 add_executable(test_program_unordered_multiset example/unordered_multiset_example.c)
 target_link_libraries(test_program_unordered_multiset unordered_multiset_lib)
+
+set(LIB_SOURCES_UNORDERED_MULTIMAP
+    src/unordered_multimap/create_unordered_multimap.c
+    src/unordered_multimap/insert_unordered_multimap.c
+    src/unordered_multimap/delete_unordered_multimap.c
+    src/unordered_multimap/find_unordered_multimap.c
+    src/unordered_multimap/free_unordered_multimap.c
+    src/unordered_multimap/operator_unordered_multimap.c
+    src/unordered_multimap/print_unordered_multimap.c
+)
+
+add_library(unordered_multimap_lib ${LIB_SOURCES_UNORDERED_MULTIMAP})
+
+target_include_directories(unordered_multimap_lib PUBLIC ${PROJECT_SOURCE_DIR}/include)
+
+add_executable(test_program_unordered_multimap example/unordered_multimap_example.c)
+target_link_libraries(test_program_unordered_multimap unordered_multimap_lib)
