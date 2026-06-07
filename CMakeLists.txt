@@ -239,3 +239,19 @@ target_include_directories(map_lib PUBLIC ${PROJECT_SOURCE_DIR}/include)
 
 add_executable(test_program_map example/map_example.c)
 target_link_libraries(test_program_map map_lib)
+
+set(LIB_SOURCES_FORWARDLIST
+    src/forwardlist/create_forwardlist.c
+    src/forwardlist/push_front_forwardlist.c
+    src/forwardlist/pop_front_forwardlist.c
+    src/forwardlist/operator_forwardlist.c
+    src/forwardlist/print_forwardlist.c
+    src/forwardlist/free_forwardlist.c
+)
+
+add_library(forwardlist_lib ${LIB_SOURCES_FORWARDLIST})
+
+target_include_directories(forwardlist_lib PUBLIC ${PROJECT_SOURCE_DIR}/include)
+
+add_executable(test_program_forwardlist example/forwardlist_example.c)
+target_link_libraries(test_program_forwardlist forwardlist_lib)
