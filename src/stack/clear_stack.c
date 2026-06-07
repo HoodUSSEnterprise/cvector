@@ -1,5 +1,4 @@
-#include "stack/stack.h"
-#include <stdlib.h>
+#include "stack/clear_stack.h"
 
 void clear_stack(Stack *stack)
 {

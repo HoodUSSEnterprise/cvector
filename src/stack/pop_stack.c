@@ -1,5 +1,4 @@
-#include "stack/stack.h"
-#include <stdlib.h>
+#include "stack/pop_stack.h"
 
 int pop(Stack *stack, int *data)
 {

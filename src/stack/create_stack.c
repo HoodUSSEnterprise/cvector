@@ -1,5 +1,4 @@
-#include "stack/stack.h"
-#include <stdlib.h>
+#include "stack/create_stack.h"
 
 Stack *create_stack(void)
 {

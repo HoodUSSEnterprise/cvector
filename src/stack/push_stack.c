@@ -1,5 +1,4 @@
-#include "stack/stack.h"
-#include <stdlib.h>
+#include "stack/push_stack.h"
 
 int push(Stack *stack, int data)
 {
