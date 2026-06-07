@@ -5,7 +5,7 @@ void free_hash_table(HashTable *ht)
     if (ht == NULL || ht->buckets == NULL)
     {
         printf("Invalid param\n");
-        return NULL;
+        return;
     }
 
     for (int i = 0; i < ht->table_size; i++)

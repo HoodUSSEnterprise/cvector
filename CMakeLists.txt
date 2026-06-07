@@ -114,3 +114,19 @@ target_include_directories(string_lib PUBLIC ${PROJECT_SOURCE_DIR}/include)
 
 add_executable(test_program_string example/string_example.c)
 target_link_libraries(test_program_string string_lib)
+
+set(LIB_SOURCES_HASHTABLE
+    src/hashtable/create_hash_table.c
+    src/hashtable/delete_node.c
+    src/hashtable/free_hash_table.c
+    src/hashtable/get_hash_table.c
+    src/hashtable/insert_hash_table.c
+)
+
+add_library(hash_table_lib ${LIB_SOURCES_HASHTABLE})
+
+target_include_directories(hash_table_lib PUBLIC ${PROJECT_SOURCE_DIR}/include)
+# target_link_libraries(matrix_lib complex_lib)
+
+add_executable(test_program_hash_table example/hash_table_example.c)
+target_link_libraries(test_program_hash_table hash_table_lib)

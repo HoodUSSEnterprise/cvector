@@ -1,5 +1,5 @@
-#ifndef HASH_TABLE_H
-#define HASH_TABLE_H
+#ifndef BASE_HASH_TABLE_H
+#define BASE_HASH_TABLE_H
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -12,7 +12,7 @@ typedef struct HashNode
     struct HashNode *next;
 } HashNode;
 
-typedef struct
+typedef struct HashTable
 {
     HashNode **buckets;
     int size;
