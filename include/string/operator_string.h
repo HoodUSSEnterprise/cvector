@@ -20,6 +20,8 @@ size_t size(MyString *self);
 
 size_t string_len(MyString *self);
 
+bool empty(MyString *self);
+
 #define append(string, str) _Generic((str), \
     char *: append_char,                    \
     MyString *: append_string)(string, str)

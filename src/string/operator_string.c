@@ -57,3 +57,8 @@ size_t string_len(MyString *self)
 {
     return self->len;
 }
+
+bool empty(MyString *self)
+{
+    return self->len == 0;
+}
