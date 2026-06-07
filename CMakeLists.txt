@@ -255,3 +255,19 @@ target_include_directories(forwardlist_lib PUBLIC ${PROJECT_SOURCE_DIR}/include)
 
 add_executable(test_program_forwardlist example/forwardlist_example.c)
 target_link_libraries(test_program_forwardlist forwardlist_lib)
+
+set(LIB_SOURCES_PRIORITYQUEUE
+    src/priorityqueue/create_priorityqueue.c
+    src/priorityqueue/push_priorityqueue.c
+    src/priorityqueue/pop_priorityqueue.c
+    src/priorityqueue/operator_priorityqueue.c
+    src/priorityqueue/print_priorityqueue.c
+    src/priorityqueue/free_priorityqueue.c
+)
+
+add_library(priorityqueue_lib ${LIB_SOURCES_PRIORITYQUEUE})
+
+target_include_directories(priorityqueue_lib PUBLIC ${PROJECT_SOURCE_DIR}/include)
+
+add_executable(test_program_priorityqueue example/priorityqueue_example.c)
+target_link_libraries(test_program_priorityqueue priorityqueue_lib)
