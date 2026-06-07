@@ -198,6 +198,7 @@ set(LIB_SOURCES_RBTREE
     src/rbtree/free_rbtree.c
     src/rbtree/print_rbtree.c
     src/rbtree/operator_rbtree.c
+    src/rbtree/count_rbtree.c
 )
 
 add_library(rbtree_lib ${LIB_SOURCES_RBTREE})
@@ -336,3 +337,21 @@ target_include_directories(unordered_multimap_lib PUBLIC ${PROJECT_SOURCE_DIR}/i
 
 add_executable(test_program_unordered_multimap example/unordered_multimap_example.c)
 target_link_libraries(test_program_unordered_multimap unordered_multimap_lib)
+
+set(LIB_SOURCES_MULTISET
+    src/multiset/create_multiset.c
+    src/multiset/insert_multiset.c
+    src/multiset/delete_multiset.c
+    src/multiset/find_multiset.c
+    src/multiset/free_multiset.c
+    src/multiset/operator_multiset.c
+    src/multiset/print_multiset.c
+)
+
+add_library(multiset_lib ${LIB_SOURCES_MULTISET})
+
+target_include_directories(multiset_lib PUBLIC ${PROJECT_SOURCE_DIR}/include)
+target_link_libraries(multiset_lib rbtree_lib)
+
+add_executable(test_program_multiset example/multiset_example.c)
+target_link_libraries(test_program_multiset multiset_lib)
