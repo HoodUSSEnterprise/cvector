@@ -1,5 +1,6 @@
 #include "rbtree/print_rbtree.h"
 
+/* 中序遍历（递归），输出 "键值r/b" 格式 */
 static void inorder(RBTree *tree, RBNode *x)
 {
     if (x == tree->nil) return;
@@ -8,6 +9,7 @@ static void inorder(RBTree *tree, RBNode *x)
     inorder(tree, x->right);
 }
 
+/* 前序遍历（递归） */
 static void preorder(RBTree *tree, RBNode *x)
 {
     if (x == tree->nil) return;
@@ -16,6 +18,7 @@ static void preorder(RBTree *tree, RBNode *x)
     preorder(tree, x->right);
 }
 
+/* 后序遍历（递归） */
 static void postorder(RBTree *tree, RBNode *x)
 {
     if (x == tree->nil) return;
@@ -24,6 +27,7 @@ static void postorder(RBTree *tree, RBNode *x)
     printf("%d%c ", x->key, x->color == RED ? 'r' : 'b');
 }
 
+/* 中序打印，输出为升序序列 */
 void rbtree_print_inorder(RBTree *tree)
 {
     printf("In-order:  ");
@@ -31,6 +35,7 @@ void rbtree_print_inorder(RBTree *tree)
     printf("\n");
 }
 
+/* 前序打印 */
 void rbtree_print_preorder(RBTree *tree)
 {
     printf("Pre-order: ");
@@ -38,6 +43,7 @@ void rbtree_print_preorder(RBTree *tree)
     printf("\n");
 }
 
+/* 后序打印 */
 void rbtree_print_postorder(RBTree *tree)
 {
     printf("Post-order:");
