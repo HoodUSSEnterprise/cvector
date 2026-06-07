@@ -302,3 +302,20 @@ target_include_directories(unordered_set_lib PUBLIC ${PROJECT_SOURCE_DIR}/includ
 
 add_executable(test_program_unorder example/unorder_example.c)
 target_link_libraries(test_program_unorder unordered_map_lib unordered_set_lib)
+
+set(LIB_SOURCES_UNORDERED_MULTISET
+    src/unordered_multiset/create_unordered_multiset.c
+    src/unordered_multiset/insert_unordered_multiset.c
+    src/unordered_multiset/delete_unordered_multiset.c
+    src/unordered_multiset/find_unordered_multiset.c
+    src/unordered_multiset/free_unordered_multiset.c
+    src/unordered_multiset/operator_unordered_multiset.c
+    src/unordered_multiset/print_unordered_multiset.c
+)
+
+add_library(unordered_multiset_lib ${LIB_SOURCES_UNORDERED_MULTISET})
+
+target_include_directories(unordered_multiset_lib PUBLIC ${PROJECT_SOURCE_DIR}/include)
+
+add_executable(test_program_unordered_multiset example/unordered_multiset_example.c)
+target_link_libraries(test_program_unordered_multiset unordered_multiset_lib)
