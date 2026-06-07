@@ -1,59 +1,31 @@
 #include "string/operator_string.h"
 
-void append_char(MyString **self, const char *str)
+void append_char(MyString *self, const char *str)
 {
-    if (self == NULL || *self == NULL || (*self)->buffer == NULL || str == NULL)
-    {
-        fprintf(stderr, "Invalid parameters\n");
-        return;
-    }
-
-    size_t new_len = (*self)->len + strlen(str);
-    char *new_buffer = (char *)malloc(new_len + 1); // +1 for '\0'
-    if (new_buffer == NULL)
+    size_t new_len = self->len + strlen(str);
+    char *new_buf = realloc(self->buffer, new_len + 1);
+    if (new_buf == NULL)
     {
         fprintf(stderr, "Memory allocation failed\n");
-        return;
+        return NULL;
     }
-
-    // Copy original
-    strcpy(new_buffer, (*self)->buffer);
-    // Append new string
-    strcat(new_buffer, str);
-
-    // Free old buffer
-    free((*self)->buffer);
-    // Update structure
-    (*self)->buffer = new_buffer;
-    (*self)->len = new_len;
+    self->buffer = new_buf;
+    strcat(self->buffer, str);
+    self->len = new_len;
 }
 
-void append_string(MyString **self, const MyString *str)
+void append_string(MyString *self, const MyString *str)
 {
-    if (self == NULL || *self == NULL || (*self)->buffer == NULL || str == NULL || str == NULL || str->buffer == NULL)
-    {
-        fprintf(stderr, "Invalid parameters\n");
-        return;
-    }
-
-    size_t new_len = (*self)->len + str->len;
-    char *new_buffer = (char *)malloc(new_len + 1); // +1 for '\0'
-    if (new_buffer == NULL)
+    size_t new_len = self->len + str->len;
+    char *new_buf = realloc(self->buffer, new_len + 1);
+    if (new_buf == NULL)
     {
         fprintf(stderr, "Memory allocation failed\n");
-        return;
+        return NULL;
     }
-
-    // Copy original
-    strcpy(new_buffer, (*self)->buffer);
-    // Append new string
-    strcat(new_buffer, str);
-
-    // Free old buffer
-    free((*self)->buffer);
-    // Update structure
-    (*self)->buffer = new_buffer;
-    (*self)->len = new_len;
+    self->buffer = new_buf;
+    strcat(self->buffer, str->buffer);
+    self->len = new_len;
 }
 
 bool equals_char(MyString *self, const char *str)

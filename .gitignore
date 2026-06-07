@@ -5,6 +5,7 @@ build/
 .vscode/
 *.code-workspace
 .hsnip
+.clang-format
 
 # OS
 Thumbs.db

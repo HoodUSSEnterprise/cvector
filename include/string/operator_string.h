@@ -4,9 +4,9 @@
 #include "string/base_string.h"
 #include <stdbool.h>
 
-void append_char(MyString **string, const char *str);
+void append_char(MyString *string, const char *str);
 
-void append_string(MyString **string, const MyString *str);
+void append_string(MyString *string, const MyString *str);
 
 bool equals_char(MyString *self, const char *str);
 
