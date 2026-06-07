@@ -1,0 +1,18 @@
+#include "stack/stack.h"
+#include <stdlib.h>
+
+void clear_stack(Stack *stack)
+{
+    if (!stack)
+    {
+        return;
+    }
+
+    while (!is_empty_stack(stack))
+    {
+        StackNode *temp = stack->top;
+        stack->top = temp->next;
+        free(temp);
+    }
+    stack->size = 0;
+}
