@@ -1,4 +1,4 @@
-#include "stack/stack.h"
+#include "stack/base_stack.h"
 #include <stdbool.h>
 
 bool is_empty_stack(Stack *stack)

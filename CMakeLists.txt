@@ -130,3 +130,19 @@ target_include_directories(hash_table_lib PUBLIC ${PROJECT_SOURCE_DIR}/include)
 
 add_executable(test_program_hash_table example/hash_table_example.c)
 target_link_libraries(test_program_hash_table hash_table_lib)
+
+set(LIB_SOURCES_STACK
+    src/stack/clear_stack.c
+    src/stack/create_stack.c
+    src/stack/free_stack.c
+    src/stack/pop_stack.c
+    src/stack/push_stack.c
+    src/stack/operator_stack.c
+)
+
+add_library(stack_lib ${LIB_SOURCES_STACK})
+
+target_include_directories(stack_lib PUBLIC ${PROJECT_SOURCE_DIR}/include)
+
+add_executable(test_program_stack example/stack_example.c)
+target_link_libraries(test_program_stack stack_lib)
