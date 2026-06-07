@@ -1,4 +1,4 @@
-#include "deque.h"
+#include "deque/deque.h"
 
 int rear(Deque *deque, int *data)
 {

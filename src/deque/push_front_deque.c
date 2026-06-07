@@ -1,4 +1,4 @@
-#include "deque.h"
+#include "deque/deque.h"
 #include <stdlib.h>
 
 int push_front(Deque *deque, int data)

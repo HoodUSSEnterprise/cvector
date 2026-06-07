@@ -1,4 +1,4 @@
-#include "deque.h"
+#include "deque/deque.h"
 
 int get_deque_size(Deque *deque)
 {
