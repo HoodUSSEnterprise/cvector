@@ -271,3 +271,34 @@ target_include_directories(priorityqueue_lib PUBLIC ${PROJECT_SOURCE_DIR}/includ
 
 add_executable(test_program_priorityqueue example/priorityqueue_example.c)
 target_link_libraries(test_program_priorityqueue priorityqueue_lib)
+
+set(LIB_SOURCES_UNORDERED_MAP
+    src/unordered_map/create_unordered_map.c
+    src/unordered_map/insert_unordered_map.c
+    src/unordered_map/delete_unordered_map.c
+    src/unordered_map/find_unordered_map.c
+    src/unordered_map/free_unordered_map.c
+    src/unordered_map/operator_unordered_map.c
+    src/unordered_map/print_unordered_map.c
+)
+
+add_library(unordered_map_lib ${LIB_SOURCES_UNORDERED_MAP})
+
+target_include_directories(unordered_map_lib PUBLIC ${PROJECT_SOURCE_DIR}/include)
+
+set(LIB_SOURCES_UNORDERED_SET
+    src/unordered_set/create_unordered_set.c
+    src/unordered_set/insert_unordered_set.c
+    src/unordered_set/delete_unordered_set.c
+    src/unordered_set/find_unordered_set.c
+    src/unordered_set/free_unordered_set.c
+    src/unordered_set/operator_unordered_set.c
+    src/unordered_set/print_unordered_set.c
+)
+
+add_library(unordered_set_lib ${LIB_SOURCES_UNORDERED_SET})
+
+target_include_directories(unordered_set_lib PUBLIC ${PROJECT_SOURCE_DIR}/include)
+
+add_executable(test_program_unorder example/unorder_example.c)
+target_link_libraries(test_program_unorder unordered_map_lib unordered_set_lib)
