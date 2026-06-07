@@ -6,6 +6,7 @@ build/
 *.code-workspace
 .hsnip
 .clang-format
+.claude
 
 # OS
 Thumbs.db
