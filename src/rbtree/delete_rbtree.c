@@ -6,14 +6,22 @@ static void left_rotate(RBTree *tree, RBNode *x)
     RBNode *y = x->right;
     x->right = y->left;
     if (y->left != tree->nil)
+    {
         y->left->parent = x;
+    }
     y->parent = x->parent;
     if (x->parent == tree->nil)
+    {
         tree->root = y;
+    }
     else if (x == x->parent->left)
+    {
         x->parent->left = y;
+    }
     else
+    {
         x->parent->right = y;
+    }
     y->left = x;
     x->parent = y;
 }
@@ -24,14 +32,22 @@ static void right_rotate(RBTree *tree, RBNode *x)
     RBNode *y = x->left;
     x->left = y->right;
     if (y->right != tree->nil)
+    {
         y->right->parent = x;
+    }
     y->parent = x->parent;
     if (x->parent == tree->nil)
+    {
         tree->root = y;
+    }
     else if (x == x->parent->right)
+    {
         x->parent->right = y;
+    }
     else
+    {
         x->parent->left = y;
+    }
     y->right = x;
     x->parent = y;
 }
@@ -40,7 +56,9 @@ static void right_rotate(RBTree *tree, RBNode *x)
 static RBNode *min_node(RBTree *tree, RBNode *x)
 {
     while (x->left != tree->nil)
+    {
         x = x->left;
+    }
     return x;
 }
 
@@ -48,11 +66,17 @@ static RBNode *min_node(RBTree *tree, RBNode *x)
 static void transplant(RBTree *tree, RBNode *u, RBNode *v)
 {
     if (u->parent == tree->nil)
+    {
         tree->root = v;
+    }
     else if (u == u->parent->left)
+    {
         u->parent->left = v;
+    }
     else
+    {
         u->parent->right = v;
+    }
     v->parent = u->parent;
 }
 
@@ -70,7 +94,7 @@ static void delete_fixup(RBTree *tree, RBNode *x)
     {
         if (x == x->parent->left)
         {
-            RBNode *w = x->parent->right;  /* 兄弟结点 */
+            RBNode *w = x->parent->right; /* 兄弟结点 */
             if (w->color == RED)
             {
                 /* 情况 1：兄弟为红 */
@@ -147,16 +171,25 @@ void rbtree_delete(RBTree *tree, int key)
     while (z != tree->nil)
     {
         if (key == z->key)
+        {
             break;
+        }
         else if (key < z->key)
+        {
             z = z->left;
+        }
         else
+        {
             z = z->right;
+        }
     }
-    if (z == tree->nil) return;  /* 未找到 */
+    if (z == tree->nil)
+    {
+        return; /* 未找到 */
+    }
 
-    RBNode *y = z;               /* y 记录实际被移除或移动的结点 */
-    RBNode *x;                   /* x 指向替换位置的孩子 */
+    RBNode *y = z; /* y 记录实际被移除或移动的结点 */
+    RBNode *x;     /* x 指向替换位置的孩子 */
     Color y_original_color = y->color;
 
     if (z->left == tree->nil)
@@ -178,7 +211,9 @@ void rbtree_delete(RBTree *tree, int key)
         y_original_color = y->color;
         x = y->right;
         if (y->parent == z)
+        {
             x->parent = y;
+        }
         else
         {
             transplant(tree, y, y->right);
@@ -188,7 +223,7 @@ void rbtree_delete(RBTree *tree, int key)
         transplant(tree, z, y);
         y->left = z->left;
         y->left->parent = y;
-        y->color = z->color;  /* y 继承 z 的颜色，不影响黑高 */
+        y->color = z->color; /* y 继承 z 的颜色，不影响黑高 */
     }
 
     free(z);
@@ -196,5 +231,7 @@ void rbtree_delete(RBTree *tree, int key)
 
     /* 若移除的结点为黑色，需要修正 */
     if (y_original_color == BLACK)
+    {
         delete_fixup(tree, x);
+    }
 }

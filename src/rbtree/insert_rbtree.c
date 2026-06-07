@@ -13,14 +13,22 @@ static void left_rotate(RBTree *tree, RBNode *x)
     RBNode *y = x->right;
     x->right = y->left;
     if (y->left != tree->nil)
+    {
         y->left->parent = x;
+    }
     y->parent = x->parent;
     if (x->parent == tree->nil)
+    {
         tree->root = y;
+    }
     else if (x == x->parent->left)
+    {
         x->parent->left = y;
+    }
     else
+    {
         x->parent->right = y;
+    }
     y->left = x;
     x->parent = y;
 }
@@ -38,14 +46,22 @@ static void right_rotate(RBTree *tree, RBNode *x)
     RBNode *y = x->left;
     x->left = y->right;
     if (y->right != tree->nil)
+    {
         y->right->parent = x;
+    }
     y->parent = x->parent;
     if (x->parent == tree->nil)
+    {
         tree->root = y;
+    }
     else if (x == x->parent->right)
+    {
         x->parent->right = y;
+    }
     else
+    {
         x->parent->left = y;
+    }
     y->right = x;
     x->parent = y;
 }
@@ -64,7 +80,7 @@ static void insert_fixup(RBTree *tree, RBNode *z)
         if (z->parent == z->parent->parent->left)
         {
             /* 父结点是祖父的左孩子 */
-            RBNode *y = z->parent->parent->right;  /* 叔结点 */
+            RBNode *y = z->parent->parent->right; /* 叔结点 */
             if (y->color == RED)
             {
                 /* 情况 1：叔结点为红 → 变色 */
@@ -90,7 +106,7 @@ static void insert_fixup(RBTree *tree, RBNode *z)
         else
         {
             /* 父结点是祖父的右孩子（对称） */
-            RBNode *y = z->parent->parent->left;   /* 叔结点 */
+            RBNode *y = z->parent->parent->left; /* 叔结点 */
             if (y->color == RED)
             {
                 /* 情况 1（对称） */
@@ -122,11 +138,14 @@ static void insert_fixup(RBTree *tree, RBNode *z)
 void rbtree_insert(RBTree *tree, int key)
 {
     RBNode *z = (RBNode *)malloc(sizeof(RBNode));
-    if (z == NULL) return;
+    if (z == NULL)
+    {
+        return;
+    }
     z->key = key;
     z->left = tree->nil;
     z->right = tree->nil;
-    z->color = RED;  /* 新结点默认为红色 */
+    z->color = RED; /* 新结点默认为红色 */
 
     /* 标准的 BST 插入 */
     RBNode *y = tree->nil;
@@ -135,18 +154,28 @@ void rbtree_insert(RBTree *tree, int key)
     {
         y = x;
         if (key < x->key)
+        {
             x = x->left;
+        }
         else
+        {
             x = x->right;
+        }
     }
     z->parent = y;
     if (y == tree->nil)
+    {
         tree->root = z;
+    }
     else if (key < y->key)
+    {
         y->left = z;
+    }
     else
+    {
         y->right = z;
+    }
 
     tree->size++;
-    insert_fixup(tree, z);  /* 修复红黑树性质 */
+    insert_fixup(tree, z); /* 修复红黑树性质 */
 }

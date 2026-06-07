@@ -7,11 +7,17 @@ RBNode *rbtree_find(RBTree *tree, int key)
     while (x != tree->nil)
     {
         if (key == x->key)
+        {
             return x;
+        }
         else if (key < x->key)
+        {
             x = x->left;
+        }
         else
+        {
             x = x->right;
+        }
     }
     return NULL;
 }
