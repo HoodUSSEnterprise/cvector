@@ -121,6 +121,28 @@ String-key → int-value hash table with chaining.
 | `tools/max_min.h` | `max` / `min` — works on elements or arrays of `int`/`float`/`double` |
 | `tools/pointer_transform.h` | Type conversion between `int*`/`float*`/`double*`/`Complex*` arrays |
 
+### Set
+Integer set backed by a red-black tree.
+
+| Type | Header |
+|------|--------|
+| `Set` | `set/set.h` |
+
+- `create_set`, `free_set`, `set_insert`, `set_delete`
+- `set_contains`, `set_size`, `set_is_empty`
+- `set_min`, `set_max`, `set_print`
+
+### Map
+Integer key → integer value map backed by a red-black tree.
+
+| Type | Header |
+|------|--------|
+| `Map` | `map/map.h` |
+
+- `create_map`, `free_map`, `map_put`, `map_delete`
+- `map_get` (returns pointer, NULL if absent), `map_contains`
+- `map_size`, `map_is_empty`, `map_print`
+
 ## Quick Start
 
 ```c
@@ -179,6 +201,8 @@ cmake --build .
 | `test_program_queue` | Queue example |
 | `test_program_deque` | Deque example |
 | `test_program_hash_table` | Hash table example |
+| `test_program_set` | Set example |
+| `test_program_map` | Map example |
 
 ## Project Structure
 
@@ -195,6 +219,8 @@ cmake --build .
 │   ├── queue/         # Queue API
 │   ├── deque/         # Deque API
 │   ├── hashtable/     # Hash table API
+│   ├── set/           # Set API
+│   ├── map/           # Map API
 │   └── tools/         # Utility functions
 ├── src/
 │   ├── complex/       # Complex number implementation
@@ -205,6 +231,8 @@ cmake --build .
 │   ├── queue/         # Queue implementation
 │   ├── deque/         # Deque implementation
 │   ├── hashtable/     # Hash table implementation
+│   ├── set/           # Set implementation
+│   ├── map/           # Map implementation
 │   └── tools/         # Utility implementation
 └── example/
     ├── complex_example.c
@@ -214,7 +242,9 @@ cmake --build .
     ├── stack_example.c
     ├── queue_example.c
     ├── deque_example.c
-    └── hash_table_example.c
+    ├── hash_table_example.c
+    ├── set_example.c
+    └── map_example.c
 ```
 
 ## Requirements
