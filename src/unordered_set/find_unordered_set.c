@@ -12,7 +12,10 @@ int unordered_set_contains(UnorderedSet *set, int key)
     UnorderedSetNode *cur = set->buckets[idx];
     while (cur)
     {
-        if (cur->key == key) return 1;
+        if (cur->key == key)
+        {
+            return 1;
+        }
         cur = cur->next;
     }
     return 0;

@@ -5,14 +5,22 @@ static void left_rotate(Map *map, MapNode *x)
     MapNode *y = x->right;
     x->right = y->left;
     if (y->left != map->nil)
+    {
         y->left->parent = x;
+    }
     y->parent = x->parent;
     if (x->parent == map->nil)
+    {
         map->root = y;
+    }
     else if (x == x->parent->left)
+    {
         x->parent->left = y;
+    }
     else
+    {
         x->parent->right = y;
+    }
     y->left = x;
     x->parent = y;
 }
@@ -22,14 +30,22 @@ static void right_rotate(Map *map, MapNode *x)
     MapNode *y = x->left;
     x->left = y->right;
     if (y->right != map->nil)
+    {
         y->right->parent = x;
+    }
     y->parent = x->parent;
     if (x->parent == map->nil)
+    {
         map->root = y;
+    }
     else if (x == x->parent->right)
+    {
         x->parent->right = y;
+    }
     else
+    {
         x->parent->left = y;
+    }
     y->right = x;
     x->parent = y;
 }
@@ -37,18 +53,26 @@ static void right_rotate(Map *map, MapNode *x)
 static MapNode *min_node(Map *map, MapNode *x)
 {
     while (x->left != map->nil)
+    {
         x = x->left;
+    }
     return x;
 }
 
 static void transplant(Map *map, MapNode *u, MapNode *v)
 {
     if (u->parent == map->nil)
+    {
         map->root = v;
+    }
     else if (u == u->parent->left)
+    {
         u->parent->left = v;
+    }
     else
+    {
         u->parent->right = v;
+    }
     v->parent = u->parent;
 }
 
@@ -128,13 +152,22 @@ void map_delete(Map *map, int key)
     while (z != map->nil)
     {
         if (key == z->key)
+        {
             break;
+        }
         else if (key < z->key)
+        {
             z = z->left;
+        }
         else
+        {
             z = z->right;
+        }
     }
-    if (z == map->nil) return;
+    if (z == map->nil)
+    {
+        return;
+    }
 
     MapNode *y = z;
     MapNode *x;
@@ -156,7 +189,9 @@ void map_delete(Map *map, int key)
         y_original_color = y->color;
         x = y->right;
         if (y->parent == z)
+        {
             x->parent = y;
+        }
         else
         {
             transplant(map, y, y->right);
@@ -173,5 +208,7 @@ void map_delete(Map *map, int key)
     map->size--;
 
     if (y_original_color == MAP_BLACK)
+    {
         delete_fixup(map, x);
+    }
 }

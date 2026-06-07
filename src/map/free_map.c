@@ -2,7 +2,10 @@
 
 static void free_nodes(Map *map, MapNode *x)
 {
-    if (x == map->nil) return;
+    if (x == map->nil)
+    {
+        return;
+    }
     free_nodes(map, x->left);
     free_nodes(map, x->right);
     free(x);
@@ -10,7 +13,10 @@ static void free_nodes(Map *map, MapNode *x)
 
 void free_map(Map *map)
 {
-    if (map == NULL) return;
+    if (map == NULL)
+    {
+        return;
+    }
     free_nodes(map, map->root);
     free(map->nil);
     free(map);

@@ -9,7 +9,10 @@ void clear_multiset(MultiSet *set)
 
 void free_multiset(MultiSet *set)
 {
-    if (!set) return;
+    if (!set)
+    {
+        return;
+    }
     free_rbtree(set->tree);
     free(set);
 }

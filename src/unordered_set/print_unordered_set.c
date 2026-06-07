@@ -9,7 +9,10 @@ void unordered_set_print(UnorderedSet *set)
         UnorderedSetNode *cur = set->buckets[i];
         while (cur)
         {
-            if (!first) printf(", ");
+            if (!first)
+            {
+                printf(", ");
+            }
             printf("%d", cur->key);
             first = 0;
             cur = cur->next;

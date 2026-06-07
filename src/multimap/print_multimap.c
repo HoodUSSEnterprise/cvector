@@ -2,9 +2,15 @@
 
 static void inorder_print(MultiMapNode *node, MultiMapNode *nil, int *first)
 {
-    if (node == nil) return;
+    if (node == nil)
+    {
+        return;
+    }
     inorder_print(node->left, nil, first);
-    if (!*first) printf(", ");
+    if (!*first)
+    {
+        printf(", ");
+    }
     printf("%d: %d", node->key, node->value);
     *first = 0;
     inorder_print(node->right, nil, first);

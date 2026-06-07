@@ -11,7 +11,10 @@ void unordered_multiset_print(UnorderedMultiset *set)
         {
             for (int j = 0; j < cur->count; j++)
             {
-                if (!first) printf(", ");
+                if (!first)
+                {
+                    printf(", ");
+                }
                 printf("%d", cur->key);
                 first = 0;
             }

@@ -22,7 +22,10 @@ void unordered_multiset_insert(UnorderedMultiset *set, int key)
     }
 
     UnorderedMultisetNode *node = (UnorderedMultisetNode *)malloc(sizeof(UnorderedMultisetNode));
-    if (!node) return;
+    if (!node)
+    {
+        return;
+    }
     node->key = key;
     node->count = 1;
     node->next = set->buckets[idx];

@@ -19,7 +19,10 @@ int main(void)
     printf("Contains 5? %s\n\n", unordered_multimap_contains(map, 5) ? "yes" : "no");
 
     int *v = unordered_multimap_get(map, 1);
-    if (v) printf("get(1) = %d (first occurrence)\n", *v);
+    if (v)
+    {
+        printf("get(1) = %d (first occurrence)\n", *v);
+    }
 
     printf("\nDelete key 1 (once):\n");
     unordered_multimap_delete(map, 1);

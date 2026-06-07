@@ -2,7 +2,10 @@
 
 void pop_priorityqueue(PriorityQueue *pq)
 {
-    if (pq->size == 0) return;
+    if (pq->size == 0)
+    {
+        return;
+    }
 
     pq->data[0] = pq->data[--pq->size];
 
@@ -15,10 +18,17 @@ void pop_priorityqueue(PriorityQueue *pq)
         int right = 2 * i + 2;
 
         if (left < pq->size && pq->data[left] > pq->data[largest])
+        {
             largest = left;
+        }
         if (right < pq->size && pq->data[right] > pq->data[largest])
+        {
             largest = right;
-        if (largest == i) break;
+        }
+        if (largest == i)
+        {
+            break;
+        }
 
         int tmp = pq->data[i];
         pq->data[i] = pq->data[largest];

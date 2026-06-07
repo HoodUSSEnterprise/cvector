@@ -17,9 +17,13 @@ void unordered_map_delete(UnorderedMap *map, int key)
         if (cur->key == key)
         {
             if (prev)
+            {
                 prev->next = cur->next;
+            }
             else
+            {
                 map->buckets[idx] = cur->next;
+            }
             free(cur);
             map->size--;
             return;

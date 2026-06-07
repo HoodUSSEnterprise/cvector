@@ -18,7 +18,10 @@ void clear_unordered_map(UnorderedMap *map)
 
 void free_unordered_map(UnorderedMap *map)
 {
-    if (!map) return;
+    if (!map)
+    {
+        return;
+    }
     clear_unordered_map(map);
     free(map->buckets);
     free(map);

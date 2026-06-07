@@ -13,7 +13,9 @@ int *unordered_map_get(UnorderedMap *map, int key)
     while (cur)
     {
         if (cur->key == key)
+        {
             return &cur->value;
+        }
         cur = cur->next;
     }
     return NULL;

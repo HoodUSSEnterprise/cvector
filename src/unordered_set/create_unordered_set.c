@@ -3,7 +3,10 @@
 UnorderedSet *create_unordered_set(void)
 {
     UnorderedSet *set = (UnorderedSet *)malloc(sizeof(UnorderedSet));
-    if (!set) return NULL;
+    if (!set)
+    {
+        return NULL;
+    }
     set->capacity = UNORDERED_SET_INITIAL_CAPACITY;
     set->size = 0;
     set->buckets = (UnorderedSetNode **)calloc(set->capacity, sizeof(UnorderedSetNode *));

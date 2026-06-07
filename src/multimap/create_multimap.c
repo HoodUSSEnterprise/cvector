@@ -3,7 +3,10 @@
 MultiMap *create_multimap(void)
 {
     MultiMap *map = (MultiMap *)malloc(sizeof(MultiMap));
-    if (!map) return NULL;
+    if (!map)
+    {
+        return NULL;
+    }
 
     map->nil = (MultiMapNode *)malloc(sizeof(MultiMapNode));
     if (!map->nil)

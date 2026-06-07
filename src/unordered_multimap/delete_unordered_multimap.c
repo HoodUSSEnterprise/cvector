@@ -17,9 +17,13 @@ void unordered_multimap_delete(UnorderedMultimap *map, int key)
         if (cur->key == key)
         {
             if (prev)
+            {
                 prev->next = cur->next;
+            }
             else
+            {
                 map->buckets[idx] = cur->next;
+            }
             free(cur);
             map->size--;
             return;

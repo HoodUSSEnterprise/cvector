@@ -4,14 +4,23 @@ static void left_rotate(MultiMap *map, MultiMapNode *x)
 {
     MultiMapNode *y = x->right;
     x->right = y->left;
-    if (y->left != map->nil) y->left->parent = x;
+    if (y->left != map->nil)
+    {
+        y->left->parent = x;
+    }
     y->parent = x->parent;
     if (x->parent == map->nil)
+    {
         map->root = y;
+    }
     else if (x == x->parent->left)
+    {
         x->parent->left = y;
+    }
     else
+    {
         x->parent->right = y;
+    }
     y->left = x;
     x->parent = y;
 }
@@ -20,14 +29,23 @@ static void right_rotate(MultiMap *map, MultiMapNode *y)
 {
     MultiMapNode *x = y->left;
     y->left = x->right;
-    if (x->right != map->nil) x->right->parent = y;
+    if (x->right != map->nil)
+    {
+        x->right->parent = y;
+    }
     x->parent = y->parent;
     if (y->parent == map->nil)
+    {
         map->root = x;
+    }
     else if (y == y->parent->left)
+    {
         y->parent->left = x;
+    }
     else
+    {
         y->parent->right = x;
+    }
     x->right = y;
     y->parent = x;
 }
@@ -35,17 +53,26 @@ static void right_rotate(MultiMap *map, MultiMapNode *y)
 static void transplant(MultiMap *map, MultiMapNode *u, MultiMapNode *v)
 {
     if (u->parent == map->nil)
+    {
         map->root = v;
+    }
     else if (u == u->parent->left)
+    {
         u->parent->left = v;
+    }
     else
+    {
         u->parent->right = v;
+    }
     v->parent = u->parent;
 }
 
 static MultiMapNode *minimum(MultiMapNode *node, MultiMapNode *nil)
 {
-    while (node->left != nil) node = node->left;
+    while (node->left != nil)
+    {
+        node = node->left;
+    }
     return node;
 }
 
@@ -125,11 +152,17 @@ static MultiMapNode *find_node(MultiMap *map, int key)
     while (cur != map->nil)
     {
         if (key < cur->key)
+        {
             cur = cur->left;
+        }
         else if (key > cur->key)
+        {
             cur = cur->right;
+        }
         else
+        {
             return cur;
+        }
     }
     return NULL;
 }
@@ -137,7 +170,10 @@ static MultiMapNode *find_node(MultiMap *map, int key)
 void multimap_delete(MultiMap *map, int key)
 {
     MultiMapNode *z = find_node(map, key);
-    if (!z) return;
+    if (!z)
+    {
+        return;
+    }
 
     MultiMapNode *y = z;
     MultiMapNode *x;
@@ -159,7 +195,9 @@ void multimap_delete(MultiMap *map, int key)
         y_orig = y->color;
         x = y->right;
         if (y->parent == z)
+        {
             x->parent = y;
+        }
         else
         {
             transplant(map, y, y->right);
@@ -176,5 +214,7 @@ void multimap_delete(MultiMap *map, int key)
     map->size--;
 
     if (y_orig == MM_BLACK)
+    {
         delete_fixup(map, x);
+    }
 }

@@ -3,7 +3,10 @@
 MultiSet *create_multiset(void)
 {
     MultiSet *set = (MultiSet *)malloc(sizeof(MultiSet));
-    if (!set) return NULL;
+    if (!set)
+    {
+        return NULL;
+    }
     set->tree = create_rbtree();
     if (!set->tree)
     {

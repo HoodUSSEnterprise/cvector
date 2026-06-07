@@ -7,7 +7,10 @@ void clear_priorityqueue(PriorityQueue *pq)
 
 void free_priorityqueue(PriorityQueue *pq)
 {
-    if (!pq) return;
+    if (!pq)
+    {
+        return;
+    }
     free(pq->data);
     free(pq);
 }

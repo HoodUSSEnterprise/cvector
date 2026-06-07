@@ -19,7 +19,10 @@ void clear_unordered_multiset(UnorderedMultiset *set)
 
 void free_unordered_multiset(UnorderedMultiset *set)
 {
-    if (!set) return;
+    if (!set)
+    {
+        return;
+    }
     clear_unordered_multiset(set);
     free(set->buckets);
     free(set);

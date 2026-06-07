@@ -3,7 +3,10 @@
 Map *create_map(void)
 {
     Map *map = (Map *)malloc(sizeof(Map));
-    if (map == NULL) return NULL;
+    if (map == NULL)
+    {
+        return NULL;
+    }
     map->nil = (MapNode *)malloc(sizeof(MapNode));
     if (map->nil == NULL)
     {

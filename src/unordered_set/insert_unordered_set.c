@@ -12,12 +12,18 @@ void unordered_set_insert(UnorderedSet *set, int key)
     UnorderedSetNode *cur = set->buckets[idx];
     while (cur)
     {
-        if (cur->key == key) return;
+        if (cur->key == key)
+        {
+            return;
+        }
         cur = cur->next;
     }
 
     UnorderedSetNode *node = (UnorderedSetNode *)malloc(sizeof(UnorderedSetNode));
-    if (!node) return;
+    if (!node)
+    {
+        return;
+    }
     node->key = key;
     node->next = set->buckets[idx];
     set->buckets[idx] = node;

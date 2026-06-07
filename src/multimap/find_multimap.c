@@ -6,11 +6,17 @@ static MultiMapNode *find_node(MultiMap *map, int key)
     while (cur != map->nil)
     {
         if (key < cur->key)
+        {
             cur = cur->left;
+        }
         else if (key > cur->key)
+        {
             cur = cur->right;
+        }
         else
+        {
             return cur;
+        }
     }
     return NULL;
 }

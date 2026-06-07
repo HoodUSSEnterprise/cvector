@@ -13,7 +13,9 @@ int *unordered_multimap_get(UnorderedMultimap *map, int key)
     while (cur)
     {
         if (cur->key == key)
+        {
             return &cur->value;
+        }
         cur = cur->next;
     }
     return NULL;

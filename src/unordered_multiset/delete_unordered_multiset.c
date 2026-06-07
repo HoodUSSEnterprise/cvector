@@ -24,9 +24,13 @@ void unordered_multiset_delete(UnorderedMultiset *set, int key)
             }
 
             if (prev)
+            {
                 prev->next = cur->next;
+            }
             else
+            {
                 set->buckets[idx] = cur->next;
+            }
             free(cur);
             set->size--;
             set->unique--;

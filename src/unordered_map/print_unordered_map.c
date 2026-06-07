@@ -9,7 +9,10 @@ void unordered_map_print(UnorderedMap *map)
         UnorderedMapNode *cur = map->buckets[i];
         while (cur)
         {
-            if (!first) printf(", ");
+            if (!first)
+            {
+                printf(", ");
+            }
             printf("%d: %d", cur->key, cur->value);
             first = 0;
             cur = cur->next;

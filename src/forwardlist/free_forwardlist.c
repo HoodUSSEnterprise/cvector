@@ -15,7 +15,10 @@ void clear_forwardlist(ForwardList *list)
 
 void free_forwardlist(ForwardList *list)
 {
-    if (!list) return;
+    if (!list)
+    {
+        return;
+    }
     clear_forwardlist(list);
     free(list);
 }

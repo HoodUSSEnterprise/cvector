@@ -17,9 +17,13 @@ void unordered_set_delete(UnorderedSet *set, int key)
         if (cur->key == key)
         {
             if (prev)
+            {
                 prev->next = cur->next;
+            }
             else
+            {
                 set->buckets[idx] = cur->next;
+            }
             free(cur);
             set->size--;
             return;

@@ -6,7 +6,10 @@ void push_priorityqueue(PriorityQueue *pq, int data)
     {
         pq->capacity *= 2;
         pq->data = (int *)realloc(pq->data, sizeof(int) * pq->capacity);
-        if (!pq->data) return;
+        if (!pq->data)
+        {
+            return;
+        }
     }
 
     int i = pq->size++;
@@ -16,7 +19,10 @@ void push_priorityqueue(PriorityQueue *pq, int data)
     while (i > 0)
     {
         int parent = (i - 1) / 2;
-        if (pq->data[i] <= pq->data[parent]) break;
+        if (pq->data[i] <= pq->data[parent])
+        {
+            break;
+        }
         int tmp = pq->data[i];
         pq->data[i] = pq->data[parent];
         pq->data[parent] = tmp;

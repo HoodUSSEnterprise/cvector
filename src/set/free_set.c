@@ -2,7 +2,10 @@
 
 void free_set(Set *set)
 {
-    if (set == NULL) return;
+    if (set == NULL)
+    {
+        return;
+    }
     free_rbtree(set->tree);
     free(set);
 }

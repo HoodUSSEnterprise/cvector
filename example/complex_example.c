@@ -15,6 +15,6 @@ int main(int argc, char **argv)
     c3 = power_complex(c1, 3);
     print_complex(c3);
     printf("%s\n", is_equal_complex(c1, c2) ? "true" : "false");
-    
+
     return 0;
 }

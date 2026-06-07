@@ -18,7 +18,10 @@ void clear_unordered_set(UnorderedSet *set)
 
 void free_unordered_set(UnorderedSet *set)
 {
-    if (!set) return;
+    if (!set)
+    {
+        return;
+    }
     clear_unordered_set(set);
     free(set->buckets);
     free(set);

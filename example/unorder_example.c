@@ -24,7 +24,10 @@ int main(void)
 
     /* Get */
     int *v = unordered_map_get(map, 2);
-    if (v) printf("get(2) = %d\n", *v);
+    if (v)
+    {
+        printf("get(2) = %d\n", *v);
+    }
     printf("get(9) = %s\n\n", unordered_map_contains(map, 9) ? "found" : "NULL");
 
     /* Delete */

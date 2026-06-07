@@ -2,7 +2,10 @@
 
 static void post_order_free(MultiMapNode *node, MultiMapNode *nil)
 {
-    if (node == nil) return;
+    if (node == nil)
+    {
+        return;
+    }
     post_order_free(node->left, nil);
     post_order_free(node->right, nil);
     free(node);
@@ -17,7 +20,10 @@ void clear_multimap(MultiMap *map)
 
 void free_multimap(MultiMap *map)
 {
-    if (!map) return;
+    if (!map)
+    {
+        return;
+    }
     clear_multimap(map);
     free(map->nil);
     free(map);

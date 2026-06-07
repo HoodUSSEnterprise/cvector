@@ -12,7 +12,10 @@ bool map_is_empty(Map *map)
 
 static void print_inorder(Map *map, MapNode *x)
 {
-    if (x == map->nil) return;
+    if (x == map->nil)
+    {
+        return;
+    }
     print_inorder(map, x->left);
     printf("{%d: %d} ", x->key, x->value);
     print_inorder(map, x->right);

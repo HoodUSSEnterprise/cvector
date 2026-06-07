@@ -3,7 +3,10 @@
 PriorityQueue *create_priorityqueue(void)
 {
     PriorityQueue *pq = (PriorityQueue *)malloc(sizeof(PriorityQueue));
-    if (!pq) return NULL;
+    if (!pq)
+    {
+        return NULL;
+    }
     pq->data = (int *)malloc(sizeof(int) * INITIAL_CAPACITY);
     if (!pq->data)
     {

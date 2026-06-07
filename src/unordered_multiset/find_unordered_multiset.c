@@ -12,7 +12,10 @@ int unordered_multiset_contains(UnorderedMultiset *set, int key)
     UnorderedMultisetNode *cur = set->buckets[idx];
     while (cur)
     {
-        if (cur->key == key) return 1;
+        if (cur->key == key)
+        {
+            return 1;
+        }
         cur = cur->next;
     }
     return 0;
@@ -25,7 +28,10 @@ int unordered_multiset_count(UnorderedMultiset *set, int key)
     UnorderedMultisetNode *cur = set->buckets[idx];
     while (cur)
     {
-        if (cur->key == key) return cur->count;
+        if (cur->key == key)
+        {
+            return cur->count;
+        }
         cur = cur->next;
     }
     return 0;

@@ -23,7 +23,10 @@ int main(void)
 
     /* Get values */
     int *v = map_get(map, 2);
-    if (v) printf("map_get(2) = %d\n", *v);
+    if (v)
+    {
+        printf("map_get(2) = %d\n", *v);
+    }
 
     v = map_get(map, 9);
     printf("map_get(9) = %s\n\n", v ? "found" : "NULL");

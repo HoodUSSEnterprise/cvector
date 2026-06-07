@@ -2,7 +2,10 @@
 
 int top_priorityqueue(PriorityQueue *pq)
 {
-    if (pq->size == 0) return 0;
+    if (pq->size == 0)
+    {
+        return 0;
+    }
     return pq->data[0];
 }
 

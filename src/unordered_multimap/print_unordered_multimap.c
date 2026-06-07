@@ -9,7 +9,10 @@ void unordered_multimap_print(UnorderedMultimap *map)
         UnorderedMultimapNode *cur = map->buckets[i];
         while (cur)
         {
-            if (!first) printf(", ");
+            if (!first)
+            {
+                printf(", ");
+            }
             printf("%d: %d", cur->key, cur->value);
             first = 0;
             cur = cur->next;

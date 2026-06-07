@@ -2,7 +2,10 @@
 
 int front_forwardlist(ForwardList *list)
 {
-    if (!list->head) return 0;
+    if (!list->head)
+    {
+        return 0;
+    }
     return list->head->data;
 }
 

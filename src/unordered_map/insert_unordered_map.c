@@ -21,7 +21,10 @@ void unordered_map_put(UnorderedMap *map, int key, int value)
     }
 
     UnorderedMapNode *node = (UnorderedMapNode *)malloc(sizeof(UnorderedMapNode));
-    if (!node) return;
+    if (!node)
+    {
+        return;
+    }
     node->key = key;
     node->value = value;
     node->next = map->buckets[idx];

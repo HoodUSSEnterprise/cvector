@@ -6,11 +6,17 @@ int *map_get(Map *map, int key)
     while (x != map->nil)
     {
         if (key == x->key)
+        {
             return &x->value;
+        }
         else if (key < x->key)
+        {
             x = x->left;
+        }
         else
+        {
             x = x->right;
+        }
     }
     return NULL;
 }

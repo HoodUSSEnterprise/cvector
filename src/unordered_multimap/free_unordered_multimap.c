@@ -18,7 +18,10 @@ void clear_unordered_multimap(UnorderedMultimap *map)
 
 void free_unordered_multimap(UnorderedMultimap *map)
 {
-    if (!map) return;
+    if (!map)
+    {
+        return;
+    }
     clear_unordered_multimap(map);
     free(map->buckets);
     free(map);
