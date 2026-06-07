@@ -355,3 +355,20 @@ target_link_libraries(multiset_lib rbtree_lib)
 
 add_executable(test_program_multiset example/multiset_example.c)
 target_link_libraries(test_program_multiset multiset_lib)
+
+set(LIB_SOURCES_MULTIMAP
+    src/multimap/create_multimap.c
+    src/multimap/insert_multimap.c
+    src/multimap/delete_multimap.c
+    src/multimap/find_multimap.c
+    src/multimap/free_multimap.c
+    src/multimap/operator_multimap.c
+    src/multimap/print_multimap.c
+)
+
+add_library(multimap_lib ${LIB_SOURCES_MULTIMAP})
+
+target_include_directories(multimap_lib PUBLIC ${PROJECT_SOURCE_DIR}/include)
+
+add_executable(test_program_multimap example/multimap_example.c)
+target_link_libraries(test_program_multimap multimap_lib)
