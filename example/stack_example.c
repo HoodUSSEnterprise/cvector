@@ -13,6 +13,8 @@ void test_int()
     push(s, b);
     push(s, c);
 
+    print_stack(s);
+
     int p = 0;
     pop(s, &p);
     printf("出栈: %d\n", p);

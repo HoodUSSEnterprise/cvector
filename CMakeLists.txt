@@ -137,6 +137,7 @@ set(LIB_SOURCES_STACK
     src/stack/free_stack.c
     src/stack/pop_stack.c
     src/stack/push_stack.c
+    src/stack/print_stack.c
     src/stack/operator_stack.c
 )
 
