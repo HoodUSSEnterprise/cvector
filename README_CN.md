@@ -121,6 +121,28 @@
 | `tools/max_min.h` | `max` / `min` — 支持 `int`/`float`/`double` 的元素或数组 |
 | `tools/pointer_transform.h` | `int*`/`float*`/`double*`/`Complex*` 数组间的类型转换 |
 
+### Set（集合）
+基于红黑树的整数集合。
+
+| 类型 | 头文件 |
+|------|--------|
+| `Set` | `set/set.h` |
+
+- `create_set`、`free_set`、`set_insert`、`set_delete`
+- `set_contains`、`set_size`、`set_is_empty`
+- `set_min`、`set_max`、`set_print`
+
+### Map（映射）
+基于红黑树的整数键 → 整数映射。
+
+| 类型 | 头文件 |
+|------|--------|
+| `Map` | `map/map.h` |
+
+- `create_map`、`free_map`、`map_put`、`map_delete`
+- `map_get`（返回指针，不存在返回 NULL）、`map_contains`
+- `map_size`、`map_is_empty`、`map_print`
+
 ## 快速开始
 
 ```c
@@ -179,6 +201,8 @@ cmake --build .
 | `test_program_queue` | 队列示例程序 |
 | `test_program_deque` | 双端队列示例程序 |
 | `test_program_hash_table` | 哈希表示例程序 |
+| `test_program_set` | 集合示例程序 |
+| `test_program_map` | 映射示例程序 |
 
 ## 项目结构
 
@@ -195,6 +219,8 @@ cmake --build .
 │   ├── queue/         # 队列 API
 │   ├── deque/         # 双端队列 API
 │   ├── hashtable/     # 哈希表 API
+│   ├── set/           # 集合 API
+│   ├── map/           # 映射 API
 │   └── tools/         # 工具函数
 ├── src/
 │   ├── complex/       # 复数实现
@@ -205,6 +231,8 @@ cmake --build .
 │   ├── queue/         # 队列实现
 │   ├── deque/         # 双端队列实现
 │   ├── hashtable/     # 哈希表实现
+│   ├── set/           # 集合实现
+│   ├── map/           # 映射实现
 │   └── tools/         # 工具实现
 └── example/
     ├── complex_example.c
@@ -214,7 +242,9 @@ cmake --build .
     ├── stack_example.c
     ├── queue_example.c
     ├── deque_example.c
-    └── hash_table_example.c
+    ├── hash_table_example.c
+    ├── set_example.c
+    └── map_example.c
 ```
 
 ## 环境要求
