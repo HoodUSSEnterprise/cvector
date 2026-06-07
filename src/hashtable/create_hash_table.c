@@ -4,7 +4,7 @@
 
 HashTable *create_hash_table(void)
 {
-    HashTable *ht = malloc(sizeof(HashTable));
+    HashTable *ht = (HashTable *)malloc(sizeof(HashTable));
     if (ht == NULL)
     {
         fprintf(stderr, "Memory allocation failed\n");
