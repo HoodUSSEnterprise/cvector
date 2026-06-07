@@ -9,5 +9,6 @@
 #include "rbtree/free_rbtree.h"
 #include "rbtree/print_rbtree.h"
 #include "rbtree/operator_rbtree.h"
+#include "rbtree/count_rbtree.h"
 
 #endif
