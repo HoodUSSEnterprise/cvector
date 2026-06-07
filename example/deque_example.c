@@ -1,5 +1,6 @@
 #include "deque/deque.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 void print_deque(Deque *d)
 {
@@ -30,6 +31,7 @@ void print_deque(Deque *d)
 
 int main()
 {
+    system("chcp 65001");
     printf("=== 双端队列测试 ===\n\n");
 
     // 创建双端队列
