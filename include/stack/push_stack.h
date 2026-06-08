@@ -3,6 +3,10 @@
 
 #include "stack/base_stack.h"
 
-int push(Stack *stack, int data);
+int push_int(StackInt *stack, int data);
+
+float push_float(StackFloat *stack, float data);
+
+double push_double(StackDouble *stack, double data);
 
 #endif // PUSH_STACK_H

@@ -4,16 +4,40 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef struct StackNode
+typedef struct StackIntNode
 {
     int data;
-    struct StackNode *next;
-} StackNode;
+    struct StackIntNode *next;
+} StackIntNode;
 
 typedef struct
 {
-    StackNode *top;
+    StackIntNode *top;
     int size;
-} Stack;
+} StackInt;
+
+typedef struct StackFloatNode
+{
+    float data;
+    struct StackFloatNode *next;
+} StackFloatNode;
+
+typedef struct
+{
+    StackFloatNode *top;
+    int size;
+} StackFloat;
+
+typedef struct StackDoubleNode
+{
+    double data;
+    struct StackDoubleNode *next;
+} StackDoubleNode;
+
+typedef struct
+{
+    StackDoubleNode *top;
+    int size;
+} StackDouble;
 
 #endif // BASE_STACK_H
