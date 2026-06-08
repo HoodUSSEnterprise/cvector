@@ -1,6 +1,6 @@
 #include "stack/clear_stack.h"
 
-void clear_stack(Stack *stack)
+void clear_stack_int(StackInt *stack)
 {
     if (!stack)
     {
@@ -9,7 +9,39 @@ void clear_stack(Stack *stack)
 
     while (!is_empty_stack(stack))
     {
-        StackNode *temp = stack->top;
+        StackIntNode *temp = stack->top;
+        stack->top = temp->next;
+        free(temp);
+    }
+    stack->size = 0;
+}
+
+void clear_stack_float(StackFloat *stack)
+{
+    if (!stack)
+    {
+        return;
+    }
+
+    while (!is_empty_stack(stack))
+    {
+        StackFloatNode *temp = stack->top;
+        stack->top = temp->next;
+        free(temp);
+    }
+    stack->size = 0;
+}
+
+void clear_stack_double(StackDouble *stack)
+{
+    if (!stack)
+    {
+        return;
+    }
+
+    while (!is_empty_stack(stack))
+    {
+        StackDoubleNode *temp = stack->top;
         stack->top = temp->next;
         free(temp);
     }
