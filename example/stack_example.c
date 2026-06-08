@@ -6,7 +6,7 @@
 void test_int()
 {
     printf("=== 整数测试 ===\n");
-    Stack *s = create_stack();
+    Stack *s = create_stack_int();
 
     int a = 10, b = 20, c = 30;
     push(s, a);

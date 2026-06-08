@@ -1,8 +1,34 @@
 #include "stack/create_stack.h"
 
-Stack *create_stack(void)
+StackInt *create_stack_int(void)
 {
-    Stack *stack = (Stack *)malloc(sizeof(Stack));
+    StackInt *stack = (StackInt *)malloc(sizeof(StackInt));
+    if (!stack)
+    {
+        return NULL;
+    }
+
+    stack->top = NULL;
+    stack->size = 0;
+    return stack;
+}
+
+StackFloat *create_stack_float(void)
+{
+    StackFloat *stack = (StackFloat *)malloc(sizeof(StackFloat));
+    if (!stack)
+    {
+        return NULL;
+    }
+
+    stack->top = NULL;
+    stack->size = 0;
+    return stack;
+}
+
+StackDouble *create_stack_double(void)
+{
+    StackDouble *stack = (StackDouble *)malloc(sizeof(StackDouble));
     if (!stack)
     {
         return NULL;

@@ -3,6 +3,10 @@
 
 #include "stack/base_stack.h"
 
-Stack *create_stack(void);
+StackInt *create_stack_int(void);
+
+StackFloat *create_stack_float(void);
+
+StackDouble *create_stack_double(void);
 
 #endif // CREATE_STACK_H

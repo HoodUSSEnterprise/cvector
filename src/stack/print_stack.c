@@ -9,7 +9,7 @@ void print_stack(Stack *stack)
     }
 
     // 创建临时栈来反转顺序
-    Stack *temp = create_stack();
+    Stack *temp = create_stack_int();
 
     // 弹出所有元素到临时栈
     int val;
