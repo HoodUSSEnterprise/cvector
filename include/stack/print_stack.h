@@ -8,6 +8,15 @@
 #include "stack/pop_stack.h"
 #include "stack/push_stack.h"
 
-void print_stack(Stack *s);
+void print_stack_int(StackInt *s);
+
+void print_stack_float(StackFloat *s);
+
+void print_stack_double(StackDouble *s);
+
+#define print_stack(stack) _Generic((stack), \
+    StackInt *: print_stack_int,             \
+    StackFloat *: print_stack_float,         \
+    StackDouble *: print_stack_double)(stack)
 
 #endif // PRINT_STACK_H
