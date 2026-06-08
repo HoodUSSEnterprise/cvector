@@ -1,4 +1,5 @@
 #include "stack/pop_stack.h"
+#include "stack/operator_stack.h"
 
 int pop(StackInt *stack, int *data)
 {

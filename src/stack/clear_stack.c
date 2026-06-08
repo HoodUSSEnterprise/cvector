@@ -43,6 +43,7 @@ void clear_stack_double(StackDouble *stack)
     {
         StackDoubleNode *temp = stack->top;
         stack->top = temp->next;
+        stack->size--;
         free(temp);
     }
     stack->size = 0;
