@@ -11,6 +11,7 @@ void clear_stack(Stack *stack)
     {
         StackNode *temp = stack->top;
         stack->top = temp->next;
+        stack->size--;
         free(temp);
     }
     stack->size = 0;

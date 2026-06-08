@@ -196,13 +196,17 @@ static void render(App *app)
     /* Collect stack elements by traversing */
     int values[MAX_VISIBLE];
     int count = 0;
+
     StackNode *cur = app->stack->top;
     while (cur && count < MAX_VISIBLE)
     {
         values[count++] = cur->data;
         cur = cur->next;
     }
-
+    if (strcmp(app->status_msg, "Cleared") == 0)
+    {
+        SDL_Log("%d", __LINE__);
+    }
     /* Draw stack elements from bottom to top */
     for (int i = 0; i < count; i++)
     {
