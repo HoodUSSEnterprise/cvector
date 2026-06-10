@@ -1,6 +1,6 @@
 #include "stack/print_stack.h"
 
-void print_stack_iny(StackInt *stack)
+void print_stack_int(StackInt *stack)
 {
     if (!stack || is_empty_stack(stack))
     {
@@ -39,7 +39,7 @@ void print_stack_float(StackFloat *stack)
     }
 
     // 创建临时栈来反转顺序
-    StackFloat *temp = create_stack_int();
+    StackFloat *temp = create_stack_float();
 
     // 弹出所有元素到临时栈
     float val;
@@ -69,7 +69,7 @@ void print_stack_double(StackDouble *stack)
     }
 
     // 创建临时栈来反转顺序
-    StackDouble *temp = create_stack_int();
+    StackDouble *temp = create_stack_double();
 
     // 弹出所有元素到临时栈
     double val;
