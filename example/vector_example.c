@@ -17,12 +17,12 @@ int main(void)
     double norm = norm_vec(v4, 2);
     printf("%lf\n", norm);
     Complex data[5] = {v1, v2, v3, v2, v3};
-    Vectorc *v = create_vec(5, data);
+    Vectorc *v = create_vec(data, 5);
     // Complex remove[2] = {v1, v2};
     int da[5] = {1, 2, 3, 4, 5};
 
     int re[2] = {1, 2};
-    Vectori *vint = create_vec(5, da);
+    Vectori *vint = create_vec(da, 5);
     Vectori *vone = remove_elem(vint, 1);
     Vectori *varr = remove_arr(vint, re, 2);
     print_vec(v);
