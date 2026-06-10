@@ -1,7 +1,7 @@
 #include "stack/pop_stack.h"
 #include "stack/operator_stack.h"
 
-int pop(StackInt *stack, int *data)
+int pop_int(StackInt *stack, int *data)
 {
     if (!stack || is_empty_stack(stack) || !data)
     {
