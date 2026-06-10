@@ -33,7 +33,7 @@ typedef struct
 {
     SDL_Window *window;
     SDL_Renderer *renderer;
-    Stack *stack;
+    StackInt *stack;
     int running;
     char status_msg[64];
     int status_timer;
@@ -51,7 +51,7 @@ static int init_app(App *app)
 {
     app->window = NULL;
     app->renderer = NULL;
-    app->stack = create_stack();
+    app->stack = create_stack_int();
     app->running = 1;
     app->status_msg[0] = '\0';
     app->status_timer = 0;
@@ -197,7 +197,7 @@ static void render(App *app)
     int values[MAX_VISIBLE];
     int count = 0;
 
-    StackNode *cur = app->stack->top;
+    StackIntNode *cur = app->stack->top;
     while (cur && count < MAX_VISIBLE)
     {
         values[count++] = cur->data;
