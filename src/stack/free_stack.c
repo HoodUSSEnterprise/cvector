@@ -1,4 +1,5 @@
 #include "stack/free_stack.h"
+#include "stack/clear_stack.h"
 
 void free_stack_int(StackInt *stack)
 {
