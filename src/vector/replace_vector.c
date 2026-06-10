@@ -203,7 +203,7 @@ Vectori *replace_vectori_elem(Vectori *v, int old_elem, int new_elem)
     }
     else
     {
-        Vectori *res = create_vectori(v->len, v->data);
+        Vectori *res = create_vectori(v->data, v->len);
         res->len = v->len;
         for (size_t i = 0; i < v->len; i++)
         {
@@ -229,7 +229,7 @@ Vectorf *replace_vectorf_elem(Vectorf *v, float old_elem, float new_elem)
     }
     else
     {
-        Vectorf *res = create_vectorf(v->len, v->data);
+        Vectorf *res = create_vectorf(v->data, v->len);
         res->len = v->len;
         for (size_t i = 0; i < v->len; i++)
         {
@@ -255,7 +255,7 @@ Vectord *replace_vectord_elem(Vectord *v, double old_elem, double new_elem)
     }
     else
     {
-        Vectord *res = create_vectord(v->len, v->data);
+        Vectord *res = create_vectord(v->data, v->len);
         res->len = v->len;
         for (size_t i = 0; i < v->len; i++)
         {
