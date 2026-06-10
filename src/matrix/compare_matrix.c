@@ -1,3 +1,6 @@
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wunused-parameter"
+
 #include "matrix/compare_matrix.h"
 #include <math.h>
 
@@ -200,3 +203,5 @@ bool is_equal_matrixc_d(MatrixC *m1, MatrixD *m2)
 {
     return false;
 }
+
+#pragma GCC diagnostic pop
