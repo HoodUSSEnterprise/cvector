@@ -1,8 +1,8 @@
 #ifndef CREATE_VECTOR_H
 #define CREATE_VECTOR_H
 
-#include "vector/base_vector.h"
 #include "complex/operator_complex.h"
+#include "vector/base_vector.h"
 
 Vector2i *create_vector2i(int x, int y);
 
@@ -100,10 +100,10 @@ Vectorc *create_vectorc(Complex *data, size_t len);
             float: create_vector3f,        \
             int: create_vector3i), ))(x, y, z)
 
-#define create_vec(len, y) _Generic((y), \
-    int *: create_vectori,             \
-    float *: create_vectorf,           \
-    double *: create_vectord,          \
-    Complex *: create_vectorc)(len, y)
+#define create_vec(y, len) _Generic((y), \
+    int *: create_vectori,               \
+    float *: create_vectorf,             \
+    double *: create_vectord,            \
+    Complex *: create_vectorc)(y, len)
 
 #endif // CREATE_VECTOR_H
