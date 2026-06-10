@@ -2,8 +2,8 @@
 
 int main(int argc, char **argv)
 {
-    Complex c1 = create_complex(3, 4);
-    Complex c2 = create_complex(3, 4);
+    Complex c1 = create_complex(3.0, 4.0);
+    Complex c2 = create_complex(3.0, 4.0);
     Complex c3 = add_complex(c1, c2);
     print_complex(c3);
     c3 = sub_complex(c1, c2);
