@@ -2,6 +2,14 @@ cmake_minimum_required(VERSION 3.10)
 
 project(example_complex)
 
+enable_language(C ASM_NASM)
+# 添加 NASM 配置
+if(CMAKE_ASM_NASM_COMPILER)
+    set(CMAKE_ASM_NASM_FLAGS "-f win64 -g")
+endif()
+# 添加调试信息
+message(STATUS "ASM_NASM compiler: ${CMAKE_ASM_NASM_COMPILER}")
+message(STATUS "ASM_NASM flags: ${CMAKE_ASM_NASM_FLAGS}")
 # 设置 C 标准为 C11
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_C_STANDARD_REQUIRED ON)
@@ -25,6 +33,12 @@ set(LIB_SOURCES_COMPLEX
     ${PROJECT_ROOT}/src/complex/copy_complex.c
     ${PROJECT_ROOT}/src/complex/create_complex.c
     ${PROJECT_ROOT}/src/complex/free_complex.c
+    ${PROJECT_ROOT}/src/complex/add_complex.asm
+    ${PROJECT_ROOT}/src/complex/sub_complex.asm
+    ${PROJECT_ROOT}/src/complex/mul_complex.asm
+    ${PROJECT_ROOT}/src/complex/div_complex.asm
+    ${PROJECT_ROOT}/src/complex/power_complex.asm
+    ${PROJECT_ROOT}/src/complex/is_equal_complex.asm
 )
 
 set(LIB_SOURCES_VECTOR
@@ -41,6 +55,12 @@ set(LIB_SOURCES_VECTOR
     ${PROJECT_ROOT}/src/vector/find_vector.c
     ${PROJECT_ROOT}/src/vector/copy_vector.c
     ${PROJECT_ROOT}/src/complex/print_complex.c
+    ${PROJECT_ROOT}/src/complex/add_complex.asm
+    ${PROJECT_ROOT}/src/complex/sub_complex.asm
+    ${PROJECT_ROOT}/src/complex/mul_complex.asm
+    ${PROJECT_ROOT}/src/complex/div_complex.asm
+    ${PROJECT_ROOT}/src/complex/power_complex.asm
+    ${PROJECT_ROOT}/src/complex/is_equal_complex.asm
 )
 
 # 创建库
@@ -89,6 +109,13 @@ set(LIB_SOURCES_MATRIX
     ${PROJECT_ROOT}/src/matrix/transpose_matrix.c
     ${PROJECT_ROOT}/src/tools/max_min.c
     ${PROJECT_ROOT}/src/tools/pointer_transform.c
+    ${PROJECT_ROOT}/src/complex/print_complex.c
+    ${PROJECT_ROOT}/src/complex/add_complex.asm
+    ${PROJECT_ROOT}/src/complex/sub_complex.asm
+    ${PROJECT_ROOT}/src/complex/mul_complex.asm
+    ${PROJECT_ROOT}/src/complex/div_complex.asm
+    ${PROJECT_ROOT}/src/complex/power_complex.asm
+    ${PROJECT_ROOT}/src/complex/is_equal_complex.asm
 )
 
 add_library(matrix_lib ${LIB_SOURCES_MATRIX})
